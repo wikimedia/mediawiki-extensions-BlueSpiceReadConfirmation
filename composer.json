@@ -1,0 +1,12 @@
+{
+  "name": "bluespice/readconfirmation",
+  "type": "mediawiki-extension",
+  "description": "Extension to collect read confirmations for an article",
+  "license": "GPL-3.0-only",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "extra": {
+    "installer-name": "BlueSpiceReadConfirmation"
+  }
+}
