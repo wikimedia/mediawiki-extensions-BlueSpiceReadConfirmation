@@ -1,12 +1,32 @@
 {
-  "name": "bluespice/readconfirmation",
-  "type": "mediawiki-extension",
-  "description": "Extension to collect read confirmations for an article",
-  "license": "GPL-3.0-only",
-  "require": {
-    "composer/installers": "~1.0"
-  },
-  "extra": {
-    "installer-name": "BlueSpiceReadConfirmation"
-  }
+	"name": "bluespice/readconfirmation",
+	"type": "mediawiki-extension",
+	"description": "Extension to collect read confirmations for an article",
+	"license": "GPL-3.0-only",
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"BlueSpice\\ReadConfirmation\\": "src",
+			"BlueSpice\\ReadConfirmation\\Tests\\": "tests/phpunit"
+		}
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "1.0.0",
+		"jakub-onderka/php-console-highlighter": "0.3.2",
+		"mediawiki/minus-x": "0.3.1"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor --exclude node_modules",
+			"minus-x check ."
+		],
+		"fix": [
+			"minus-x fix ."
+		]
+	},
+	"extra": {
+		"installer-name": "BlueSpiceReadConfirmation"
+	}
 }
