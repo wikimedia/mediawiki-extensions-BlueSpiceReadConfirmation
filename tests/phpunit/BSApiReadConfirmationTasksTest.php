@@ -1,8 +1,14 @@
 <?php
 
+namespace BlueSpice\ReadConfirmation\Tests;
+
+use Title;
+use User;
+use WikiPage;
 use BlueSpice\Tests\BSApiTasksTestBase;
 
 /**
+ * @group Broken
  * @group medium
  * @group API
  * @group Database

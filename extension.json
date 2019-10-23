@@ -74,8 +74,7 @@
 			"messages": [
 				"bs-readconfirmation-confirm-read-heading",
 				"bs-readconfirmation-confirm-read-checkbox-label",
-				"bs-readconfirmation-confirm-read-button-label",
-				"bs-readconfirmation-action-apiread-description"
+				"bs-readconfirmation-confirm-read-button-label"
 			],
 			"dependencies": [
 				"ext.bluespice"
@@ -158,5 +157,8 @@
 			"readconfirmationremind": true
 		}
 	},
+	"AvailableRights": [
+		"readconfirmationremind"
+	],
 	"manifest_version": 2
 }

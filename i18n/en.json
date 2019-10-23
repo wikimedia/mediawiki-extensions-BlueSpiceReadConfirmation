@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Robert Vogel",
+			"Leonid Verhovskij"
+		]
 	},
 	"bs-readconfirmation-desc": "Extension to collect read confirmations for an article",
 	"bs-readconfirmation-column-read": "Read?",
@@ -26,7 +29,7 @@
 	"log-show-hide-bs-readconfirmation": "$1 read confirmation log",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|has}} confirmed to have read the article $3",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|has}} asked the user $4 to confirme reading of the article $3",
-	"apihelp-bs-readconfirmation-tasks-description": "API endpoint for extension ReadConfirmation",
+	"apihelp-bs-readconfirmation-tasks-summary": "API endpoint for extension ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Read Confirmation",
 	"bs-readconfirmation-api-error-not-active-ns": "Read Confirmation is not enabled for this namespace",
 	"bs-readconfirmation-disabled-ns": "Read confirmation not enabled",
@@ -34,5 +37,7 @@
 	"bs-readconfirmation-navigation-link-title": "Shows an overview of all pending read confirmations",
 	"bs-readconfirmation-navigation-link-text": "Requested read confirmations",
 	"bs-readconfirmation-graphicallist-btn-read": "Read",
-	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: You confirmed reading the page $1 (revision $2) on $3"
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: You confirmed reading the page $1 (revision $2) on $3",
+	"action-readconfirmationremind": "remind users that they have to confirm to have read the page",
+	"right-readconfirmationremind": "Remind users that they have to confirm to have read the page"
 }
