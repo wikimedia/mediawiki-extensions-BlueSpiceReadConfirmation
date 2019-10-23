@@ -1,0 +1,158 @@
+{
+	"name": "BlueSpiceReadConfirmation",
+	"version": "3.1.0",
+	"license-name": "GPL-3.0-only",
+	"author": [
+		"Robert Vogel",
+		"Leonid Verhovskij"
+	],
+	"url": "https://en.wiki.bluespice.com/wiki/Reference:ReadConfirmation",
+	"descriptionmsg": "bs-readconfirmation-desc",
+	"type": "bluespice",
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Extensions": {
+				"BlueSpiceReadConfirmation": {
+					"className": "\\BlueSpice\\ReadConfirmation\\Extension",
+					"extPath": "/BlueSpiceReadConfirmation",
+					"package": "BlueSpice Pro"
+				}
+			},
+			"GraphicalListRegistry": {
+				"readconfirmation-list": "bs.readconfirmation.GraphicalListFactory"
+			},
+			"PermissionRegistry": {
+				"readconfirmationremind": {
+					"type": "global",
+					"roles": [
+						"admin",
+						"maintenanceadmin"
+					]
+				}
+			},
+			"NotificationRegistrationFunctions": [
+				"\\BlueSpice\\ReadConfirmation\\Notifications\\Registrator::registerNotifications"
+			]
+		},
+		"BlueSpicePrivacy": {
+			"Handlers": [
+				"\\BlueSpice\\ReadConfirmation\\Privacy\\Handler"
+			]
+		}
+	},
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+	"AutoloadNamespaces": {
+		"BlueSpice\\ReadConfirmation\\Tests\\": "tests/phpunit/",
+		"BlueSpice\\ReadConfirmation\\": "src/"
+	},
+	"AutoloadClasses": {
+		"ReadConfirmationHooks": "includes/ReadConfirmationHooks.php",
+		"ReadConfirmationPageAssignmentHooks": "includes/ReadConfirmationPageAssignmentHooks.php",
+		"BSApiReadConfirmationTasks": "includes/api/BSApiReadConfirmationTasks.php"
+	},
+	"ExtensionFunctions": [
+		"ReadConfirmationHooks::setup"
+	],
+	"APIModules": {
+		"bs-readconfirmation-tasks": "BSApiReadConfirmationTasks"
+	},
+	"ResourceModules": {
+		"ext.readconfirmation.styles": {
+			"styles": [
+				"ext.bluespice.readconfirmation.less"
+			]
+		},
+		"ext.readconfirmation.scripts": {
+			"scripts": [
+				"ext.bluespice.readconfirmation.js"
+			],
+			"messages": [
+				"bs-readconfirmation-confirm-read-heading",
+				"bs-readconfirmation-confirm-read-checkbox-label",
+				"bs-readconfirmation-confirm-read-button-label",
+				"bs-readconfirmation-action-apiread-description"
+			],
+			"dependencies": [
+				"ext.bluespice"
+			]
+		},
+		"ext.readconfirmation.pageassignmentsintegration.styles": {
+			"styles": [
+				"ext.bluespice.readconfirmation.pageassignmentsintegration.less"
+			]
+		},
+		"ext.readconfirmation.pageassignmentsintegration": {
+			"scripts": [
+				"ext.bluespice.readconfirmation.pageassignmentsintegration.js"
+			],
+			"messages": [
+				"bs-readconfirmation-column-read",
+				"bs-readconfirmation-column-read-at",
+				"bs-readconfirmation-not-read",
+				"bs-readconfirmation-action-remind",
+				"bs-readconfirmation-action-log",
+				"bs-readconfirmation-action-remind-confirm",
+				"bs-readconfirmation-disabled-ns",
+				"bs-readconfirmation-disabled-ns-short"
+			],
+			"dependencies": [
+				"ext.bluespice"
+			]
+		},
+		"bs.readconfirmation.GraphicalListFactory": {
+			"scripts": [
+				"bs.readconfirmation.GraphicalListFactory.js"
+			],
+			"messages": [
+				"bs-readconfirmation-graphicallist-btn-read"
+			],
+			"dependencies": [
+				"ext.bluespice"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceReadConfirmation/resources"
+	},
+	"MessagesDirs": {
+		"BlueSpiceReadConfirmation": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"BSApiExtJSStoreBaseBeforePostProcessData": "ReadConfirmationPageAssignmentHooks::onBSApiExtJSStoreBaseBeforePostProcessData",
+		"BSPageAssignmentsManager": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
+		"BSPageAssignmentsOverview": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
+		"LoadExtensionSchemaUpdates": "ReadConfirmationHooks::onLoadExtensionSchemaUpdates",
+		"BeforePageDisplay": [
+			"ReadConfirmationHooks::onBeforePageDisplay",
+			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddGraphicalListModule::callback",
+			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources::callback"
+		],
+		"PageContentSaveComplete": "ReadConfirmationHooks::onPageContentSaveComplete",
+		"NamespaceManager::getMetaFields": "ReadConfirmationHooks::onNamespaceManager_getMetaFields",
+		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
+		"NamespaceManager::writeNamespaceConfiguration": "ReadConfirmationHooks::onNamespaceManager_writeNamespaceConfiguration",
+		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
+		"UnitTestsList" : "ReadConfirmationHooks::onUnitTestsList",
+		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\ReadConfirmation\\Hook\\SkinTemplateOutputPageBeforeExec\\AddGraphicalListLink::callback"
+	},
+	"LogTypes": [
+		"bs-readconfirmation"
+	],
+	"FilterLogTypes": {
+		"bs-readconfirmation": true
+	},
+	"LogActionsHandlers": {
+		"bs-readconfirmation/*": "LogFormatter"
+	},
+	"GroupPermissions": {
+		"sysop": {
+			"readconfirmationremind": true
+		}
+	},
+	"manifest_version": 2
+}
