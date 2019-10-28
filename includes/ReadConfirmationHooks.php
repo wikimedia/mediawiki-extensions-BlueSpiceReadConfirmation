@@ -9,40 +9,42 @@ class ReadConfirmationHooks {
 			'bs-readconfirmation-remind',
 			'bs-pageassignments-action-cat',
 			'notification-bs-readconfirmation-remind-summary',
-			array('agent', 'title', 'titlelink'),
+			[ 'agent', 'title', 'titlelink' ],
 			'notification-bs-readconfirmation-remind-subject',
-			array('agent', 'title', 'titlelink'),
+			[ 'agent', 'title', 'titlelink' ],
 			'notification-bs-readconfirmation-remind-body',
-			array('agent', 'title', 'titlelink'),
-			array(
+			[ 'agent', 'title', 'titlelink' ],
+			[
 				'formatter-class' => 'PageAssignmentsNotificationFormatter',
-				'primary-link' => array( 'message' => 'notification-link-text-view-page', 'destination' => 'title' )
-			)
+				'primary-link' => [ 'message' => 'notification-link-text-view-page', 'destination' => 'title' ]
+			]
 		);
 	}
-
 
 	/**
 	 * Adds database tables
 	 * @param DatabaseUpdater $updater
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$updater->addExtensionTable( 'bs_readconfirmation', dirname( __DIR__ ).'/db/bs_readconfirmation.sql' );
+		$updater->addExtensionTable(
+			'bs_readconfirmation',
+			dirname( __DIR__ ) . '/db/bs_readconfirmation.sql'
+		);
 		return true;
 	}
 
 	/**
 	 *
-	 * @param OutputPage $out
-	 * @param Skin $skin
-	 * @return boolean
+	 * @param OutputPage &$out
+	 * @param Skin &$skin
+	 * @return bool
 	 */
 	public static function onBeforePageDisplay( &$out, &$skin ) {
 		$out->addModuleStyles( 'ext.readconfirmation.styles' );
 		$out->addModules( 'ext.readconfirmation.scripts' );
 
-		if( $out->getTitle()->isSpecial( 'ManagePageAssignments' ) ) {
+		if ( $out->getTitle()->isSpecial( 'ManagePageAssignments' ) ) {
 			$out->addModuleStyles(
 				'ext.readconfirmation.pageassignmentsintegration.styles'
 			);
@@ -59,45 +61,46 @@ class ReadConfirmationHooks {
 	 * @param User $user
 	 * @param Content $content
 	 * @param string $summary
-	 * @param boolean $isMinor
-	 * @param boolean $isWatch
+	 * @param bool $isMinor
+	 * @param bool $isWatch
 	 * @param int $section
 	 * @param int $flags
 	 * @param Revision $revision
 	 * @param Status $status
 	 * @param int $baseRevId
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onPageContentSaveComplete( $wikiPage, $user,
 			$content, $summary, $isMinor, $isWatch, $section, $flags,
 			$revision, $status, $baseRevId ) {
-
-		if( $isMinor ) {
+		if ( $isMinor ) {
 			return true;
 		}
 
 		$iNS = $wikiPage->getTitle()->getNamespace();
-		if( !isset( $wgNamespacesWithEnabledReadConfirmation[$iNS] ) || $wgNamespacesWithEnabledReadConfirmation[$iNS] === false ) {
+		if ( !isset( $wgNamespacesWithEnabledReadConfirmation[$iNS] )
+			|| $wgNamespacesWithEnabledReadConfirmation[$iNS] === false ) {
 			return true;
 		}
 
 		$factory = Services::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
-		if( !$factory ) {
+		if ( !$factory ) {
 			return true;
 		}
-		if( !$target = $factory->newFromTargetTitle( $wikiPage->getTitle() ) ) {
+		$target = $factory->newFromTargetTitle( $wikiPage->getTitle() );
+		if ( !$target ) {
 			return true;
 		}
-		if( $target->isUserAssigned( $user->getId() ) ) {
+		if ( $target->isUserAssigned( $user->getId() ) ) {
 			return true;
 		}
 
-		$aRow = array(
+		$aRow = [
 			'rc_rev_id' => $revision->getId(),
-			'rc_user_id' =>  $user->getId()
-		);
+			'rc_user_id' => $user->getId()
+		];
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'bs_readconfirmation', $aRow );
@@ -111,19 +114,19 @@ class ReadConfirmationHooks {
 	 * Hook handler for
 	 * NamespaceManager::getMetaFields
 	 *
-	 * @param array $aMetaFields
+	 * @param array &$aMetaFields
 	 * @return bool Always true
 	 */
 	public static function onNamespaceManager_getMetaFields( &$aMetaFields ) {
-		$aMetaFields[] = array(
+		$aMetaFields[] = [
 				'name' => 'read_confirmation',
 				'type' => 'boolean',
 				'sortable' => true,
-				'filter' => array(
+				'filter' => [
 					'type' => 'boolean'
-				),
+				],
 				'label' => wfMessage( 'bs-readconfirmation-label-ns-manager' )->plain()
-		);
+		];
 		return true;
 	}
 
@@ -131,21 +134,22 @@ class ReadConfirmationHooks {
 	 * Hook handler for
 	 * NamespaceManager::editNamespace
 	 *
-	 * @param array $aNamespaceDefinitions
-	 * @param integer $iNs
+	 * @param array &$aNamespaceDefinition
+	 * @param int &$iNs
 	 * @param array $aAdditionalSettings
-	 * @param boolean $bUseInternalDefaults
+	 * @param bool $bUseInternalDefaults
 	 * @return bool Always true
 	 */
-	public static function onNamespaceManager_editNamespace( &$aNamespaceDefinition, &$iNs, $aAdditionalSettings, $bUseInternalDefaults ) {
+	public static function onNamespaceManager_editNamespace( &$aNamespaceDefinition, &$iNs,
+		$aAdditionalSettings, $bUseInternalDefaults ) {
 		if ( empty( $aNamespaceDefinition[$iNs] ) ) {
-			$aNamespaceDefinition[$iNs] = array();
+			$aNamespaceDefinition[$iNs] = [];
 		}
 
 		if ( isset( $aAdditionalSettings['read_confirmation'] ) ) {
-			$aNamespaceDefinition[$iNs][ 'read_confirmation' ] = $aAdditionalSettings['read_confirmation'];
-		}
-		else {
+			$aNamespaceDefinition[$iNs][ 'read_confirmation' ]
+				= $aAdditionalSettings['read_confirmation'];
+		} else {
 			$aNamespaceDefinition[$iNs][ 'read_confirmation' ] = false;
 		}
 		return true;
@@ -155,20 +159,24 @@ class ReadConfirmationHooks {
 	 * Hook handler for
 	 * NamespaceManager::WriteNamespaceConfiguration
 	 *
-	 * @param string $sSaveContent
+	 * @param string &$sSaveContent
 	 * @param string $sConstName
-	 * @param integer $iNs
+	 * @param int $iNs
 	 * @param array $aDefinition
 	 * @return bool Always true
 	 */
-	public static function onNamespaceManager_writeNamespaceConfiguration( &$sSaveContent, $sConstName, $iNs, $aDefinition ) {
+	public static function onNamespaceManager_writeNamespaceConfiguration( &$sSaveContent, $sConstName,
+		$iNs, $aDefinition ) {
 		global $wgNamespacesWithEnabledReadConfirmation;
-		if ( isset( $aDefinition[ 'read_confirmation' ] ) && $aDefinition['read_confirmation'] === true ) {
+		if ( isset( $aDefinition[ 'read_confirmation' ] )
+			&& $aDefinition['read_confirmation'] === true ) {
 			$sSaveContent .= "\$GLOBALS['wgNamespacesWithEnabledReadConfirmation'][{$sConstName}] = true;\n";
-		} else if( isset( $aDefinition[ 'read_confirmation' ] ) && $aDefinition['read_confirmation'] === false ) {
+		} elseif ( isset( $aDefinition[ 'read_confirmation' ] )
+			&& $aDefinition['read_confirmation'] === false ) {
 			return true;
 		}
-		if( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] ) && $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
+		if ( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] )
+			&& $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
 			$sSaveContent .= "\$GLOBALS['wgNamespacesWithEnabledReadConfirmation'][{$sConstName}] = true;\n";
 		}
 		return true;
@@ -178,15 +186,16 @@ class ReadConfirmationHooks {
 	 * Hook handler for
 	 * BSApiNamespaceStoreMakeData
 	 *
-	 * @param array $aResult
+	 * @param array &$aResult
 	 * @return bool Always true
 	 */
 	public static function onBSApiNamespaceStoreMakeData( &$aResult ) {
 		global $wgNamespacesWithEnabledReadConfirmation;
 
-		foreach( $aResult as &$aSingleResult ) {
+		foreach ( $aResult as &$aSingleResult ) {
 			$iNs = $aSingleResult['id'];
-			if( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] ) && $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
+			if ( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] )
+				&& $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
 				$aSingleResult['read_confirmation'] = true;
 			} else {
 				$aSingleResult['read_confirmation'] = false;
@@ -199,8 +208,8 @@ class ReadConfirmationHooks {
 	/**
 	 * Hook handler for UnitTestList
 	 *
-	 * @param array $paths
-	 * @return boolean
+	 * @param array &$paths
+	 * @return bool
 	 */
 	public static function onUnitTestsList( &$paths ) {
 		$paths[] = __DIR__ . '/../tests/phpunit/';
