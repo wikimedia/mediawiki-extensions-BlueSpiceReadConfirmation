@@ -9,32 +9,46 @@ class Remind extends BaseNotification {
 
 	protected $affectedUsers = null;
 
+	/**
+	 *
+	 * @param \User $agent
+	 * @param \Title|null $title
+	 * @param array $extraParams
+	 */
 	public function __construct( \User $agent, \Title $title = null, $extraParams = [] ) {
 		parent::__construct( 'bs-readconfirmation-remind', $agent, $title, $extraParams );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAudience() {
 		return $this->getAffectedUsers();
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAffectedUsers() {
 		if ( $this->affectedUsers ) {
 			return $this->affectedUsers;
 		}
 		$target = $this->getAssignmentFactory()->newFromTargetTitle( $this->getTitle() );
-		if( $target === false ) {
+		if ( $target === false ) {
 			return [];
 		}
 		$assignedUserIds = $target->getAssignedUserIDs();
 		$currentReads = \BlueSpice\ReadConfirmation\Extension::getCurrentReadConfirmations(
 			$assignedUserIds,
-			array( $this->getTitle()->getArticleID() )
+			[ $this->getTitle()->getArticleID() ]
 		);
 		$this->affectedUsers = array_filter(
 			$target->getAssignedUserIDs(),
-			function( $e ) use( $target, $currentReads ) {
+			function ( $e ) use( $target, $currentReads ) {
 				return !isset( $currentReads[$target->getTitle()->getArticleID()][$e] );
-		} );
+		 } );
 		return $this->affectedUsers;
 	}
 

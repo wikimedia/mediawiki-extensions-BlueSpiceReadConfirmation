@@ -2,14 +2,16 @@
 
 namespace BlueSpice\ReadConfirmation\Notifications;
 
+use BlueSpice\NotificationManager;
+
 class Registrator {
 
 	/**
 	 * Registeres base notifications used for Social Entities
 	 *
-	 * @param \BlueSpice\NotificationManager $notificationsManager
+	 * @param NotificationManager $notificationsManager
 	 */
-	public static function registerNotifications( \BlueSpice\NotificationManager $notificationsManager ) {
+	public static function registerNotifications( NotificationManager $notificationsManager ) {
 		$echoNotifier = $notificationsManager->getNotifier();
 
 		$echoNotifier->registerNotificationCategory(

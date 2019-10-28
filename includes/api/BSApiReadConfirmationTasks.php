@@ -1,6 +1,7 @@
 <?php
 
 use BlueSpice\Services;
+use BlueSpice\Api\Response\Standard;
 use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
 
@@ -8,124 +9,146 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 	protected $sTaskLogType = 'bs-readconfirmation';
 
-	protected $aTasks = array( 'confirm', 'check', 'remind' );
+	protected $aTasks = [ 'confirm', 'check', 'remind' ];
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getRequiredTaskPermissions() {
-		return array(
-			'confirm' => array( 'read' ),
-			'check' => array( 'read' ),
-			'remind' => array( 'readconfirmationremind' )
-		);
+		return [
+			'confirm' => [ 'read' ],
+			'check' => [ 'read' ],
+			'remind' => [ 'readconfirmationremind' ]
+		];
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oTaskData
+	 * @param array $aParams
+	 * @return Standard
+	 */
 	protected function task_confirm( $oTaskData, $aParams ) {
 		$oResult = $this->makeStandardReturn();
 
-		if( is_int( $oTaskData->pageId ) === false ) {
+		if ( is_int( $oTaskData->pageId ) === false ) {
 			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $oResult;
 		}
 
 		$oTitle = Title::newFromId( $oTaskData->pageId );
-		if( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled ( $oTitle ) ) {
+		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
 			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
 			return $oResult;
 		}
 		$oWikiPage = WikiPage::factory( $oTitle );
 		$oRevision = $oWikiPage->getRevision();
-		while( $oRevision instanceof Revision && $oRevision->isMinor() === true ) {
+		while ( $oRevision instanceof Revision && $oRevision->isMinor() === true ) {
 			$oRevision = $oRevision->getPrevious();
 		}
 
-		if( $oRevision instanceof Revision === false ) {
+		if ( $oRevision instanceof Revision === false ) {
 			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-no-non-minor-revision' )->plain();
 			return $oResult;
 		}
 
-		$aRow = array(
+		$aRow = [
 			'rc_rev_id' => $oRevision->getId(),
-			'rc_user_id' =>  $this->getUser()->getId()
-		);
+			'rc_user_id' => $this->getUser()->getId()
+		];
 
-		//I don't understand the usage of "DatabaseBase::uspert"
+		// I don't understand the usage of "DatabaseBase::uspert"
 		$this->getDB( DB_MASTER )->delete( 'bs_readconfirmation', $aRow );
 		$aRow['rc_timestamp'] = wfTimestampNow();
 		$this->getDB( DB_MASTER )->insert( 'bs_readconfirmation', $aRow );
 
-		$this->logTaskAction( 'confirm', array(), array(
+		$this->logTaskAction( 'confirm', [], [
 			'target' => $oTitle
-		) );
+		] );
 
 		$oResult->success = true;
 
 		return $oResult;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oTaskData
+	 * @param array $aParams
+	 * @return Standard
+	 */
 	protected function task_check( $oTaskData, $aParams ) {
 		$oResult = $this->makeStandardReturn();
 
 		$oTitle = Title::newFromID( $oTaskData->pageId );
-		if( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled ( $oTitle ) ) {
+		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
 			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
 			return $oResult;
 		}
 		$iCurrentUserId = $this->getUser()->getId();
-		if( $oTitle instanceof Title === false ) {
+		if ( $oTitle instanceof Title === false ) {
 			$oResult->message = wfMessage( 'bs-pageassignments-api-error-no-page' )->plain();
 			return $oResult;
 		}
 
 		$oResult->success = true;
-		$oResult->payload = array(
+		$oResult->payload = [
 			'pageId' => $oTaskData->pageId,
 			'userId' => $iCurrentUserId,
 			'userHasConfirmed' => true
-		);
+		];
 
 		$target = $this->getAssignmentFactory()->newFromTargetTitle( $oTitle );
-		if( $target === false ) {
+		if ( $target === false ) {
 			return $oResult;
 		}
 
-		//This is a hard dependency to PageAssignments extension.
-		//It could also be placed in an appropriate hook handler
-		if( !$target->isUserAssigned( $this->getUser() ) ) {
-			return $oResult; //If the user is not assigned we bail out telling
-			//the caller that it already has been confirmed. This is not the
-			//truth and therefore not nice, but for the time being it is
-			//sufficient. Better solution would probably be to throw an
-			//exception
+		// This is a hard dependency to PageAssignments extension.
+		// It could also be placed in an appropriate hook handler
+		if ( !$target->isUserAssigned( $this->getUser() ) ) {
+			// If the user is not assigned we bail out telling
+			return $oResult;
+			// the caller that it already has been confirmed. This is not the
+			// truth and therefore not nice, but for the time being it is
+			// sufficient. Better solution would probably be to throw an
+			// exception
 		}
 
 		$aCurrentPageReads = BlueSpice\ReadConfirmation\Extension::getCurrentReadConfirmations(
-			array( $iCurrentUserId ),
-			array( $oTaskData->pageId )
+			[ $iCurrentUserId ],
+			[ $oTaskData->pageId ]
 		);
 
-		if( !isset( $aCurrentPageReads[$oTaskData->pageId][$iCurrentUserId] ) ) {
+		if ( !isset( $aCurrentPageReads[$oTaskData->pageId][$iCurrentUserId] ) ) {
 			$oResult->payload['userHasConfirmed'] = false;
 		}
 
 		return $oResult;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oTaskData
+	 * @param array $aParams
+	 * @return Standard
+	 */
 	protected function task_remind( $oTaskData, $aParams ) {
-		global $wgNamespacesWithEnabledReadConfirmation;
 		$oResult = $this->makeStandardReturn();
 
 		$oTitle = Title::newFromID( $oTaskData->pageId );
-		if( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled ( $oTitle ) ) {
+		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
 			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
 			return $oResult;
 		}
-		if( $oTitle instanceof Title === false ) {
+		if ( $oTitle instanceof Title === false ) {
 			$oResult->message = wfMessage( 'bs-pageassignments-api-error-no-page' )->plain();
 			return $oResult;
 		}
 
-		$aUserDisplayNames = array();
+		$aUserDisplayNames = [];
 		$target = $this->getAssignmentFactory()->newFromTargetTitle( $oTitle );
-		if( $target === false || empty( $target->getAssignedUserIDs() ) ) {
+		if ( $target === false || empty( $target->getAssignedUserIDs() ) ) {
 			return $oResult;
 		}
 
@@ -134,24 +157,29 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$notification = new Remind( $this->getUser(), $oTitle );
 		$notifier->notify( $notification );
 
-		foreach( $notification->getAffectedUsers() as $userId ) {
-			if ( !$user = \User::newFromId( $userId ) ) {
+		foreach ( $notification->getAffectedUsers() as $userId ) {
+			$user = \User::newFromId( $userId );
+			if ( !$user ) {
 				continue;
 			}
 			$aUserDisplayNames[] = Services::getInstance()->getBSUtilityFactory()
 				->getUserHelper( $user )->getDisplayName();
 		}
-		$this->logTaskAction( 'remind', array(
+		$this->logTaskAction( 'remind', [
 			'4::users' => implode( ', ',  $aUserDisplayNames )
-		),
-		array(
+		],
+		[
 			'target' => $oTitle
-		));
+		] );
 
 		$oResult->success = true;
 		return $oResult;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function isWriteMode() {
 		return true;
 	}
@@ -171,17 +199,18 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 * @param bool $bDoPublish
 	 * @return int Id of the newly created log entry or -1 on error
 	 */
-	protected function logTaskAction( $sAction, $aParams, $aOptions = array(), $bDoPublish = false ) {
-		$aOptions += array(
+	protected function logTaskAction( $sAction, $aParams, $aOptions = [], $bDoPublish = false ) {
+		$aOptions += [
 			'performer' => null,
 			'target' => null,
 			'timestamp' => null,
 			'relations' => null,
 			'comment' => null,
-			'deleted' =>  null,
+			'deleted' => null,
 			'publish' => null,
-			'type' => null //To allow overriding of class default
-		);
+			// To allow overriding of class default
+			'type' => null
+		];
 
 		$oTarget = $aOptions['target'];
 		if ( $oTarget === null ) {
@@ -198,7 +227,8 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$sType = $aOptions['type'];
 		}
 
-		if ( $sType === null ) { //Not set on class, not set as call option
+		// Not set on class, not set as call option
+		if ( $sType === null ) {
 			return -1;
 		}
 
