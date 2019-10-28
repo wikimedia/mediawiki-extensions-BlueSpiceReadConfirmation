@@ -10,57 +10,60 @@ class Extension extends \BlueSpice\Extension {
 	 * @param int[] $aPageIds
 	 * @return array in form [ <page_id> => [ <user_id1>, <user_id2>, ...], ... ]
 	 */
-	public static function getCurrentReadConfirmations( $aUserIds = array(), $aPageIds = array() ) {
+	public static function getCurrentReadConfirmations( $aUserIds = [], $aPageIds = [] ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
-		//Step 1: Collect all data about what the users have read
-		$aConds = array();
-		if( !empty( $aUserIds ) ) {
+		// Step 1: Collect all data about what the users have read
+		$aConds = [];
+		if ( !empty( $aUserIds ) ) {
 			$aConds['rc_user_id'] = $aUserIds;
 		}
 		$res = $dbr->select( 'bs_readconfirmation', '*', $aConds, __METHOD__ );
 
-		$aReadRevisions = array();
-		foreach( $res as $row ) {
+		$aReadRevisions = [];
+		foreach ( $res as $row ) {
 			$iRevId = (int)$row->rc_rev_id;
-			if( !isset( $aReadRevisions[$iRevId] ) ) {
-				$aReadRevisions[$iRevId] = array();
+			if ( !isset( $aReadRevisions[$iRevId] ) ) {
+				$aReadRevisions[$iRevId] = [];
 			}
 			$aReadRevisions[$iRevId][(int)$row->rc_user_id] = $row->rc_timestamp;
 		}
 
-		//Step 2: Collect data about the recent non-minor edits of the requested pages
-		$aConds = array(
-			'rev_minor_edit' => 0 //Only non-minor-edits
-		);
-		if( !empty( $aPageIds ) ) {
+		// Step 2: Collect data about the recent non-minor edits of the requested pages
+		$aConds = [
+			// Only non-minor-edits
+			'rev_minor_edit' => 0
+		];
+		if ( !empty( $aPageIds ) ) {
 			$aConds['rev_page'] = $aPageIds;
 		}
 
 		$res = $dbr->select(
 			'revision',
-			array( 'rev_id', 'rev_page', 'rev_minor_edit' ),
+			[ 'rev_id', 'rev_page', 'rev_minor_edit' ],
 			$aConds,
 			__METHOD__,
-			array(
+			[
 				'ORDER BY' => 'rev_id DESC'
-			)
+			]
 		);
 
-		$aPageRevisions = array();
-		foreach( $res as $row ) {
+		$aPageRevisions = [];
+		foreach ( $res as $row ) {
 			$iPageId = (int)$row->rev_page;
-			if( isset( $aPageRevisions[$iPageId] ) ) {
-				continue; //This way we only get the latest non-minor revisions
+			if ( isset( $aPageRevisions[$iPageId] ) ) {
+				// This way we only get the latest non-minor revisions
+				continue;
 			}
 			$aPageRevisions[$iPageId] = (int)$row->rev_id;
 		}
 
-		//Step 3: Combine the two information into one
-		$aCurrentPageReads = array();
-		foreach( $aPageIds as $iPageId ) {
-			$aReads = array();
-			if( isset( $aPageRevisions[$iPageId] ) && isset( $aReadRevisions[$aPageRevisions[$iPageId]] ) ) {
+		// Step 3: Combine the two information into one
+		$aCurrentPageReads = [];
+		foreach ( $aPageIds as $iPageId ) {
+			$aReads = [];
+			if ( isset( $aPageRevisions[$iPageId] )
+				&& isset( $aReadRevisions[$aPageRevisions[$iPageId]] ) ) {
 				$aReads = $aReadRevisions[$aPageRevisions[$iPageId]];
 			}
 			$aCurrentPageReads[$iPageId] = $aReads;
@@ -69,13 +72,19 @@ class Extension extends \BlueSpice\Extension {
 		return $aCurrentPageReads;
 	}
 
+	/**
+	 *
+	 * @param \Title $oTitle
+	 * @return bool
+	 */
 	public static function isNamespaceEnabled( $oTitle ) {
 		global $wgNamespacesWithEnabledReadConfirmation;
-		if( !$oTitle instanceof \Title ) {
+		if ( !$oTitle instanceof \Title ) {
 			return true;
 		}
 		$iNS = $oTitle->getNamespace();
-		if( isset( $wgNamespacesWithEnabledReadConfirmation[$iNS] ) && $wgNamespacesWithEnabledReadConfirmation[$iNS] ) {
+		if ( isset( $wgNamespacesWithEnabledReadConfirmation[$iNS] )
+			&& $wgNamespacesWithEnabledReadConfirmation[$iNS] ) {
 			return true;
 		}
 		return false;
