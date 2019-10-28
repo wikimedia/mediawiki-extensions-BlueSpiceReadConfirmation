@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
+	"bs-readconfirmation-column-read": "Lu ?",
+	"bs-readconfirmation-column-read-at": "Poursuivre la lecture",
+	"bs-readconfirmation-not-read": "non lu",
+	"bs-readconfirmation-action-remind": "Requête de confirmation de lecture",
+	"bs-readconfirmation-action-log": "Journal de confirmation de lecture",
+	"bs-readconfirmation-action-remind-confirm": "Demande de confirmation de lecture ?",
+	"bs-readconfirmation-confirm-read-heading": "Confirmation de lecture",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Oui, j’ai complètement lu cet article.",
+	"bs-readconfirmation-confirm-read-button-label": "Confirmer",
+	"bs-readconfirmation-action-apiread-check-description": "vérifier la confirmation de lecture pour $1",
+	"bs-readconfirmation-action-apiread-confirm-description": "Marquer $1 comme lu",
+	"bs-readconfirmation-action-apiread-remind-description": "Demander une confirmation de lecture pour $1",
+	"bs-readconfirmation-api-error-no-page": "Aucune page n’a été fournie",
+	"bs-readconfirmation-api-error-no-non-minor-revision": "Aucune révision n’a été trouvée"
+}
