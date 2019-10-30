@@ -4,5 +4,10 @@
 			"Eduardo Addad de Oliveira"
 		]
 	},
+	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura de um artigo",
+	"bs-readconfirmation-column-read": "Ler?",
+	"bs-readconfirmation-column-read-at": "Ler em",
+	"bs-readconfirmation-not-read": "não lido",
+	"bs-readconfirmation-action-remind": "Solicitar confirmação de leitura",
 	"bs-readconfirmation-disabled-ns-short": "Desabilitado"
 }
