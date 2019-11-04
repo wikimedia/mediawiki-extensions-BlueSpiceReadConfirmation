@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu",
+			"Mansil alfalb"
+		]
+	},
+	"bs-readconfirmation-desc": "Extensão para coligir as confirmações de leitura de um artigo",
+	"bs-readconfirmation-column-read": "Lido?",
+	"bs-readconfirmation-column-read-at": "Lido em",
+	"bs-readconfirmation-not-read": "não lido",
+	"bs-readconfirmation-action-remind": "Pedir confirmação de leitura",
+	"bs-readconfirmation-action-log": "Registo de confirmação de leitura",
+	"bs-readconfirmation-action-remind-confirm": "Solicitar confirmação de leitura?",
+	"bs-readconfirmation-confirm-read-heading": "Confirmação de leitura",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Sim, li completamente este artigo.",
+	"bs-readconfirmation-confirm-read-button-label": "Confirmar",
+	"bs-readconfirmation-action-apiread-confirm-description": "Marcar $1 como lido",
+	"bs-readconfirmation-disabled-ns": "Confirmação de leitura não ativada",
+	"bs-readconfirmation-disabled-ns-short": "Desativada",
+	"bs-readconfirmation-graphicallist-btn-read": "Ler"
+}
