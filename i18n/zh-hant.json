@@ -1,0 +1,42 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"bs-readconfirmation-desc": "用於收集條目的讀取確認之擴充套件",
+	"bs-readconfirmation-column-read": "讀取？",
+	"bs-readconfirmation-column-read-at": "讀取於",
+	"bs-readconfirmation-not-read": "未讀取",
+	"bs-readconfirmation-action-remind": "請求讀取確認",
+	"bs-readconfirmation-action-log": "讀取確認日誌",
+	"bs-readconfirmation-action-remind-confirm": "請求讀取確認？",
+	"bs-readconfirmation-confirm-read-heading": "讀取確認",
+	"bs-readconfirmation-confirm-read-checkbox-label": "是的，我已完整讀取過此條目。",
+	"bs-readconfirmation-confirm-read-button-label": "確認",
+	"bs-readconfirmation-action-apiread-check-description": "檢查$1的讀取確認",
+	"bs-readconfirmation-action-apiread-confirm-description": "標記$1為已讀",
+	"bs-readconfirmation-action-apiread-remind-description": "請求$1的讀取確認",
+	"bs-readconfirmation-api-error-no-page": "為提供頁面",
+	"bs-readconfirmation-api-error-no-non-minor-revision": "未發現修訂",
+	"echo-category-title-bs-readconfirmation-cat": "讀取確認",
+	"notification-bs-readconfirmation-remind-summary": "$1想提醒您去讀取$3",
+	"notification-bs-readconfirmation-remind-subject": "提醒條目$2",
+	"notification-bs-readconfirmation-remind-body": "$1想要提醒您去確認您已讀取$2。",
+	"log-name-bs-readconfirmation": "讀取確認日誌",
+	"log-description-bs-readconfirmation": "用於讀取確認的日誌",
+	"log-show-hide-bs-readconfirmation": "$1讀取確認日誌",
+	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|已}}確認有讀取條目$3",
+	"logentry-bs-readconfirmation-remind": "$1{{GENDER:$2|已}}請求使用者$4去確認條目$3的讀取",
+	"apihelp-bs-readconfirmation-tasks-summary": "用於 ReadConfirmation 擴充套件的 API 端點",
+	"bs-readconfirmation-label-ns-manager": "讀取確認",
+	"bs-readconfirmation-api-error-not-active-ns": "讀取確認無法在此命名空間啟用",
+	"bs-readconfirmation-disabled-ns": "讀取確認未啟用",
+	"bs-readconfirmation-disabled-ns-short": "停用",
+	"bs-readconfirmation-navigation-link-title": "顯示所有待定讀取確認的概要",
+	"bs-readconfirmation-navigation-link-text": "已請求讀取確認",
+	"bs-readconfirmation-graphicallist-btn-read": "讀取",
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation：您已確認在$3讀取了頁面$1（修訂：$2）",
+	"action-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面",
+	"right-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面"
+}
