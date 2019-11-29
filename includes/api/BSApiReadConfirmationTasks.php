@@ -1,18 +1,22 @@
 <?php
 
-use BlueSpice\Services;
 use BlueSpice\Api\Response\Standard;
-use BlueSpice\PageAssignments\AssignmentFactory;
-use BlueSpice\ReadConfirmation\Notifications\Remind;
+use BlueSpice\ReadConfirmation\IMechanism;
+use BlueSpice\ReadConfirmation\MechanismFactory;
 
 class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
+	/**
+	 * @var string
+	 */
 	protected $sTaskLogType = 'bs-readconfirmation';
 
+	/**
+	 * @var array
+	 */
 	protected $aTasks = [ 'confirm', 'check', 'remind' ];
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
@@ -24,156 +28,86 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
-	 * @param \stdClass $oTaskData
-	 * @param array $aParams
+	 * @param stdClass $taskData
+	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_confirm( $oTaskData, $aParams ) {
-		$oResult = $this->makeStandardReturn();
+	protected function task_confirm( $taskData, $params ) {
+		$result = $this->makeStandardReturn();
 
-		if ( is_int( $oTaskData->pageId ) === false ) {
-			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-no-page' )->plain();
-			return $oResult;
+		if ( is_int( $taskData->pageId ) === false ) {
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			return $result;
 		}
 
-		$oTitle = Title::newFromId( $oTaskData->pageId );
-		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
-			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
-			return $oResult;
-		}
-		$oWikiPage = WikiPage::factory( $oTitle );
-		$oRevision = $oWikiPage->getRevision();
-		while ( $oRevision instanceof Revision && $oRevision->isMinor() === true ) {
-			$oRevision = $oRevision->getPrevious();
-		}
+		$title = Title::newFromId( $taskData->pageId );
+		$mechanismInstance = $this->getMechanismInstance();
 
-		if ( $oRevision instanceof Revision === false ) {
-			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-no-non-minor-revision' )->plain();
-			return $oResult;
+		if ( $mechanismInstance->canConfirm( $title, $this->getUser() ) ) {
+			$mechanismInstance->confirm( $title, $this->getUser() );
+			$this->logTaskAction( 'confirm', [], [ 'target' => $title ] );
+			$result->success = true;
+		} else {
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-cant-confirm' )->plain();
 		}
 
-		$aRow = [
-			'rc_rev_id' => $oRevision->getId(),
-			'rc_user_id' => $this->getUser()->getId()
-		];
-
-		// I don't understand the usage of "DatabaseBase::uspert"
-		$this->getDB( DB_MASTER )->delete( 'bs_readconfirmation', $aRow );
-		$aRow['rc_timestamp'] = wfTimestampNow();
-		$this->getDB( DB_MASTER )->insert( 'bs_readconfirmation', $aRow );
-
-		$this->logTaskAction( 'confirm', [], [
-			'target' => $oTitle
-		] );
-
-		$oResult->success = true;
-
-		return $oResult;
+		return $result;
 	}
 
 	/**
-	 *
-	 * @param \stdClass $oTaskData
-	 * @param array $aParams
+	 * @param stdClass $taskData
+	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_check( $oTaskData, $aParams ) {
-		$oResult = $this->makeStandardReturn();
+	protected function task_check( $taskData, $params ) {
+		$result = $this->makeStandardReturn();
+		$title = Title::newFromID( $taskData->pageId );
+		$mechanismInstance = $this->getMechanismInstance();
 
-		$oTitle = Title::newFromID( $oTaskData->pageId );
-		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
-			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
-			return $oResult;
-		}
-		$iCurrentUserId = $this->getUser()->getId();
-		if ( $oTitle instanceof Title === false ) {
-			$oResult->message = wfMessage( 'bs-pageassignments-api-error-no-page' )->plain();
-			return $oResult;
-		}
-
-		$oResult->success = true;
-		$oResult->payload = [
-			'pageId' => $oTaskData->pageId,
-			'userId' => $iCurrentUserId,
+		$result->success = true;
+		$result->payload = [
+			'pageId' => $taskData->pageId,
+			'userId' => $this->getUser()->getId(),
 			'userHasConfirmed' => true
 		];
 
-		$target = $this->getAssignmentFactory()->newFromTargetTitle( $oTitle );
-		if ( $target === false ) {
-			return $oResult;
+		if ( $mechanismInstance->canConfirm( $title, $this->getUser() ) ) {
+			$result->payload[ 'userHasConfirmed' ] = false;
 		}
 
-		// This is a hard dependency to PageAssignments extension.
-		// It could also be placed in an appropriate hook handler
-		if ( !$target->isUserAssigned( $this->getUser() ) ) {
-			// If the user is not assigned we bail out telling
-			return $oResult;
-			// the caller that it already has been confirmed. This is not the
-			// truth and therefore not nice, but for the time being it is
-			// sufficient. Better solution would probably be to throw an
-			// exception
-		}
-
-		$aCurrentPageReads = BlueSpice\ReadConfirmation\Extension::getCurrentReadConfirmations(
-			[ $iCurrentUserId ],
-			[ $oTaskData->pageId ]
-		);
-
-		if ( !isset( $aCurrentPageReads[$oTaskData->pageId][$iCurrentUserId] ) ) {
-			$oResult->payload['userHasConfirmed'] = false;
-		}
-
-		return $oResult;
+		return $result;
 	}
 
 	/**
-	 *
-	 * @param \stdClass $oTaskData
-	 * @param array $aParams
+	 * @param stdClass $taskData
+	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_remind( $oTaskData, $aParams ) {
-		$oResult = $this->makeStandardReturn();
+	protected function task_remind( $taskData, $params ) {
+		$result = $this->makeStandardReturn();
+		$title = Title::newFromID( $taskData->pageId );
+		$mechanismInstance = $this->getMechanismInstance();
 
-		$oTitle = Title::newFromID( $oTaskData->pageId );
-		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
-			$oResult->message = wfMessage( 'bs-readconfirmation-api-error-not-active-ns' )->plain();
-			return $oResult;
-		}
-		if ( $oTitle instanceof Title === false ) {
-			$oResult->message = wfMessage( 'bs-pageassignments-api-error-no-page' )->plain();
-			return $oResult;
+		$notifiedUsers = $mechanismInstance->notify( $title, $this->getUser() );
+
+		if ( $notifiedUsers == false ) {
+			return $result;
 		}
 
-		$aUserDisplayNames = [];
-		$target = $this->getAssignmentFactory()->newFromTargetTitle( $oTitle );
-		if ( $target === false || empty( $target->getAssignedUserIDs() ) ) {
-			return $oResult;
+		$userDisplayNames = [];
+		foreach ( $notifiedUsers as $notifiedUser ) {
+			$userDisplayNames[] = $this->getServices()->getBSUtilityFactory()
+				->getUserHelper( $notifiedUser )->getDisplayName();
 		}
 
-		$notificationsManager = Services::getInstance()->getBSNotificationManager();
-		$notifier = $notificationsManager->getNotifier();
-		$notification = new Remind( $this->getUser(), $oTitle );
-		$notifier->notify( $notification );
+		$this->logTaskAction(
+			'remind',
+			[ '4::users' => implode( ', ',  $userDisplayNames ) ],
+			[ 'target' => $title ]
+		);
 
-		foreach ( $notification->getAffectedUsers() as $userId ) {
-			$user = \User::newFromId( $userId );
-			if ( !$user ) {
-				continue;
-			}
-			$aUserDisplayNames[] = Services::getInstance()->getBSUtilityFactory()
-				->getUserHelper( $user )->getDisplayName();
-		}
-		$this->logTaskAction( 'remind', [
-			'4::users' => implode( ', ',  $aUserDisplayNames )
-		],
-		[
-			'target' => $oTitle
-		] );
-
-		$oResult->success = true;
-		return $oResult;
+		$result->success = true;
+		return $result;
 	}
 
 	/**
@@ -263,13 +197,14 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
-	 * @return AssignmentFactory
+	 * @return IMechanism
 	 */
-	protected function getAssignmentFactory() {
-		$factory = Services::getInstance()->getService(
-			'BSPageAssignmentsAssignmentFactory'
+	private function getMechanismInstance() {
+		/** @var MechanismFactory $factory */
+		$factory = $this->getServices()->getService(
+			'BSReadConfirmationMechanismFactory'
 		);
-		return $factory;
+
+		return $factory->getMechanismInstance();
 	}
 }

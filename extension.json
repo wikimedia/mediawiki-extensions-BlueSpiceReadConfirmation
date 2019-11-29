@@ -32,7 +32,10 @@
 			},
 			"NotificationRegistrationFunctions": [
 				"\\BlueSpice\\ReadConfirmation\\Notifications\\Registrator::registerNotifications"
-			]
+			],
+			"RunJobsTriggerHandlerRegistry": {
+				"bs-readconfirmation-autonotifier": "BlueSpice\\ReadConfirmation\\RunJobsTriggerHandler\\AutomaticReadConfirmationNotifier::factory"
+			}
 		},
 		"BlueSpicePrivacy": {
 			"Handlers": [
@@ -56,7 +59,8 @@
 		"BSApiReadConfirmationTasks": "includes/api/BSApiReadConfirmationTasks.php"
 	},
 	"ExtensionFunctions": [
-		"ReadConfirmationHooks::setup"
+		"ReadConfirmationHooks::setup",
+		"BlueSpice\\ReadConfirmation\\TriggerRegistration::addNotificationTrigger"
 	],
 	"APIModules": {
 		"bs-readconfirmation-tasks": "BSApiReadConfirmationTasks"
@@ -124,6 +128,9 @@
 			"i18n"
 		]
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"Hooks": {
 		"BSApiExtJSStoreBaseBeforePostProcessData": "ReadConfirmationPageAssignmentHooks::onBSApiExtJSStoreBaseBeforePostProcessData",
 		"BSPageStoreDataProviderBeforeAppendRow": "ReadConfirmationPageAssignmentHooks::onBSPageStoreDataProviderBeforeAppendRow",
@@ -160,5 +167,11 @@
 	"AvailableRights": [
 		"readconfirmationremind"
 	],
+	"config_prefix": "bsgReadConfirmation",
+	"config": {
+		"Mechanism": {
+			"value": "BlueSpice\\ReadConfirmation\\Mechanism\\NonMinorEdit::factory"
+		}
+	},
 	"manifest_version": 2
 }
