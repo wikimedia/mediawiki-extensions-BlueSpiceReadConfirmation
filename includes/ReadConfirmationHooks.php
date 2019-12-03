@@ -22,19 +22,6 @@ class ReadConfirmationHooks {
 	}
 
 	/**
-	 * Adds database tables
-	 * @param DatabaseUpdater $updater
-	 * @return bool
-	 */
-	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$updater->addExtensionTable(
-			'bs_readconfirmation',
-			dirname( __DIR__ ) . '/db/bs_readconfirmation.sql'
-		);
-		return true;
-	}
-
-	/**
 	 *
 	 * @param OutputPage &$out
 	 * @param Skin &$skin
