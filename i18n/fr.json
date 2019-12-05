@@ -18,6 +18,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "vérifier la confirmation de lecture pour $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Marquer $1 comme lu",
 	"bs-readconfirmation-action-apiread-remind-description": "Demander une confirmation de lecture pour $1",
+	"bs-readconfirmation-api-error-cant-confirm": "Impossible de traiter la confirmation de lecture pour cette page",
 	"bs-readconfirmation-api-error-no-page": "Aucune page n’a été fournie",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Aucune version n’a été trouvée",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmation de lecture",

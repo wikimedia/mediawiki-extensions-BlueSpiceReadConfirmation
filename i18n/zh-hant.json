@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "檢查$1的讀取確認",
 	"bs-readconfirmation-action-apiread-confirm-description": "標記$1為已讀",
 	"bs-readconfirmation-action-apiread-remind-description": "請求$1的讀取確認",
+	"bs-readconfirmation-api-error-cant-confirm": "無法處理此頁面的讀取確認",
 	"bs-readconfirmation-api-error-no-page": "為提供頁面",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "未發現修訂",
 	"echo-category-title-bs-readconfirmation-cat": "讀取確認",

@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "verificar a confirmação de leitura para $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Marcas $1 como lido",
 	"bs-readconfirmation-action-apiread-remind-description": "Solicitar confirmação de leitura para $1",
+	"bs-readconfirmation-api-error-cant-confirm": "Não é possível processar a confirmação de leitura desta página",
 	"bs-readconfirmation-api-error-no-page": "Nenhuma página foi fornecida",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Nenhuma revisão foi encontrada",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmação de leitura",

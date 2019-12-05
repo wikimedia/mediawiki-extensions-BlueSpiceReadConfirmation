@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "تحقق من تأكيد قراءة $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "تعليم $1 كمقروءة",
 	"bs-readconfirmation-action-apiread-remind-description": "طلب تأكيد القراءة ل$1",
+	"bs-readconfirmation-api-error-cant-confirm": "لا يمكن معالجة تأكيد القراءة لهذه الصفحة",
 	"bs-readconfirmation-api-error-no-page": "لم يتم إعطاء صفحة",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "لم يتم العثور على مراجعة",
 	"echo-category-title-bs-readconfirmation-cat": "تأكيد القراءة",

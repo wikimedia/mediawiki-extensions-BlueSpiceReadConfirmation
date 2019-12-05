@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "Api description that states that this action does check the read confrimation for the given page\n{{Identical|check read confirmation for $1}}\n* $1 - name of the page the read conformation gets checked on",
 	"bs-readconfirmation-action-apiread-confirm-description": "Api description that states that this action does confirm the read confrimation for the given page\n{{Identical|Mark $1 as read}}\n* $1 - name of the page the read conformation gets confirmed on",
 	"bs-readconfirmation-action-apiread-remind-description": "Api description that states that this action reminds the users to confirm the read confrimation for the given page\n{{Identical|Request read confirmation for $1}}\n* $1 - name of the page the users get reminded to conformation on",
+	"bs-readconfirmation-api-error-cant-confirm": "Error message when read confirmation can't be completed",
 	"bs-readconfirmation-api-error-no-page": "Error message when no page was given to either check, confirm or remind the users with the api",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Error message when teh given page has to revision to either check, confirm or remind the users with the api",
 	"echo-category-title-bs-readconfirmation-cat": "Checkbox label for mail and wiki notification subscribtion on read confirmation\n{{Identical|Read confirmation}}",
@@ -38,6 +39,5 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Link title that leads to the page, the user must confirm to have read\n{{Identical|Read}}",
 	"bs-readconfirmation-privacy-transparency-working-rc": "Message for item in BlueSpicePrivacy when exporting user's pages that the user confirmed to have read. $1 - name of the page the user has confirmed to have read\n* $2 - the revision number the user has confirmed to have read\n* $3 - the date of the users confirmaion to have read the page",
 	"action-readconfirmationremind": "{{doc-action|readconfirmationremind}}",
-	"right-readconfirmationremind": "{{doc-right|readconfirmationremind}}",
-	"bs-readconfirmation-api-error-cant-confirm": "Error message when read confirmation can't be completed"
+	"right-readconfirmationremind": "{{doc-right|readconfirmationremind}}"
 }
