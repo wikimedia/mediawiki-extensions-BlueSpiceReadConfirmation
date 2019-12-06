@@ -136,7 +136,7 @@
 		"BSPageStoreDataProviderBeforeAppendRow": "ReadConfirmationPageAssignmentHooks::onBSPageStoreDataProviderBeforeAppendRow",
 		"BSPageAssignmentsManager": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
 		"BSPageAssignmentsOverview": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
-		"LoadExtensionSchemaUpdates": "ReadConfirmationHooks::onLoadExtensionSchemaUpdates",
+		"LoadExtensionSchemaUpdates": "\\BlueSpice\\ReadConfirmation\\Hook\\LoadExtensionSchemaUpdates\\AddReadConfirmationDatabase::callback",
 		"BeforePageDisplay": [
 			"ReadConfirmationHooks::onBeforePageDisplay",
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddGraphicalListModule::callback",
