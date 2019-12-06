@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Les Meloures"
 		]
 	},
 	"bs-readconfirmation-column-read": "Gelies?",
-	"bs-readconfirmation-not-read": "nwt geliest",
+	"bs-readconfirmation-not-read": "net gelies",
 	"bs-readconfirmation-confirm-read-checkbox-label": "Jo, ech hunn dësen Artikel ganz geliest.",
 	"bs-readconfirmation-confirm-read-button-label": "Confirméieren",
 	"bs-readconfirmation-action-apiread-confirm-description": "$1 als gelies markéieren",

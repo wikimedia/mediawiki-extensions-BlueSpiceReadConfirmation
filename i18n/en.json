@@ -39,5 +39,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Read",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: You confirmed reading the page $1 (revision $2) on $3",
 	"action-readconfirmationremind": "remind users that they have to confirm to have read the page",
-	"right-readconfirmationremind": "Remind users that they have to confirm to have read the page"
+	"right-readconfirmationremind": "Remind users that they have to confirm to have read the page",
+	"bs-readconfirmation-api-error-cant-confirm": "Can't process read confirmtaion for this page"
 }

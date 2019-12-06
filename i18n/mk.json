@@ -14,5 +14,9 @@
 	"echo-category-title-bs-readconfirmation-cat": "Потврда на читање",
 	"bs-readconfirmation-label-ns-manager": "Потврда на читање",
 	"bs-readconfirmation-disabled-ns-short": "Оневозможено",
-	"bs-readconfirmation-graphicallist-btn-read": "Читај"
+	"bs-readconfirmation-graphicallist-btn-read": "Читај",
+	"bs-readconfirmation-action-remind": "Побарај потврда на читање",
+	"bs-readconfirmation-action-apiread-check-description": "провери потврда на читање за $1",
+	"bs-readconfirmation-action-apiread-remind-description": "Побарај потврда на читање за $1",
+	"bs-readconfirmation-disabled-ns": "Потврда на читање не е овозможена"
 }
