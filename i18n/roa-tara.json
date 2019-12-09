@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "controlle 'a conferme de letture pe $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Signe $1 cumme a lette",
 	"bs-readconfirmation-action-apiread-remind-description": "Conferme de letture cercate pe $1",
+	"bs-readconfirmation-api-error-cant-confirm": "Non ge pozze processà 'a conferme de letture pe sta vôsce",
 	"bs-readconfirmation-api-error-no-page": "Nisciuna pàgene ha state date",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Nisciuna revisione ha state acchiate",
 	"echo-category-title-bs-readconfirmation-cat": "Lìgge 'a conferme",
