@@ -17,6 +17,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "sjekke lesebekreftelse for $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Merke $1 som lest",
 	"bs-readconfirmation-action-apiread-remind-description": "Be om lesebekreftelse for $1",
+	"bs-readconfirmation-api-error-cant-confirm": "Kan ikke prosessere lesebekreftelse for denne siden",
 	"bs-readconfirmation-api-error-no-page": "Ingen side gitt",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Ingen revisjon funnet",
 	"echo-category-title-bs-readconfirmation-cat": "Lesebekreftelse",
