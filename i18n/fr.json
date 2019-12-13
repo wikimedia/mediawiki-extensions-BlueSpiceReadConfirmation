@@ -2,16 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Verdy p"
+			"Verdy p",
+			"Thibaut120094"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
-	"bs-readconfirmation-column-read": "Lu ?",
+	"bs-readconfirmation-column-read": "Lu ?",
 	"bs-readconfirmation-column-read-at": "Poursuivre la lecture",
 	"bs-readconfirmation-not-read": "non lu",
 	"bs-readconfirmation-action-remind": "Requête de confirmation de lecture",
 	"bs-readconfirmation-action-log": "Journal de confirmation de lecture",
-	"bs-readconfirmation-action-remind-confirm": "Demande de confirmation de lecture ?",
+	"bs-readconfirmation-action-remind-confirm": "Demande de confirmation de lecture ?",
 	"bs-readconfirmation-confirm-read-heading": "Confirmation de lecture",
 	"bs-readconfirmation-confirm-read-checkbox-label": "Oui, j’ai complètement lu cet article.",
 	"bs-readconfirmation-confirm-read-button-label": "Confirmer",
@@ -38,7 +39,7 @@
 	"bs-readconfirmation-navigation-link-title": "Affiche une vue générale de toute les confirmations de lecture en attente",
 	"bs-readconfirmation-navigation-link-text": "Confirmations de lecture demandées",
 	"bs-readconfirmation-graphicallist-btn-read": "Lire",
-	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation : vous avez confirmé avoir lu la page $1 (version $2) le $3",
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation : vous avez confirmé avoir lu la page $1 (version $2) le $3",
 	"action-readconfirmationremind": "rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"right-readconfirmationremind": "Rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page"
 }
