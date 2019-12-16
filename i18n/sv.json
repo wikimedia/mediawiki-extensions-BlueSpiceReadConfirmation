@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
-	"bs-readconfirmation-disabled-ns-short": "Inaktiverad"
+	"bs-readconfirmation-api-error-no-page": "Ingen sida gett",
+	"bs-readconfirmation-disabled-ns-short": "Inaktiverad",
+	"bs-readconfirmation-graphicallist-btn-read": "Läst"
 }
