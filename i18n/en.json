@@ -18,7 +18,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "check read confirmation for $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Mark $1 as read",
 	"bs-readconfirmation-action-apiread-remind-description": "Request read confirmation for $1",
-	"bs-readconfirmation-api-error-cant-confirm": "Can't process read confirmtaion for this page",
+	"bs-readconfirmation-api-error-cant-confirm": "Can't process read confirmation for this page",
 	"bs-readconfirmation-api-error-no-page": "No page was given",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "No revision was found",
 	"echo-category-title-bs-readconfirmation-cat": "Read confirmation",
