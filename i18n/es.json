@@ -13,6 +13,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "Verficar la confirmación de lectura para $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Marcar $1 como leído",
 	"bs-readconfirmation-action-apiread-remind-description": "Pedir confirmación de lectura para $1",
+	"bs-readconfirmation-api-error-cant-confirm": "No se puede procesar la confirmación de lectura de esta página",
 	"bs-readconfirmation-api-error-no-page": "No se indicó ninguna página",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmación de lectura",
 	"log-name-bs-readconfirmation": "Registro de confirmaciones de lectura",
