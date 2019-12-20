@@ -181,12 +181,15 @@ class ReadConfirmationHooks {
 
 		foreach ( $aResult as &$aSingleResult ) {
 			$iNs = $aSingleResult['id'];
+			$activated = false;
 			if ( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] )
 				&& $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
-				$aSingleResult['read_confirmation'] = true;
-			} else {
-				$aSingleResult['read_confirmation'] = false;
+				$activated = true;
 			}
+			$aSingleResult[ 'read_confirmation' ] = [
+				'value' => $activated,
+				'disabled' => $aSingleResult['isTalkNS']
+			];
 		}
 
 		return true;
