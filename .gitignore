@@ -3,3 +3,4 @@ BlueSpiceRatedComments.php
 Thumbs.db
 vendor
 composer.lock
+node_modules
