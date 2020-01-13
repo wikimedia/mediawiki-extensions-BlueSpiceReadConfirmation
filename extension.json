@@ -147,7 +147,6 @@
 		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
 		"NamespaceManager::writeNamespaceConfiguration": "ReadConfirmationHooks::onNamespaceManager_writeNamespaceConfiguration",
 		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
-		"UnitTestsList" : "ReadConfirmationHooks::onUnitTestsList",
 		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\ReadConfirmation\\Hook\\SkinTemplateOutputPageBeforeExec\\AddGraphicalListLink::callback"
 	},
 	"LogTypes": [
