@@ -138,7 +138,7 @@
 		"BSPageAssignmentsOverview": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
 		"LoadExtensionSchemaUpdates": "\\BlueSpice\\ReadConfirmation\\Hook\\LoadExtensionSchemaUpdates\\AddReadConfirmationDatabase::callback",
 		"BeforePageDisplay": [
-			"ReadConfirmationHooks::onBeforePageDisplay",
+			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddManagePageAssignmentsIntegration::callback",
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddGraphicalListModule::callback",
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources::callback"
 		],
