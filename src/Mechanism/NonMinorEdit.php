@@ -2,14 +2,14 @@
 
 namespace BlueSpice\ReadConfirmation\Mechanism;
 
-use Title;
-use User;
-use BlueSpice\Services;
 use BlueSpice\NotificationManager;
+use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\PageAssignments\TitleTarget;
 use BlueSpice\ReadConfirmation\IMechanism;
-use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
+use BlueSpice\Services;
+use Title;
+use User;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class NonMinorEdit implements IMechanism {
@@ -117,7 +117,7 @@ class NonMinorEdit implements IMechanism {
 			 * truth and therefore not nice, but for the time being it is
 			 * sufficient. Better solution would probably be to throw an
 			 * exception
-			 **/
+			 */
 		}
 
 		$revision = $this->getRecentRevisions( [ $title->getArticleID() ] );
@@ -199,7 +199,7 @@ class NonMinorEdit implements IMechanism {
 	}
 
 	/**
-	 * @param $title
+	 * @param Title $title
 	 * @return TitleTarget|bool
 	 */
 	private function getTargetFromTitle( $title ) {
@@ -279,7 +279,7 @@ class NonMinorEdit implements IMechanism {
 	}
 
 	/**
-	 * @param $title
+	 * @param Title $title
 	 * @return bool
 	 */
 	private function isNamespaceEnabled( $title ) {

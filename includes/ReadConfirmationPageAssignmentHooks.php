@@ -1,9 +1,9 @@
 <?php
 
-use BlueSpice\Services;
 use BlueSpice\Data\ResultSet;
 use BlueSpice\PageAssignments\Data\Page\PrimaryDataProvider;
 use BlueSpice\PageAssignments\Data\Page\Record;
+use BlueSpice\Services;
 
 class ReadConfirmationPageAssignmentHooks {
 	/**

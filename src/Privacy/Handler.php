@@ -2,9 +2,9 @@
 
 namespace BlueSpice\ReadConfirmation\Privacy;
 
-use BlueSpice\Services;
 use BlueSpice\Privacy\IPrivacyHandler;
 use BlueSpice\Privacy\Module\Transparency;
+use BlueSpice\Services;
 
 class Handler implements IPrivacyHandler {
 	protected $db;

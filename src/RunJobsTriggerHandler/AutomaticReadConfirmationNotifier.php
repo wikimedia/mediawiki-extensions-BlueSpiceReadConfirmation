@@ -2,10 +2,10 @@
 
 namespace BlueSpice\ReadConfirmation\RunJobsTriggerHandler;
 
-use BlueSpice\Services;
-use BlueSpice\RunJobsTriggerHandler;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
+use BlueSpice\RunJobsTriggerHandler;
+use BlueSpice\Services;
 
 class AutomaticReadConfirmationNotifier extends RunJobsTriggerHandler {
 

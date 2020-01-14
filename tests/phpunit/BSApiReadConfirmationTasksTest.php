@@ -2,10 +2,10 @@
 
 namespace BlueSpice\ReadConfirmation\Tests;
 
+use BlueSpice\Tests\BSApiTasksTestBase;
 use Title;
 use User;
 use WikiPage;
-use BlueSpice\Tests\BSApiTasksTestBase;
 
 /**
  * @group Broken
