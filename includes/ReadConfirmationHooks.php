@@ -22,26 +22,6 @@ class ReadConfirmationHooks {
 	}
 
 	/**
-	 *
-	 * @param OutputPage &$out
-	 * @param Skin &$skin
-	 * @return bool
-	 */
-	public static function onBeforePageDisplay( &$out, &$skin ) {
-		$out->addModuleStyles( 'ext.readconfirmation.styles' );
-		$out->addModules( 'ext.readconfirmation.scripts' );
-
-		if ( $out->getTitle()->isSpecial( 'ManagePageAssignments' ) ) {
-			$out->addModuleStyles(
-				'ext.readconfirmation.pageassignmentsintegration.styles'
-			);
-			$out->addModules( 'ext.readconfirmation.pageassignmentsintegration' );
-		}
-
-		return true;
-	}
-
-	/**
 	 * Automatically set a page revision as read if user is creator of the
 	 * revision
 	 * @param WikiPage $wikiPage
