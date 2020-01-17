@@ -18,7 +18,8 @@ class Registrator {
 			'bs-readconfirmation-cat',
 			[
 				'priority' => 100,
-				'no-dismiss' => [ 'web', 'email' ]
+				'no-dismiss' => [ 'web', 'email' ],
+				'tooltip' => 'echo-pref-tooltip-bs-readconfirmation-cat'
 			]
 		);
 
