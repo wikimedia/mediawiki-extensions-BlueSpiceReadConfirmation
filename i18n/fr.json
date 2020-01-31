@@ -23,6 +23,7 @@
 	"bs-readconfirmation-api-error-no-page": "Aucune page n’a été fournie",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Aucune version n’a été trouvée",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmation de lecture",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Me notifier quand j’ai des confirmations de lecture ouvertes",
 	"notification-bs-readconfirmation-remind-summary": "$1 vous rappelle de lire $3",
 	"notification-bs-readconfirmation-remind-subject": "Rappel pour l’article $2",
 	"notification-bs-readconfirmation-remind-body": "$1 voudrait vous rappeler de confirmer que vous avez lu $2.",

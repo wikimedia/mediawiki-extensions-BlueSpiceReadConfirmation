@@ -21,6 +21,7 @@
 	"bs-readconfirmation-api-error-no-page": "為提供頁面",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "未發現修訂",
 	"echo-category-title-bs-readconfirmation-cat": "讀取確認",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "當我開啟讀取確認時通知我",
 	"notification-bs-readconfirmation-remind-summary": "$1想提醒您去讀取$3",
 	"notification-bs-readconfirmation-remind-subject": "提醒條目$2",
 	"notification-bs-readconfirmation-remind-body": "$1想要提醒您去確認您已讀取$2。",

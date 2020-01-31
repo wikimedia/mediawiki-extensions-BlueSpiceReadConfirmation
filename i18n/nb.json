@@ -21,6 +21,7 @@
 	"bs-readconfirmation-api-error-no-page": "Ingen side gitt",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Ingen revisjon funnet",
 	"echo-category-title-bs-readconfirmation-cat": "Lesebekreftelse",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser",
 	"notification-bs-readconfirmation-remind-summary": "$1 minner deg om å lese $3",
 	"notification-bs-readconfirmation-remind-subject": "Påminnelse for artikkelen $2",
 	"notification-bs-readconfirmation-remind-body": "$1 ønsker å minne deg på å bekrefte om du har lest $2.",

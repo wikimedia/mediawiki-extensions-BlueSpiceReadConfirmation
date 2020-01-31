@@ -7,6 +7,7 @@
 	},
 	"bs-readconfirmation-confirm-read-button-label": "Bekräfta",
 	"bs-readconfirmation-api-error-no-page": "Ingen sida gett",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Avisera mig när jag öppnar lästa bekräftelser",
 	"bs-readconfirmation-disabled-ns-short": "Inaktiverad",
 	"bs-readconfirmation-graphicallist-btn-read": "Läst"
 }
