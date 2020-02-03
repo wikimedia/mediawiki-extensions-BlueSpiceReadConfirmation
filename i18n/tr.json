@@ -21,6 +21,7 @@
 	"bs-readconfirmation-api-error-no-page": "Sayfa verilmedi",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Düzeltme bulunamadı",
 	"echo-category-title-bs-readconfirmation-cat": "Onayı oku",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Açık okuma onaylarım olduğunda bana bildir",
 	"notification-bs-readconfirmation-remind-summary": "$1 size $3 okumanızı hatırlatır",
 	"notification-bs-readconfirmation-remind-subject": "$2 makale için hatırlatma",
 	"notification-bs-readconfirmation-remind-body": "$1, $2 okuduğunuzu onaylamanızı hatırlatmak istiyor.",

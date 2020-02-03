@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robert Vogel",
-			"Leonid Verhovskij"
+			"Leonid Verhovskij",
+			"Mglaser"
 		]
 	},
 	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen einzuholen",
@@ -18,6 +19,7 @@
 	"bs-readconfirmation-action-apiread-check-description": "Lesebestätigung für $1 überprüfen",
 	"bs-readconfirmation-action-apiread-confirm-description": "$1 als gelesen markieren",
 	"bs-readconfirmation-action-apiread-remind-description": "Lesebestätigungen für $1 anfordern",
+	"bs-readconfirmation-api-error-cant-confirm": "Die Lesebestätigung für diese Seite kann nicht verarbeitet werden",
 	"bs-readconfirmation-api-error-no-page": "Es wurde keine Seite angegeben",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Es wurde keine passende Revision gefunden",
 	"echo-category-title-bs-readconfirmation-cat": "Lesebestätigung",
@@ -38,5 +40,7 @@
 	"bs-readconfirmation-navigation-link-title": "Zeigt eine Übersicht aller offenen Lesebestätigungen",
 	"bs-readconfirmation-navigation-link-text": "Angeforderte Lesebestätigungen",
 	"bs-readconfirmation-graphicallist-btn-read": "Lesen",
-	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du hast bestätigt, die Seite $1 (Version $2) am $3 gelesen zu haben"
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du hast bestätigt, die Seite $1 (Version $2) am $3 gelesen zu haben",
+	"action-readconfirmationremind": "Benutzer zu erinnern, dass sie das Lesen der Seite bestätigen müssen",
+	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen"
 }
