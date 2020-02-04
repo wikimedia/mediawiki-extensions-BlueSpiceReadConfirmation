@@ -38,5 +38,7 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Les",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du bekreftet at du har lest siden $1 (revisjon $2) $3",
 	"action-readconfirmationremind": "minne brukere på at de må bekrefte å ha lest siden",
-	"right-readconfirmationremind": "Minne brukere på at de må bekrefte å ha lest siden"
+	"right-readconfirmationremind": "Minne brukere på at de må bekrefte å ha lest siden",
+	"bs-readconfirmation-api-error-cant-confirm": "Kan ikke prosessere lesebekreftelse for denne siden",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser"
 }

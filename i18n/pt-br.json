@@ -38,5 +38,7 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Leitura",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Você confirmou a leitura da página $1 (revisão $2) em $3",
 	"action-readconfirmationremind": "lembrar aos usuários que eles precisam confirmar para ler a página",
-	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página"
+	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página",
+	"bs-readconfirmation-api-error-cant-confirm": "Não é possível processar a confirmação de leitura desta página",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Notificar-me quando tiver confirmações de leitura abertas"
 }

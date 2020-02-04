@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robert Vogel",
-			"Leonid Verhovskij"
+			"Leonid Verhovskij",
+			"Mglaser"
 		]
 	},
 	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen einzuholen",
@@ -38,5 +39,8 @@
 	"bs-readconfirmation-navigation-link-title": "Zeigt eine Übersicht aller offenen Lesebestätigungen",
 	"bs-readconfirmation-navigation-link-text": "Angeforderte Lesebestätigungen",
 	"bs-readconfirmation-graphicallist-btn-read": "Lesen",
-	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du hast bestätigt, die Seite $1 (Version $2) am $3 gelesen zu haben"
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du hast bestätigt, die Seite $1 (Version $2) am $3 gelesen zu haben",
+	"bs-readconfirmation-api-error-cant-confirm": "Die Lesebestätigung für diese Seite kann nicht verarbeitet werden",
+	"action-readconfirmationremind": "Benutzer zu erinnern, dass sie das Lesen der Seite bestätigen müssen",
+	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen"
 }

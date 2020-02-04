@@ -18,5 +18,10 @@
 	"bs-readconfirmation-action-apiread-confirm-description": "Marcar $1 como lido",
 	"bs-readconfirmation-disabled-ns": "Confirmação de leitura não ativada",
 	"bs-readconfirmation-disabled-ns-short": "Desativada",
-	"bs-readconfirmation-graphicallist-btn-read": "Ler"
+	"bs-readconfirmation-graphicallist-btn-read": "Ler",
+	"echo-category-title-bs-readconfirmation-cat": "Confirmação de leitura",
+	"notification-bs-readconfirmation-remind-subject": "Aviso para o artigo $2",
+	"bs-readconfirmation-label-ns-manager": "Confirmação de leitura",
+	"bs-readconfirmation-api-error-not-active-ns": "A 'Confirmação de leitura' não está ativada para este espaço nominal",
+	"bs-readconfirmation-navigation-link-text": "Confirmações de leitura pedidas"
 }

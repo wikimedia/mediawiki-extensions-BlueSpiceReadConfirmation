@@ -38,5 +38,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "قراءة",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: لقد أكدت قراءة صفحة $1 (revision $2) في $3",
 	"action-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
-	"right-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة"
+	"right-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
+	"bs-readconfirmation-api-error-cant-confirm": "لا يمكن معالجة تأكيد القراءة لهذه الصفحة"
 }
