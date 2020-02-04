@@ -39,5 +39,6 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation：您已確認在$3讀取了頁面$1（修訂：$2）",
 	"action-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面",
 	"right-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面",
-	"bs-readconfirmation-api-error-cant-confirm": "無法處理此頁面的讀取確認"
+	"bs-readconfirmation-api-error-cant-confirm": "無法處理此頁面的讀取確認",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "當我開啟讀取確認時通知我"
 }

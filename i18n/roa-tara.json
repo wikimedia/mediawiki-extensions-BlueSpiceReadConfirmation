@@ -38,5 +38,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Ligge",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: è confermate 'a letture d'a pàgene $1 (revisione $2) sus a $3",
 	"action-readconfirmationremind": "arrecuèrde le utinde ca onna confermà ca onne lette 'a pàgene",
-	"right-readconfirmationremind": "Arrecuèrde le utinde ca onna confermà ca onne lette 'a pàgene"
+	"right-readconfirmationremind": "Arrecuèrde le utinde ca onna confermà ca onne lette 'a pàgene",
+	"bs-readconfirmation-api-error-cant-confirm": "Non ge pozze processà 'a conferme de letture pe sta vôsce"
 }

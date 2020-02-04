@@ -21,5 +21,6 @@
 	"bs-readconfirmation-api-error-not-active-ns": "La confirmación de lectura no está activada en este espacio de nombres",
 	"bs-readconfirmation-disabled-ns-short": "Desactivado",
 	"bs-readconfirmation-graphicallist-btn-read": "Lectura",
-	"right-readconfirmationremind": "Recordar a usuarios que tienen que confirmar que han leído la página"
+	"right-readconfirmationremind": "Recordar a usuarios que tienen que confirmar que han leído la página",
+	"bs-readconfirmation-api-error-cant-confirm": "No se puede procesar la confirmación de lectura de esta página"
 }
