@@ -74,7 +74,7 @@ class NonMinorEdit implements IMechanism {
 			return false;
 		}
 		/** @var NotificationManager $notificationsManager */
-		$notificationsManager = Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = Services::getInstance()->getService( 'BSNotificationManager' );
 		$notifier = $notificationsManager->getNotifier();
 		$notifyUsers = $this->getNotifyUsers( $target );
 		$notification = new Remind( $userAgent, $title, [], $notifyUsers );

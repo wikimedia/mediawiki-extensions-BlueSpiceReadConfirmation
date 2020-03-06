@@ -96,7 +96,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 		$userDisplayNames = [];
 		foreach ( $notifiedUsers as $notifiedUser ) {
-			$userDisplayNames[] = $this->getServices()->getBSUtilityFactory()
+			$userDisplayNames[] = $this->getServices()->getService( 'BSUtilityFactory' )
 				->getUserHelper( $notifiedUser )->getDisplayName();
 		}
 
