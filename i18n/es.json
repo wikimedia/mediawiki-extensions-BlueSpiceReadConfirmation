@@ -6,6 +6,8 @@
 			"Madamebiblio"
 		]
 	},
+	"bs-readconfirmation-column-read-at": "Leída el",
+	"bs-readconfirmation-not-read": "no leída",
 	"bs-readconfirmation-action-remind": "Pedir confirmación de lectura",
 	"bs-readconfirmation-action-remind-confirm": "¿Pedir confirmación de lectura?",
 	"bs-readconfirmation-confirm-read-heading": "Confirmación de lectura",
