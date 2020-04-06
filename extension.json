@@ -18,9 +18,6 @@
 					"package": "BlueSpice Pro"
 				}
 			},
-			"GraphicalListRegistry": {
-				"readconfirmation-list": "bs.readconfirmation.GraphicalListFactory"
-			},
 			"PermissionRegistry": {
 				"readconfirmationremind": {
 					"type": "global",
@@ -102,17 +99,6 @@
 			"dependencies": [
 				"ext.bluespice"
 			]
-		},
-		"bs.readconfirmation.GraphicalListFactory": {
-			"scripts": [
-				"bs.readconfirmation.GraphicalListFactory.js"
-			],
-			"messages": [
-				"bs-readconfirmation-graphicallist-btn-read"
-			],
-			"dependencies": [
-				"ext.bluespice"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -131,15 +117,13 @@
 		"LoadExtensionSchemaUpdates": "ReadConfirmationHooks::onLoadExtensionSchemaUpdates",
 		"BeforePageDisplay": [
 			"ReadConfirmationHooks::onBeforePageDisplay",
-			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddGraphicalListModule::callback",
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources::callback"
 		],
 		"PageContentSaveComplete": "ReadConfirmationHooks::onPageContentSaveComplete",
 		"NamespaceManager::getMetaFields": "ReadConfirmationHooks::onNamespaceManager_getMetaFields",
 		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
 		"NamespaceManager::writeNamespaceConfiguration": "ReadConfirmationHooks::onNamespaceManager_writeNamespaceConfiguration",
-		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
-		"SkinTemplateOutputPageBeforeExec": "\\BlueSpice\\ReadConfirmation\\Hook\\SkinTemplateOutputPageBeforeExec\\AddGraphicalListLink::callback"
+		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData"
 	},
 	"LogTypes": [
 		"bs-readconfirmation"
