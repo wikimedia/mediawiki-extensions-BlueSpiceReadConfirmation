@@ -150,7 +150,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 			'bs_readconfirmation',
 			[ 'rc_rev_id', 'rc_user_id' ],
 			[],
-			[ [ $oWikiPage->getRevision()->getId(), $oExecutingUser->getId() ] ]
+			[ [ $oWikiPage->getRevisionRecord()->getId(), $oExecutingUser->getId() ] ]
 		);
 	}
 }
