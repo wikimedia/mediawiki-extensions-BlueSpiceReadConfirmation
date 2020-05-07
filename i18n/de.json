@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel",
 			"Leonid Verhovskij",
-			"Mglaser"
+			"Mglaser",
+			"Robert Vogel"
 		]
 	},
 	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen einzuholen",
