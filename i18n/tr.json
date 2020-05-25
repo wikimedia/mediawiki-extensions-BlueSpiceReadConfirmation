@@ -10,9 +10,9 @@
 	"bs-readconfirmation-not-read": "okuma",
 	"bs-readconfirmation-action-remind": "Okuma onayı iste",
 	"bs-readconfirmation-action-log": "Onay günlüğünü okuyun",
-	"bs-readconfirmation-action-remind-confirm": "Okuma onayı ister misiniz?",
+	"bs-readconfirmation-action-remind-confirm": "Okuma onayı talep edilsin mi?",
 	"bs-readconfirmation-confirm-read-heading": "Onayı oku",
-	"bs-readconfirmation-confirm-read-checkbox-label": "Evet, bu makaleyi tamamen okudum.",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Evet, bu maddeyi tamamen okudum.",
 	"bs-readconfirmation-confirm-read-button-label": "Onayla",
 	"bs-readconfirmation-action-apiread-check-description": "$1 için okuma onayını kontrol et",
 	"bs-readconfirmation-action-apiread-confirm-description": "$1 okundu olarak işaretle",
@@ -28,8 +28,8 @@
 	"log-name-bs-readconfirmation": "Onay günlüğünü okuyun",
 	"log-description-bs-readconfirmation": "Okuma onayları için günlük",
 	"log-show-hide-bs-readconfirmation": "$1 okuma onay günlüğü",
-	"logentry-bs-readconfirmation-confirm": "$1 makalesinin $3 makaleyi okuduğunu {{CİNSİYET:$2|onayladı}}",
-	"logentry-bs-readconfirmation-remind": "$1 kullanıcıdan $4 makalesinin $3 makalesinin okunmasını onaylamasını {{GENDER:$2|istedi}}",
+	"logentry-bs-readconfirmation-confirm": "$1 maddesini $3 maddeyi okuduğunu {{GENDER:$2|onayladı}}",
+	"logentry-bs-readconfirmation-remind": "$1 kullanıcıdan $4 maddesini $3 maddenin okunmasını onaylamasını {{GENDER:$2|istedi}}",
 	"apihelp-bs-readconfirmation-tasks-summary": "ReadConfirmation uzantısı için API bitiş noktası",
 	"bs-readconfirmation-label-ns-manager": "Onayı Oku",
 	"bs-readconfirmation-api-error-not-active-ns": "Bu ad alanı için Okuma Onayı etkin değil",
@@ -40,5 +40,5 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Oku",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: $3 üzerinde $1 (revizyon $2) sayfasını okudunuz",
 	"action-readconfirmationremind": "kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
-	"right-readconfirmationremind": "Kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlatın"
+	"right-readconfirmationremind": "Kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat"
 }
