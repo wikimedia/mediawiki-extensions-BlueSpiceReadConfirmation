@@ -84,7 +84,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 			'Payload does not contain "userhasConfirmed" key'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			1,
 			$aPayload['pageId'],
 			'Returned unexpected value for "pageId"'
