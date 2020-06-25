@@ -12,6 +12,7 @@ Ext.define('BS.ReadConfirmation.action.ApiReadTaskBase', {
 		var data = {
 			pageId: this.pageId
 		};
+		mw.hook( 'readconfirmation.check.request.before' ).fire(data);
 
 		this.doApiConfirmRead( dfd, data );
 

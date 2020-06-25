@@ -40,11 +40,18 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			return $result;
 		}
 
+		$revId = $this->getWikiPage()->getRevision()->getId();
+		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
+			if ( isset( $taskData->stableRevId ) ) {
+				$revId = $taskData->stableRevId;
+			}
+		}
+
 		$title = Title::newFromId( $taskData->pageId );
 		$mechanismInstance = $this->getMechanismInstance();
 
-		if ( $mechanismInstance->canConfirm( $title, $this->getUser() ) ) {
-			$mechanismInstance->confirm( $title, $this->getUser() );
+		if ( $mechanismInstance->canConfirm( $title, $this->getUser(), $revId ) ) {
+			$mechanismInstance->confirm( $title, $this->getUser(), $revId );
 			$this->logTaskAction( 'confirm', [], [ 'target' => $title ] );
 			$result->success = true;
 		} else {
@@ -64,6 +71,13 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$title = Title::newFromID( $taskData->pageId );
 		$mechanismInstance = $this->getMechanismInstance();
 
+		$revId = $this->getWikiPage()->getRevision()->getId();
+		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
+			if ( isset( $taskData->stableRevId ) ) {
+				$revId = $taskData->stableRevId;
+			}
+		}
+
 		$result->success = true;
 		$result->payload = [
 			'pageId' => $taskData->pageId,
@@ -71,7 +85,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			'userHasConfirmed' => true
 		];
 
-		if ( $mechanismInstance->canConfirm( $title, $this->getUser() ) ) {
+		if ( $mechanismInstance->canConfirm( $title, $this->getUser(), $revId ) ) {
 			$result->payload[ 'userHasConfirmed' ] = false;
 		}
 
