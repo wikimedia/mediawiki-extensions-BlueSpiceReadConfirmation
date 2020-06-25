@@ -96,9 +96,10 @@ class NonMinorEdit implements IMechanism {
 	/**
 	 * @param Title $title
 	 * @param User $user
-	 * @return bool|Title
+	 * @param null $revId
+	 * @return bool
 	 */
-	public function canConfirm( Title $title, User $user ) {
+	public function canConfirm( Title $title, User $user, $revId = null ) {
 		$currentReadConfirmations = $this->getCurrentReadConfirmations(
 			[ $user->getId() ],
 			[ $title->getArticleID() ]
@@ -133,10 +134,11 @@ class NonMinorEdit implements IMechanism {
 	/**
 	 * @param Title $title
 	 * @param User $user
+	 * @param null $revId
 	 * @return bool
 	 */
-	public function confirm( Title $title, User $user ) {
-		if ( !$this->canConfirm( $title, $user ) ) {
+	public function confirm( Title $title, User $user, $revId = null ) {
+		if ( !$this->canConfirm( $title, $user, $revId ) ) {
 			return false;
 		}
 

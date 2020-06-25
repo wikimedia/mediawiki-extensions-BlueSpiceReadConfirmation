@@ -67,18 +67,23 @@
 		if( curPageId < 1 ) { //SpecialPages ...
 			return;
 		}
+		var data = {
+			pageId: curPageId
+		};
+
+		mw.hook( 'readconfirmation.check.request.before' ).fire(data);
+
 		//We use a normal BS Tasks Api abstraction here even though there is
 		//a BS.ReadConfirmation.action.ApiReadTaskCheck class.
 		//This is to avoid loading 'ext.bluespice.extjs' if not necessary
-		bs.api.tasks.execSilent( 'readconfirmation', 'check', {
-			pageId: curPageId
-		}).done(function( response, xhr ){
-			if( response.success && response.payload.userHasConfirmed === false ) {
-				_buildMessage( curPageId );
-			}
-		});
+		bs.api.tasks.execSilent( 'readconfirmation', 'check', data )
+			.done(function( response, xhr ){
+				if( response.success && response.payload.userHasConfirmed === false ) {
+					_buildMessage( curPageId );
+				}
+			});
 	};
 
-	$(bs.readconfirmation.init);
+	setTimeout(function(){$(bs.readconfirmation.init)}, 1000);
 
 })( mediaWiki, jQuery, blueSpice, document );

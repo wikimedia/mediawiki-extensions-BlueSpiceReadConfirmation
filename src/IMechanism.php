@@ -10,16 +10,18 @@ interface IMechanism {
 	/**
 	 * @param Title $title
 	 * @param User $user
+	 * @param int|null $revId
 	 * @return bool
 	 */
-	public function canConfirm( Title $title, User $user );
+	public function canConfirm( Title $title, User $user, $revId = null );
 
 	/**
 	 * @param Title $title
 	 * @param User $user
+	 * @param int|null $revId
 	 * @return bool
 	 */
-	public function confirm( Title $title, User $user );
+	public function confirm( Title $title, User $user, $revId = null );
 
 	/**
 	 * @param Title $title
