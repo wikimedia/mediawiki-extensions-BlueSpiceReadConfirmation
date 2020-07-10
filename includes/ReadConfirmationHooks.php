@@ -1,6 +1,8 @@
 <?php
 
 use BlueSpice\Services;
+use MediaWiki\Revision\RevisionStoreRecord;
+use MediaWiki\Storage\EditResult;
 
 class ReadConfirmationHooks {
 
@@ -24,23 +26,18 @@ class ReadConfirmationHooks {
 	/**
 	 * Automatically set a page revision as read if user is creator of the
 	 * revision
+	 *
 	 * @param WikiPage $wikiPage
 	 * @param User $user
-	 * @param Content $content
 	 * @param string $summary
-	 * @param bool $isMinor
-	 * @param bool $isWatch
-	 * @param int $section
 	 * @param int $flags
-	 * @param Revision $revision
-	 * @param Status $status
-	 * @param int $baseRevId
+	 * @param RevisionStoreRecord $revision
+	 * @param EditResult $editResult
 	 * @return bool
 	 */
-	public static function onPageContentSaveComplete( $wikiPage, $user,
-			$content, $summary, $isMinor, $isWatch, $section, $flags,
-			$revision, $status, $baseRevId ) {
-		if ( $isMinor ) {
+	public static function onPageSaveComplete( WikiPage $wikiPage, User $user, string $summary,
+		int $flags, RevisionStoreRecord $revision, EditResult $editResult ) {
+		if ( $flags & EDIT_MINOR ) {
 			return true;
 		}
 		global $wgNamespacesWithEnabledReadConfirmation;
