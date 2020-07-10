@@ -76,6 +76,7 @@ class ReadConfirmationHooks {
 		if ( $isMinor ) {
 			return true;
 		}
+		global $wgNamespacesWithEnabledReadConfirmation;
 
 		$iNS = $wikiPage->getTitle()->getNamespace();
 		if ( !isset( $wgNamespacesWithEnabledReadConfirmation[$iNS] )
