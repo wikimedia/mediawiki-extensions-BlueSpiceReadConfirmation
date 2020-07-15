@@ -94,7 +94,7 @@ class ReadConfirmationHooks {
 		if ( !$target ) {
 			return true;
 		}
-		if ( $target->isUserAssigned( $user->getId() ) ) {
+		if ( $target->isUserAssigned( $user ) ) {
 			return true;
 		}
 
