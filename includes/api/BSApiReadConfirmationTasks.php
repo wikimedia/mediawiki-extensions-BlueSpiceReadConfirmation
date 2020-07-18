@@ -35,19 +35,24 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	protected function task_confirm( $taskData, $params ) {
 		$result = $this->makeStandardReturn();
 
-		if ( is_int( $taskData->pageId ) === false ) {
+		if ( empty( $taskData->pageId ) ) {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $result;
 		}
+		$title = Title::newFromId( $taskData->pageId );
+		if ( !$title ) {
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			return $result;
+		}
+		$revision = $this->getServices()->getRevisionStore()->getRevisionByTitle( $title );
+		$revId = $revision ? $revision->getId() : 0;
 
-		$revId = $this->getWikiPage()->getRevision()->getId();
 		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
 			if ( isset( $taskData->stableRevId ) ) {
 				$revId = $taskData->stableRevId;
 			}
 		}
 
-		$title = Title::newFromId( $taskData->pageId );
 		$mechanismInstance = $this->getMechanismInstance();
 
 		if ( $mechanismInstance->canConfirm( $title, $this->getUser(), $revId ) ) {
@@ -68,10 +73,20 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 */
 	protected function task_check( $taskData, $params ) {
 		$result = $this->makeStandardReturn();
-		$title = Title::newFromID( $taskData->pageId );
 		$mechanismInstance = $this->getMechanismInstance();
 
-		$revId = $this->getWikiPage()->getRevision()->getId();
+		if ( empty( $taskData->pageId ) ) {
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			return $result;
+		}
+		$title = Title::newFromId( $taskData->pageId );
+		if ( !$title ) {
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			return $result;
+		}
+		$revision = $this->getServices()->getRevisionStore()->getRevisionByTitle( $title );
+		$revId = $revision ? $revision->getId() : 0;
+
 		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
 			if ( isset( $taskData->stableRevId ) ) {
 				$revId = $taskData->stableRevId;
