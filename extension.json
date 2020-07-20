@@ -140,7 +140,8 @@
 		"bs-readconfirmation": true
 	},
 	"LogActionsHandlers": {
-		"bs-readconfirmation/*": "LogFormatter"
+		"bs-readconfirmation/*": "LogFormatter",
+		"bs-readconfirmation/confirm": "\\BlueSpice\\ReadConfirmation\\Logging\\ConfirmFormatter"
 	},
 	"GroupPermissions": {
 		"sysop": {
