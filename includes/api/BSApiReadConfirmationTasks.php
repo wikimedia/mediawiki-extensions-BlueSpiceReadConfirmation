@@ -52,7 +52,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 		if ( $mechanismInstance->canConfirm( $title, $this->getUser(), $revId ) ) {
 			$mechanismInstance->confirm( $title, $this->getUser(), $revId );
-			$this->logTaskAction( 'confirm', [], [ 'target' => $title ] );
+			$this->logTaskAction( 'confirm', [ 'revid' => $revId ], [ 'target' => $title ] );
 			$result->success = true;
 		} else {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-cant-confirm' )->plain();
@@ -204,7 +204,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$iLogEntryId = $oLogger->insert();
 
 		if ( $bDoPublish ) {
-			$oLogger->publish();
+			$oLogger->publish( $iLogEntryId );
 		}
 
 		return $iLogEntryId;

@@ -40,5 +40,6 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "Message for item in BlueSpicePrivacy when exporting user's pages that the user confirmed to have read. $1 - name of the page the user has confirmed to have read\n* $2 - the revision number the user has confirmed to have read\n* $3 - the date of the users confirmaion to have read the page",
 	"action-readconfirmationremind": "{{doc-action|readconfirmationremind}}",
 	"right-readconfirmationremind": "{{doc-right|readconfirmationremind}}",
-	"bs-readconfirmation-api-error-cant-confirm": "Error message when read confirmation can't be completed"
+	"bs-readconfirmation-api-error-cant-confirm": "Error message when read confirmation can't be completed",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "Suffix to be appended to the entry on [[Special:Log]] when a revision information is available\n* $1 - a formatted timestamp"
 }
