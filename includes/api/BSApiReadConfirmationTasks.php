@@ -63,7 +63,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$aRow['rc_timestamp'] = wfTimestampNow();
 		$this->getDB( DB_MASTER )->insert( 'bs_readconfirmation', $aRow );
 
-		$this->logTaskAction( 'confirm', [], [
+		$this->logTaskAction( 'confirm', [ 'revid' => $oRevision->getId() ], [
 			'target' => $oTitle
 		] );
 
@@ -256,7 +256,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$iLogEntryId = $oLogger->insert();
 
 		if ( $bDoPublish ) {
-			$oLogger->publish();
+			$oLogger->publish( $iLogEntryId );
 		}
 
 		return $iLogEntryId;
