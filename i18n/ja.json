@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tmv"
+		]
+	},
+	"bs-readconfirmation-desc": "あるページの読み取りの確認を集計するための拡張機能",
+	"bs-readconfirmation-confirm-read-checkbox-label": "はい、私はこのページを全部読みました。"
+}
