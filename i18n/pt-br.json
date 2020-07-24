@@ -4,7 +4,7 @@
 			"Eduardo Addad de Oliveira"
 		]
 	},
-	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura de um artigo",
+	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura para uma página",
 	"bs-readconfirmation-column-read": "Ler?",
 	"bs-readconfirmation-column-read-at": "Ler em",
 	"bs-readconfirmation-not-read": "não lido",
@@ -12,7 +12,7 @@
 	"bs-readconfirmation-action-log": "Registro de confirmação de leitura",
 	"bs-readconfirmation-action-remind-confirm": "Solicitar confirmação de leitura?",
 	"bs-readconfirmation-confirm-read-heading": "Confirmação de leitura",
-	"bs-readconfirmation-confirm-read-checkbox-label": "Sim, eu li completamente este artigo.",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Sim, eu li completamente esta página.",
 	"bs-readconfirmation-confirm-read-button-label": "Confirmar",
 	"bs-readconfirmation-action-apiread-check-description": "verificar a confirmação de leitura para $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Marcas $1 como lido",
