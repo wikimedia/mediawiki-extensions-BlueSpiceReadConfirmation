@@ -157,11 +157,10 @@ class NonMinorEdit implements IMechanism {
 	/**
 	 * @param array $userIds
 	 * @param array $pageIds
-	 * @return array
+	 * @return array [ <page_id> => [ <user_id1>, <user_id2>, ...], ... ]
 	 */
-	private function getCurrentReadConfirmations( $userIds = [], $pageIds = [] ) {
+	public function getCurrentReadConfirmations( array $userIds = [], array $pageIds = [] ) {
 		$currentReadConfirmations = [];
-
 		$userReadRevisions = $this->getUserReadRevisions( $userIds );
 		$recentRevisions = $this->getRecentRevisions( $pageIds );
 
@@ -175,7 +174,6 @@ class NonMinorEdit implements IMechanism {
 			}
 			$currentReadConfirmations[ $pageId ] = $reads;
 		}
-
 		return $currentReadConfirmations;
 	}
 
@@ -305,4 +303,18 @@ class NonMinorEdit implements IMechanism {
 		return $factory;
 	}
 
+	/**
+	 * @param Title $title
+	 * @return bool
+	 */
+	public function mustRead( Title $title ) {
+		if ( !$title instanceof Title ) {
+			return false;
+		}
+		if ( !isset( $this->enabledNamespaces[$title->getNamespace()] )
+			|| !$this->enabledNamespaces[$title->getNamespace()] ) {
+			return false;
+		}
+		return true;
+	}
 }
