@@ -1,15 +1,16 @@
 <?php
 
 use BlueSpice\Services;
-use BlueSpice\Data\ResultSet;
 use BlueSpice\PageAssignments\Data\Page\PrimaryDataProvider;
 use BlueSpice\PageAssignments\Data\Page\Record;
+use BlueSpice\ReadConfirmation\IMechanism;
+use MediaWiki\MediaWikiServices;
 
 class ReadConfirmationPageAssignmentHooks {
 	/**
 	 *
 	 * @param PrimaryDataProvider $dataProvider
-	 * @param ResultSet $dataSet
+	 * @param Record $dataSet
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -19,7 +20,7 @@ class ReadConfirmationPageAssignmentHooks {
 			return true;
 		}
 		$dataSet->set( 'all_assignees_have_read', false );
-		if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $title ) ) {
+		if ( !self::getReadConfirmationMechanismInstance()->mustRead( $title ) ) {
 			return true;
 		}
 		if ( empty( $dataSet->get( Record::ASSIGNMENTS, [] ) ) ) {
@@ -39,7 +40,7 @@ class ReadConfirmationPageAssignmentHooks {
 			return true;
 		}
 
-		$aPageReads = \BlueSpice\ReadConfirmation\Extension::getCurrentReadConfirmations(
+		$aPageReads = self::getReadConfirmationMechanismInstance()->getCurrentReadConfirmations(
 			$target->getAssignedUserIDs(),
 			[ (int)$dataSet->get( Record::ID ) ]
 		);
@@ -74,7 +75,7 @@ class ReadConfirmationPageAssignmentHooks {
 		$aDisabledIds = [];
 		foreach ( $aData as $oDataSet ) {
 			$oTitle = Title::newFromID( $oDataSet->page_id );
-			if ( !\BlueSpice\ReadConfirmation\Extension::isNamespaceEnabled( $oTitle ) ) {
+			if ( !self::getReadConfirmationMechanismInstance()->mustRead( $oTitle ) ) {
 				$aDisabledIds[] = $oDataSet->page_id;
 			} else {
 				$aPageIds[] = $oDataSet->page_id;
@@ -83,7 +84,7 @@ class ReadConfirmationPageAssignmentHooks {
 
 		$iCurrentUserId = RequestContext::getMain()->getUser()->getId();
 
-		$aCurrentPageReads = \BlueSpice\ReadConfirmation\Extension::getCurrentReadConfirmations(
+		$aCurrentPageReads = self::getReadConfirmationMechanismInstance()->getCurrentReadConfirmations(
 			[ $iCurrentUserId ],
 			$aPageIds
 		);
@@ -110,6 +111,15 @@ class ReadConfirmationPageAssignmentHooks {
 	public static function onBSPageAssignmentsSpecialPages( $oSender, &$aDeps ) {
 		$aDeps[] = 'ext.readconfirmation.pageassignmentsintegration';
 		return true;
+	}
+
+	/**
+	 * @return IMechanism
+	 */
+	public static function getReadConfirmationMechanismInstance() {
+		return MediaWikiServices::getInstance()
+			->getService( 'BSReadConfirmationMechanismFactory' )
+			->getMechanismInstance();
 	}
 
 }
