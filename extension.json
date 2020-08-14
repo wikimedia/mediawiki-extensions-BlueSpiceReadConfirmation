@@ -46,8 +46,10 @@
 			"BlueSpiceFoundation": ">= 3.4"
 		}
 	},
+	"TestAutoloadNamespaces": {
+		"BlueSpice\\ReadConfirmation\\Tests\\": "tests/phpunit/"
+	},
 	"AutoloadNamespaces": {
-		"BlueSpice\\ReadConfirmation\\Tests\\": "tests/phpunit/",
 		"BlueSpice\\ReadConfirmation\\": "src/"
 	},
 	"AutoloadClasses": {
