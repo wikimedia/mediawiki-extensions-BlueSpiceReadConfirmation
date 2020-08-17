@@ -40,5 +40,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Leitura",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Você confirmou a leitura da página $1 (revisão $2) em $3",
 	"action-readconfirmationremind": "lembrar aos usuários que eles precisam confirmar para ler a página",
-	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página"
+	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)"
 }
