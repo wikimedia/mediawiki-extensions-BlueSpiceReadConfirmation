@@ -7,7 +7,7 @@ use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\PageAssignments\TitleTarget;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 use Wikimedia\Rdbms\LoadBalancer;
@@ -34,7 +34,7 @@ class NonMinorEdit implements IMechanism {
 	 */
 	public static function factory() {
 		global $wgNamespacesWithEnabledReadConfirmation;
-		$dbLoadBalancer = Services::getInstance()->getDBLoadBalancer();
+		$dbLoadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
 		return new self(
 			$dbLoadBalancer,
 			$wgNamespacesWithEnabledReadConfirmation
@@ -74,7 +74,9 @@ class NonMinorEdit implements IMechanism {
 			return false;
 		}
 		/** @var NotificationManager $notificationsManager */
-		$notificationsManager = Services::getInstance()->getService( 'BSNotificationManager' );
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 		$notifier = $notificationsManager->getNotifier();
 		$notifyUsers = $this->getNotifyUsers( $target );
 		$notification = new Remind( $userAgent, $title, [], $notifyUsers );
@@ -297,7 +299,7 @@ class NonMinorEdit implements IMechanism {
 	 * @return AssignmentFactory
 	 */
 	private function getAssignmentFactory() {
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
 		return $factory;

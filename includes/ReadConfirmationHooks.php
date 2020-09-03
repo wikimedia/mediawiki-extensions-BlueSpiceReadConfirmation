@@ -1,6 +1,6 @@
 <?php
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStoreRecord;
 use MediaWiki\Storage\EditResult;
 
@@ -48,7 +48,7 @@ class ReadConfirmationHooks {
 			return true;
 		}
 
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
 		if ( !$factory ) {
