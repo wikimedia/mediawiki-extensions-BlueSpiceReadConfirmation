@@ -4,7 +4,7 @@ namespace BlueSpice\ReadConfirmation\Privacy;
 
 use BlueSpice\Privacy\IPrivacyHandler;
 use BlueSpice\Privacy\Module\Transparency;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Handler implements IPrivacyHandler {
 	protected $db;
@@ -64,7 +64,7 @@ class Handler implements IPrivacyHandler {
 
 		$data = [];
 		foreach ( $res as $row ) {
-			$lookup = Services::getInstance()->getRevisionLookup();
+			$lookup = MediaWikiServices::getInstance()->getRevisionLookup();
 			$rev = $lookup->getRevisionById( $row->rc_rev_id );
 			if ( !$rev ) {
 				continue;

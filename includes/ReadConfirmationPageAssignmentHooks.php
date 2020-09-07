@@ -3,7 +3,6 @@
 use BlueSpice\PageAssignments\Data\Page\PrimaryDataProvider;
 use BlueSpice\PageAssignments\Data\Page\Record;
 use BlueSpice\ReadConfirmation\IMechanism;
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 
 class ReadConfirmationPageAssignmentHooks {
@@ -26,7 +25,7 @@ class ReadConfirmationPageAssignmentHooks {
 		if ( empty( $dataSet->get( Record::ASSIGNMENTS, [] ) ) ) {
 			return true;
 		}
-		$factory = Services::getInstance()->getService(
+		$factory = MediaWikiServices::getInstance()->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
 		if ( !$factory ) {
