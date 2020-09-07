@@ -58,7 +58,6 @@
 		"BSApiReadConfirmationTasks": "includes/api/BSApiReadConfirmationTasks.php"
 	},
 	"ExtensionFunctions": [
-		"ReadConfirmationHooks::setup",
 		"BlueSpice\\ReadConfirmation\\TriggerRegistration::addNotificationTrigger"
 	],
 	"APIModules": {
