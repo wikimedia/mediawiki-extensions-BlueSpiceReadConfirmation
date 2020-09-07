@@ -40,5 +40,6 @@
 	"action-readconfirmationremind": "lembrar aos usuários que eles precisam confirmar para ler a página",
 	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página",
 	"bs-readconfirmation-api-error-cant-confirm": "Não é possível processar a confirmação de leitura desta página",
-	"echo-pref-tooltip-bs-readconfirmation-cat": "Notificar-me quando tiver confirmações de leitura abertas"
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Notificar-me quando tiver confirmações de leitura abertas",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)"
 }
