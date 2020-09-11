@@ -6,23 +6,6 @@ use MediaWiki\Storage\EditResult;
 
 class ReadConfirmationHooks {
 
-	public static function setup() {
-		BSNotifications::registerNotification(
-			'bs-readconfirmation-remind',
-			'bs-pageassignments-action-cat',
-			'notification-bs-readconfirmation-remind-summary',
-			[ 'agent', 'title', 'titlelink' ],
-			'notification-bs-readconfirmation-remind-subject',
-			[ 'agent', 'title', 'titlelink' ],
-			'notification-bs-readconfirmation-remind-body',
-			[ 'agent', 'title', 'titlelink' ],
-			[
-				'formatter-class' => 'PageAssignmentsNotificationFormatter',
-				'primary-link' => [ 'message' => 'notification-link-text-view-page', 'destination' => 'title' ]
-			]
-		);
-	}
-
 	/**
 	 * Automatically set a page revision as read if user is creator of the
 	 * revision
