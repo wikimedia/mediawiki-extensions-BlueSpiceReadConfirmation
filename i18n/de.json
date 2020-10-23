@@ -28,6 +28,7 @@
 	"notification-bs-readconfirmation-remind-subject": "Erinnerung an Seite $2",
 	"notification-bs-readconfirmation-remind-body": "$1 möchte dich daran erinnern, für $2 eine Lesebestätigung abzugeben.",
 	"log-name-bs-readconfirmation": "Lesebestätigungs-Logbuch",
+	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch",
 	"log-description-bs-readconfirmation": "Logbuch über Lesebestätigungen",
 	"log-show-hide-bs-readconfirmation": "$1 Lesebestätigungs-Logbuch",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|hat}} bestätigt, die Seite $3 gelesen zu haben",
