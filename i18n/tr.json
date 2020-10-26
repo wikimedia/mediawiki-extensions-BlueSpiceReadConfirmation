@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
 	"bs-readconfirmation-desc": "Bir sayfa için okuma onaylarını toplama uzantısı",
@@ -26,6 +27,7 @@
 	"notification-bs-readconfirmation-remind-subject": "$2 sayfa hatırlatması",
 	"notification-bs-readconfirmation-remind-body": "$1, $2 okuduğunuzu onaylamanızı hatırlatmak istiyor.",
 	"log-name-bs-readconfirmation": "Onay günlüğünü okuyun",
+	"logeventslist-bs-readconfirmation-log": "Onay günlüğünü okuyun",
 	"log-description-bs-readconfirmation": "Okuma onayları için günlük",
 	"log-show-hide-bs-readconfirmation": "$1 okuma onay günlüğü",
 	"logentry-bs-readconfirmation-confirm": "$1, $3 sayfayı okuduğunu {{GENDER:$2|onayladı}}",
