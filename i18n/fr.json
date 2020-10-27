@@ -29,6 +29,7 @@
 	"notification-bs-readconfirmation-remind-subject": "Rappel pour la page $2",
 	"notification-bs-readconfirmation-remind-body": "$1 voudrait vous rappeler de confirmer que vous avez lu $2.",
 	"log-name-bs-readconfirmation": "Journal des confirmations de lecture",
+	"logeventslist-bs-readconfirmation-log": "Lire le journal de confirmation",
 	"log-description-bs-readconfirmation": "Journal des confirmations de lecture",
 	"log-show-hide-bs-readconfirmation": "$1 le journal des confirmations de lecture",
 	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|}} a confirmé avoir lu la page $3",
