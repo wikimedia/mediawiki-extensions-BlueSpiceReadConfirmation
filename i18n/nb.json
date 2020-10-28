@@ -26,6 +26,7 @@
 	"notification-bs-readconfirmation-remind-subject": "Påminnelse for siden $2",
 	"notification-bs-readconfirmation-remind-body": "$1 ønsker å minne deg på å bekrefte om du har lest $2.",
 	"log-name-bs-readconfirmation": "Lesebekreftelseslogg",
+	"logeventslist-bs-readconfirmation-log": "Les bekreftelseslogg",
 	"log-description-bs-readconfirmation": "Logg for lesebekreftelser",
 	"log-show-hide-bs-readconfirmation": "$1 lesebekreftelseslogg",
 	"logentry-bs-readconfirmation-confirm": "$1 har bekreftet at {{GENDER:$2|han|hun|vedkommende}} har lest siden $3",
