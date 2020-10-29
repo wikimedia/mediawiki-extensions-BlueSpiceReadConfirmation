@@ -12,8 +12,7 @@ use Message;
 class ConfirmFormatter extends LogFormatter {
 
 	/**
-	 *
-	 * @var integer
+	 * @var int
 	 */
 	private $revId = -1;
 
