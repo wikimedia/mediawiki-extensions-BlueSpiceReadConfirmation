@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patric Wirth"
+			"Amire80",
+			"Patric Wirth",
+			"Umherirrender"
 		]
 	},
 	"bs-readconfirmation-desc": "{{desc|name=BlueSpiceReadConfirmation}}",
@@ -22,7 +24,7 @@
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Error message when teh given page has to revision to either check, confirm or remind the users with the api",
 	"echo-category-title-bs-readconfirmation-cat": "Checkbox label for mail and wiki notification subscribtion on read confirmation\n{{Identical|Read confirmation}}",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Tooltip for Echo notification category bs-readconfirmation-cat",
-	"notification-bs-readconfirmation-remind-summary": "Summaray of the notification that states, that a user reminds the receiving user to read a page\n* $1 - Name of the user, that reminds the receiving user\n* $2 Real name of the user, that reminds the receiving user\n* $3 - Name of the page, the receiving user has to read confirm on",
+	"notification-bs-readconfirmation-remind-summary": "Summary of the notification that states, that a user reminds the receiving user to read a page\n* $1 - Name of the user, that reminds the receiving user\n* $2 - Real name of the user, that reminds the receiving user\n* $3 - Name of the page, the receiving user has to read confirm on",
 	"notification-bs-readconfirmation-remind-subject": "Subject of the notification that states, that a user reminds the receiving user to read a page\n* $1 - Name of the user, that reminds the receiving user\n* $2 Real name of the user, that reminds the receiving user\n* $3 - Name of the page, the receiving user has to read confirm on",
 	"notification-bs-readconfirmation-remind-body": "Body of the notification that states, that a user reminds the receiving user to read a page\n* $1 - Name of the user, that reminds the receiving user\n* $2 Real name of the user, that reminds the receiving user\n* $3 - Name of the page, the receiving user has to read confirm on",
 	"log-name-bs-readconfirmation": "Used in [[Special:Log]], headline for the read confirmation log",
