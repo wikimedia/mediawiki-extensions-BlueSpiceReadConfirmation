@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
 	"bs-readconfirmation-desc": "Bir sayfa için okuma onaylarını toplama uzantısı",
@@ -41,5 +42,6 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: $3 üzerinde $1 (revizyon $2) sayfasını okudunuz",
 	"action-readconfirmationremind": "kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
 	"right-readconfirmationremind": "Kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)",
+	"logeventslist-bs-readconfirmation-log": "Onay günlüğünü okuyun"
 }

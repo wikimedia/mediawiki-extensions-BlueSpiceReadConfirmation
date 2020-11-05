@@ -44,5 +44,6 @@
 	"right-readconfirmationremind": "Rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"bs-readconfirmation-api-error-cant-confirm": "Impossible de traiter la confirmation de lecture pour cette page",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Me notifier quand j’ai des confirmations de lecture ouvertes",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)",
+	"logeventslist-bs-readconfirmation-log": "Lire le journal de confirmation"
 }

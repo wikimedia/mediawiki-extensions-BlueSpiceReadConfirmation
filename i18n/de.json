@@ -43,5 +43,6 @@
 	"bs-readconfirmation-api-error-cant-confirm": "Die Lesebestätigung für diese Seite kann nicht verarbeitet werden",
 	"action-readconfirmationremind": "Benutzer zu erinnern, dass sie das Lesen der Seite bestätigen müssen",
 	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(seit $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(seit $1)",
+	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch"
 }

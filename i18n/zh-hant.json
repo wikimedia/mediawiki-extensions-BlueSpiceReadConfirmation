@@ -41,5 +41,6 @@
 	"right-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面",
 	"bs-readconfirmation-api-error-cant-confirm": "無法處理此頁面的閱讀確認",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "當我開啟閱讀確認時通知我",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "（截至 $1）"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "（截至 $1）",
+	"logeventslist-bs-readconfirmation-log": "讀取確認日誌"
 }

@@ -41,5 +41,6 @@
 	"right-readconfirmationremind": "Minne brukere på at de må bekrefte å ha lest siden",
 	"bs-readconfirmation-api-error-cant-confirm": "Kan ikke prosessere lesebekreftelse for denne siden",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(per $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(per $1)",
+	"logeventslist-bs-readconfirmation-log": "Les bekreftelseslogg"
 }
