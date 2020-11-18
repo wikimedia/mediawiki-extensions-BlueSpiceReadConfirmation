@@ -26,6 +26,7 @@
 	"notification-bs-readconfirmation-remind-subject": "Promemorie pa vôsce $2",
 	"notification-bs-readconfirmation-remind-body": "$1 te vole arrecurdà de confermà ca è lette $2.",
 	"log-name-bs-readconfirmation": "Archivije de le conferme de letture",
+	"logeventslist-bs-readconfirmation-log": "Archivije de le conferme de letture",
 	"log-description-bs-readconfirmation": "Archivije pe le conferme de letture",
 	"log-show-hide-bs-readconfirmation": "$1 archivije de le conferme de letture",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|ave}} confermate ca ave lette sta vôsce $3",
