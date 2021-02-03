@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Golmore",
 			"Gomoko",
-			"Verdy p",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Verdy p"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
@@ -23,13 +24,13 @@
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Aucune version n’a été trouvée",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmation de lecture",
 	"notification-bs-readconfirmation-remind-summary": "$1 vous rappelle de lire $3",
-	"notification-bs-readconfirmation-remind-subject": "Rappel pour l’article $2",
+	"notification-bs-readconfirmation-remind-subject": "Rappel pour la page $2",
 	"notification-bs-readconfirmation-remind-body": "$1 voudrait vous rappeler de confirmer que vous avez lu $2.",
 	"log-name-bs-readconfirmation": "Journal des confirmations de lecture",
 	"log-description-bs-readconfirmation": "Journal des confirmations de lecture",
 	"log-show-hide-bs-readconfirmation": "$1 le journal des confirmations de lecture",
-	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|}} a confirmé avoir lu l’article $3",
-	"logentry-bs-readconfirmation-remind": "$1{{GENDER:$2|}} a demandé à l’utilisateur $4 de confirmer avoir lu l’article $3",
+	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|}} a confirmé avoir lu la page $3",
+	"logentry-bs-readconfirmation-remind": "$1{{GENDER:$2|}} a demandé à l’utilisateur $4 de confirmer d'avoir lu l’article $3",
 	"apihelp-bs-readconfirmation-tasks-summary": "API terminale pour l’extension ''ReadConfirmation''",
 	"bs-readconfirmation-label-ns-manager": "Confirmation de lecture",
 	"bs-readconfirmation-api-error-not-active-ns": "La Confirmation de lecture n’est pas activée pour cet espace de noms",
@@ -42,5 +43,7 @@
 	"action-readconfirmationremind": "rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"right-readconfirmationremind": "Rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"bs-readconfirmation-api-error-cant-confirm": "Impossible de traiter la confirmation de lecture pour cette page",
-	"echo-pref-tooltip-bs-readconfirmation-cat": "Me notifier quand j’ai des confirmations de lecture ouvertes"
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Me notifier quand j’ai des confirmations de lecture ouvertes",
+	"logeventslist-bs-readconfirmation-log": "Lire le journal de confirmation",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)"
 }

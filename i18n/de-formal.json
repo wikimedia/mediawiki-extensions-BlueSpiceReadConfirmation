@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel",
-			"Leonid Verhovskij"
+			"Leonid Verhovskij",
+			"Robert Vogel"
 		]
 	},
 	"notification-bs-readconfirmation-remind-summary": "$1 erinnert Sie daran, $3 zu lesen",

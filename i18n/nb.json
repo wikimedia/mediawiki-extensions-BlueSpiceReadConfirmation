@@ -4,7 +4,7 @@
 			"Jon Harald Søby"
 		]
 	},
-	"bs-readconfirmation-desc": "Utvidelse for å samle lesebekreftelser for en artikkel",
+	"bs-readconfirmation-desc": "Utvidelse for å samle lesebekreftelser for en side",
 	"bs-readconfirmation-column-read": "Lest?",
 	"bs-readconfirmation-column-read-at": "Lest dato",
 	"bs-readconfirmation-not-read": "ikke lest",
@@ -12,7 +12,7 @@
 	"bs-readconfirmation-action-log": "Lesebekreftelseslogg",
 	"bs-readconfirmation-action-remind-confirm": "Be om lesebekreftelse?",
 	"bs-readconfirmation-confirm-read-heading": "Lesebekreftelse",
-	"bs-readconfirmation-confirm-read-checkbox-label": "Ja, jeg har lest denne artikkelen i sin helhet",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Ja, jeg har lest denne siden i sin helhet",
 	"bs-readconfirmation-confirm-read-button-label": "Bekreft",
 	"bs-readconfirmation-action-apiread-check-description": "sjekke lesebekreftelse for $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Merke $1 som lest",
@@ -21,13 +21,13 @@
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Ingen revisjon funnet",
 	"echo-category-title-bs-readconfirmation-cat": "Lesebekreftelse",
 	"notification-bs-readconfirmation-remind-summary": "$1 minner deg om å lese $3",
-	"notification-bs-readconfirmation-remind-subject": "Påminnelse for artikkelen $2",
+	"notification-bs-readconfirmation-remind-subject": "Påminnelse for siden $2",
 	"notification-bs-readconfirmation-remind-body": "$1 ønsker å minne deg på å bekrefte om du har lest $2.",
 	"log-name-bs-readconfirmation": "Lesebekreftelseslogg",
 	"log-description-bs-readconfirmation": "Logg for lesebekreftelser",
 	"log-show-hide-bs-readconfirmation": "$1 lesebekreftelseslogg",
-	"logentry-bs-readconfirmation-confirm": "$1 har bekreftet at {{GENDER:$2|han|hun|vedkommende}} har lest artikkelen $3",
-	"logentry-bs-readconfirmation-remind": "$1 har bedt brukeren $4 bekrefte at {{GENDER:$2|han|hun|vedkommende}} har lest artikkelen $3",
+	"logentry-bs-readconfirmation-confirm": "$1 har bekreftet at {{GENDER:$2|han|hun|vedkommende}} har lest siden $3",
+	"logentry-bs-readconfirmation-remind": "$1 har bedt brukeren $4 bekrefte at {{GENDER:$2|han|hun|vedkommende}} har lest siden $3",
 	"apihelp-bs-readconfirmation-tasks-summary": "API-endepunkt for utvidelsen ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Lesebekreftelse",
 	"bs-readconfirmation-api-error-not-active-ns": "Lesebekreftelser er ikke slått på for dette navnerommet",
@@ -40,5 +40,7 @@
 	"action-readconfirmationremind": "minne brukere på at de må bekrefte å ha lest siden",
 	"right-readconfirmationremind": "Minne brukere på at de må bekrefte å ha lest siden",
 	"bs-readconfirmation-api-error-cant-confirm": "Kan ikke prosessere lesebekreftelse for denne siden",
-	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser"
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser",
+	"logeventslist-bs-readconfirmation-log": "Les bekreftelseslogg",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(per $1)"
 }

@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel",
 			"Leonid Verhovskij",
-			"Mglaser"
+			"Mglaser",
+			"Robert Vogel"
 		]
 	},
-	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen einzuholen",
+	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen für eine Seite einzuholen",
 	"bs-readconfirmation-column-read": "Gelesen?",
 	"bs-readconfirmation-column-read-at": "Gelesen am",
 	"bs-readconfirmation-not-read": "nicht gelesen",
@@ -29,8 +29,8 @@
 	"log-name-bs-readconfirmation": "Lesebestätigungs-Logbuch",
 	"log-description-bs-readconfirmation": "Logbuch über Lesebestätigungen",
 	"log-show-hide-bs-readconfirmation": "$1 Lesebestätigungs-Logbuch",
-	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|hat}} bestätigt die Seite $3 gelesen zu haben",
-	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|hat}} die Benutzer $4 aufgefordert, eine Lesebestätigung für die Seite $3 abzugeben",
+	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|hat}} bestätigt, die Seite $3 gelesen zu haben",
+	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|hat}} $4 aufgefordert, eine Lesebestätigung für die Seite $3 abzugeben",
 	"apihelp-bs-readconfirmation-tasks-summary": "API-Endpunkt für die Erweiterung Lesebestätigung",
 	"bs-readconfirmation-label-ns-manager": "Lesebestätigung",
 	"bs-readconfirmation-api-error-not-active-ns": "Lesebestätigungen sind für diesem Namensraum nicht aktiviert",
@@ -42,5 +42,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du hast bestätigt, die Seite $1 (Version $2) am $3 gelesen zu haben",
 	"bs-readconfirmation-api-error-cant-confirm": "Die Lesebestätigung für diese Seite kann nicht verarbeitet werden",
 	"action-readconfirmationremind": "Benutzer zu erinnern, dass sie das Lesen der Seite bestätigen müssen",
-	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen"
+	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen",
+	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(seit $1)"
 }
