@@ -3,6 +3,7 @@
 namespace BlueSpice\ReadConfirmation\Tests;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 use WikiPage;
@@ -27,10 +28,11 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		$oExecutingUser = self::$users['sysop']->user;
 		$oAssignedUser = self::$users['uploader']->user;
 
-		$oExecutingUser->setOption( 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
-		$oExecutingUser->saveSettings();
-		$oAssignedUser->setOption( 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
-		$oAssignedUser->saveSettings();
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
+		$userOptionsManager->setOption( $oExecutingUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
+		$userOptionsManager->saveOptions( $oExecutingUser );
+		$userOptionsManager->setOption( $oAssignedUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
+		$userOptionsManager->saveOptions( $oAssignedUser );
 
 		$oDbw = wfGetDB( DB_MASTER );
 		$oDbw->delete( 'bs_pageassignments', [ 'pa_page_id' => $oTitle->getArticleID() ] );
