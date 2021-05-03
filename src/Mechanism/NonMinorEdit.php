@@ -149,9 +149,9 @@ class NonMinorEdit implements IMechanism {
 			'rc_user_id' => $user->getId()
 		];
 
-		$this->dbLoadBalancer->getConnection( DB_MASTER )->delete( 'bs_readconfirmation', $row );
+		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->delete( 'bs_readconfirmation', $row );
 		$row[ 'rc_timestamp' ] = wfTimestampNow();
-		$this->dbLoadBalancer->getConnection( DB_MASTER )->insert( 'bs_readconfirmation', $row );
+		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->insert( 'bs_readconfirmation', $row );
 
 		return true;
 	}
@@ -192,7 +192,7 @@ class NonMinorEdit implements IMechanism {
 
 		$affectedUsers = array_filter(
 			$target->getAssignedUserIDs(),
-			function ( $e ) use( $target, $currentReads ) {
+			static function ( $e ) use( $target, $currentReads ) {
 				return !isset( $currentReads[$target->getTitle()->getArticleID()][$e] );
 			}
 		);

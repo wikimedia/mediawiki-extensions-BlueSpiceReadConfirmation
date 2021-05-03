@@ -50,7 +50,7 @@ class ReadConfirmationHooks {
 			'rc_user_id' => $user->getId()
 		];
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete( 'bs_readconfirmation', $aRow );
 		$aRow['rc_timestamp'] = wfTimestampNow();
 		$dbw->insert( 'bs_readconfirmation', $aRow );

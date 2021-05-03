@@ -3,7 +3,7 @@
 use MediaWiki\MediaWikiServices;
 
 return [
-	'BSReadConfirmationMechanismFactory' => function ( MediaWikiServices $services ) {
+	'BSReadConfirmationMechanismFactory' => static function ( MediaWikiServices $services ) {
 		$mechanismCallback = $services->getConfigFactory()
 			->makeConfig( 'bsg' )->get( 'ReadConfirmationMechanism' );
 

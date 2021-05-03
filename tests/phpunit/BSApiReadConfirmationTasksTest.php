@@ -34,7 +34,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		$userOptionsManager->setOption( $oAssignedUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
 		$userOptionsManager->saveOptions( $oAssignedUser );
 
-		$oDbw = wfGetDB( DB_MASTER );
+		$oDbw = wfGetDB( DB_PRIMARY );
 		$oDbw->delete( 'bs_pageassignments', [ 'pa_page_id' => $oTitle->getArticleID() ] );
 		$aPAData = [
 				[
