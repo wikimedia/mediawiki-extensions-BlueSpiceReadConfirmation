@@ -4,5 +4,8 @@
 			"Mainframe98"
 		]
 	},
-	"bs-readconfirmation-confirm-read-button-label": "Bevestigen"
+	"bs-readconfirmation-confirm-read-button-label": "Bevestigen",
+	"bs-readconfirmation-action-apiread-confirm-description": "$1 als gelezen markeren",
+	"bs-readconfirmation-disabled-ns-short": "Uitgeschakeld",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(sinds $1)"
 }

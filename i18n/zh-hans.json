@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			")8",
+			"Lakejason0",
 			"沈澄心"
 		]
 	},
 	"bs-readconfirmation-confirm-read-button-label": "确认",
 	"bs-readconfirmation-disabled-ns-short": "已禁用",
-	"bs-readconfirmation-confirm-read-checkbox-label": "是的，我已完整阅读本页。"
+	"bs-readconfirmation-confirm-read-checkbox-label": "是的，我已完整阅读本页。",
+	"bs-readconfirmation-column-read": "已读取？",
+	"bs-readconfirmation-action-apiread-confirm-description": "标记$1为已读",
+	"bs-readconfirmation-graphicallist-btn-read": "阅读"
 }
