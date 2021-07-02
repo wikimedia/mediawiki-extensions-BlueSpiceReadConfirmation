@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Piramidion",
 			"Ата"
 		]
@@ -27,6 +28,7 @@
 	"notification-bs-readconfirmation-remind-subject": "Нагадування для сторінки $2",
 	"notification-bs-readconfirmation-remind-body": "$1 {{GENDER:$1|хотів би|хотіла б}} нагадати вам, що вам треба підтвердити прочитання $2.",
 	"log-name-bs-readconfirmation": "Журнал підтвердження прочитань",
+	"logeventslist-bs-readconfirmation-log": "Журнал підтвердження прочитань",
 	"log-description-bs-readconfirmation": "Журнал для підтверджень прочитань",
 	"log-show-hide-bs-readconfirmation": "$1 журнал підтверджень прочитань",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|підтвердив|підтвердила}} прочитання сторінки $3",
