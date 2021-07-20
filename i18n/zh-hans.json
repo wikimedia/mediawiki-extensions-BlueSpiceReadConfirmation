@@ -11,5 +11,6 @@
 	"bs-readconfirmation-confirm-read-checkbox-label": "是的，我已完整阅读本页。",
 	"bs-readconfirmation-column-read": "已读取？",
 	"bs-readconfirmation-action-apiread-confirm-description": "标记$1为已读",
-	"bs-readconfirmation-graphicallist-btn-read": "阅读"
+	"bs-readconfirmation-graphicallist-btn-read": "阅读",
+	"bs-readconfirmation-api-error-no-non-minor-revision": "找不到修订版本"
 }
