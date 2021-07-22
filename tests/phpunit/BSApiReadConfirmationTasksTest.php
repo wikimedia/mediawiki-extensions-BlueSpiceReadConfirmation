@@ -21,7 +21,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		return 'bs-readconfirmation-tasks';
 	}
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		$oTitle = Title::newFromId( 1 );
