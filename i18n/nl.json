@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"bs-readconfirmation-confirm-read-button-label": "Bevestigen",
 	"bs-readconfirmation-action-apiread-confirm-description": "$1 als gelezen markeren",
 	"bs-readconfirmation-disabled-ns-short": "Uitgeschakeld",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(sinds $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(sinds $1)",
+	"bs-readconfirmation-column-read": "Lezen?",
+	"bs-readconfirmation-column-read-at": "Lezen op",
+	"bs-readconfirmation-not-read": "niet gelezen",
+	"bs-readconfirmation-confirm-read-heading": "Lees bevestiging"
 }
