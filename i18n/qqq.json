@@ -9,7 +9,7 @@
 		]
 	},
 	"bs-readconfirmation-desc": "{{desc|name=BlueSpiceReadConfirmation}}",
-	"bs-readconfirmation-column-read": "Label of a column in an ExtJS manager that shows if an entry is read or not\n{{Identical|Read?}}",
+	"bs-readconfirmation-column-read": "Label of a column in an ExtJS manager that shows if an entry is read or not\n{{doc-important|This is the past perfect tense of the verb ''read'', as in ''Have you read this page?''}}\n{{Identical|Read?}}",
 	"bs-readconfirmation-column-read-at": "Label of a column in an ExtJS manager that shows the date of when an entry was read\n{{Identical|Read on}}",
 	"bs-readconfirmation-not-read": "Text in an ExtJS manager column when an entry was not read\n{{Identical|not read}}",
 	"bs-readconfirmation-action-remind": "Button label in an ExtJS manager column that lets the user request a read confirmation\n{{Identical|Request read confirmation}}",
