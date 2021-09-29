@@ -43,5 +43,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: You confirmed reading the page $1 (revision $2) on $3",
 	"action-readconfirmationremind": "remind users that they have to confirm to have read the page",
 	"right-readconfirmationremind": "Remind users that they have to confirm to have read the page",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(as of $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(as of $1)",
+	"bs-readconfirmation-uto-task-header": "Read confirmation required",
+	"bs-readconfirmation-uto-task-body-diff": "See changes since last read confirmation"
 }

@@ -104,6 +104,11 @@
 			"dependencies": [
 				"ext.bluespice"
 			]
+		},
+		"ext.readconfirmation.uto.styles": {
+			"styles": [
+				"ext.bluespice.readconfirmation.uto.less"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -133,7 +138,14 @@
 		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
 		"NamespaceManager::writeNamespaceConfiguration": "ReadConfirmationHooks::onNamespaceManager_writeNamespaceConfiguration",
 		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
-		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback"
+		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback",
+		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations"
+	},
+	"HookHandlers": {
+		"addUTOReadConfirmations": {
+			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\UnifiedTaskOverview",
+			"services": [ "DBLoadBalancer", "UserGroupManager", "BSReadConfirmationMechanismFactory" ]
+		}
 	},
 	"LogTypes": [
 		"bs-readconfirmation"
