@@ -157,6 +157,100 @@ class NonMinorEdit implements IMechanism {
 	}
 
 	/**
+	 * Gets THE LATEST read revisions of each page for each user specified
+	 *
+	 * @param array $userIds List of user IDs
+	 * @return array Array with such structure:
+	 *  [
+	 *    <user_id1> => [
+	 *		 <page_id1> => <latest_read_revision1>,
+	 * 		 <page_id2> => <latest_read_revision2>
+	 *	  ],
+	 * 	  <user_id2> => [
+	 * 	  ...
+	 * 	  ],
+	 * 	  ...
+	 * 	]
+	 */
+	private function getUserLatestReadRevisions( array $userIds ): array {
+		$conds = [];
+		if ( $userIds ) {
+			$conds = [
+				'rc_user_id' => $userIds
+			];
+		}
+
+		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
+			[
+				'revision',
+				'bs_readconfirmation'
+			],
+			[
+				'latest_rev' => 'MAX(rc_rev_id)',
+				'rev_page',
+				'rc_user_id'
+			],
+			$conds,
+			__METHOD__,
+			[
+				'GROUP BY' => [
+					'rev_page',
+					'rc_user_id'
+				]
+			],
+			[
+				'bs_readconfirmation' => [
+					'INNER JOIN', 'rc_rev_id = rev_id'
+				]
+			]
+		);
+
+		$latestRevs = [];
+		foreach ( $res as $row ) {
+			$latestRevs[ (int)$row->rc_user_id ][ (int)$row->rev_page ] = (int)$row->latest_rev;
+		}
+
+		return $latestRevs;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getLatestReadConfirmations( array $userIds = [] ): array {
+		$userLatestReadRevisions = $this->getUserLatestReadRevisions( $userIds );
+
+		$pageIds = [];
+		foreach ( $userLatestReadRevisions as $latestReadRevisionData ) {
+			foreach ( $latestReadRevisionData as $pageId => $latestReadRevisionId ) {
+				$pageIds[$pageId] = true;
+			}
+		}
+		$pageIds = array_keys( $pageIds );
+
+		$recentRevisions = $this->getRecentRevisions( $pageIds );
+
+		$readConfirmations = [];
+		foreach ( $userLatestReadRevisions as $userId => $latestReadRevisionData ) {
+			foreach ( $latestReadRevisionData as $pageId => $latestReadRevisionId ) {
+				// In case if there are no major revisions of the page
+				$recentRevisionId = 0;
+
+				// There is some major revision of the page
+				if ( isset( $recentRevisions[ $pageId ] ) ) {
+					$recentRevisionId = $recentRevisions[ $pageId ];
+				}
+
+				$readConfirmations[$userId][$pageId] = [
+					'latest_rev' => $recentRevisionId,
+					'latest_read_rev' => $latestReadRevisionId
+				];
+			}
+		}
+
+		return $readConfirmations;
+	}
+
+	/**
 	 * @param array $userIds
 	 * @param array $pageIds
 	 * @return array [ <page_id> => [ <user_id1>, <user_id2>, ...], ... ]
@@ -257,7 +351,16 @@ class NonMinorEdit implements IMechanism {
 
 	/**
 	 * @param array $userIds
-	 * @return array
+	 * @return array Array with such structure:
+	 * 	[
+	 * 	  <rev_id> =>
+	 *		[
+	 * 			<user_id1> => <read_timestamp1>,
+	 * 			<user_id2> => <read_timestamp2>,
+	 * 			...
+	 * 		],
+	 * 	  ...
+	 * 	]
 	 */
 	private function getUserReadRevisions( $userIds = [] ) {
 		$conds = [];
