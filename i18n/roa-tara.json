@@ -42,5 +42,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: è confermate 'a letture d'a pàgene $1 (revisione $2) sus a $3",
 	"action-readconfirmationremind": "arrecuèrde le utinde ca onna confermà ca onne lette 'a pàgene",
 	"right-readconfirmationremind": "Arrecuèrde le utinde ca onna confermà ca onne lette 'a pàgene",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(cumme de $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(cumme de $1)",
+	"bs-readconfirmation-uto-task-header": "Conferme de letture cercate",
+	"bs-readconfirmation-uto-task-body-diff": "'Ndruche le cangiaminde da l'urtema conferme de letture"
 }
