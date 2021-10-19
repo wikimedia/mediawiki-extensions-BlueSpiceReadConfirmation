@@ -8,6 +8,7 @@ use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\PageAssignments\Data\Record;
 use BlueSpice\PageAssignments\TitleTarget;
 use BlueSpice\ReadConfirmation\IMechanism;
+use BlueSpice\ReadConfirmation\Notifications\DailyRemind;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
 use MediaWiki\MediaWikiServices;
 use Title;
@@ -107,7 +108,7 @@ class NonMinorEdit implements IMechanism {
 		$userAgent = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 		foreach ( $titles as $title ) {
-			$this->notify( $title, $userAgent );
+			$this->notifyDaily( $title, $userAgent );
 		}
 	}
 
@@ -137,6 +138,23 @@ class NonMinorEdit implements IMechanism {
 		}
 
 		return $notifiedUsers;
+	}
+
+	/**
+	 * @param Title $title
+	 * @param User $userAgent
+	 * @return bool
+	 */
+	private function notifyDaily( Title $title, User $userAgent ) {
+		$target = $this->getTargetFromTitle( $title );
+		if ( $target === false ) {
+			return false;
+		}
+
+		$notifyUsers = $this->getNotifyUsers( $target );
+		$notification = new DailyRemind( $userAgent, $title, [], $notifyUsers );
+		$this->notificationsManager->getNotifier()->notify( $notification );
+		return true;
 	}
 
 	/**
