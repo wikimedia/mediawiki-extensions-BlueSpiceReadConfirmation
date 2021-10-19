@@ -3,6 +3,7 @@
 namespace BlueSpice\ReadConfirmation\Notifications;
 
 use BlueSpice\NotificationManager;
+use BlueSpice\ReadConfirmation\Notifications\PresentationModel\DailyRemind;
 
 class Registrator {
 
@@ -43,6 +44,13 @@ class Registrator {
 				'web-body-params' => [
 					'agent', 'realname', 'title'
 				],
+			]
+		);
+		$notificationsManager->registerNotification(
+			'bs-readconfirmation-remind-daily',
+			[
+				'category' => 'bs-readconfirmation-cat',
+				'presentation-model' => DailyRemind::class
 			]
 		);
 	}
