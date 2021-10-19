@@ -2,8 +2,10 @@
 
 namespace BlueSpice\ReadConfirmation\Mechanism;
 
+use BlueSpice\Data\ReaderParams;
 use BlueSpice\NotificationManager;
 use BlueSpice\PageAssignments\AssignmentFactory;
+use BlueSpice\PageAssignments\Data\Record;
 use BlueSpice\PageAssignments\TitleTarget;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
@@ -30,14 +32,33 @@ class NonMinorEdit implements IMechanism {
 	private $enabledNamespaces;
 
 	/**
+	 *
+	 * @var AssignmentFactory
+	 */
+	protected $assignmentFactory = null;
+
+	/**
+	 * @var NotificationManager
+	 */
+	protected $notificationsManager = null;
+
+	/**
 	 * @return NonMinorEdit
 	 */
 	public static function factory() {
 		global $wgNamespacesWithEnabledReadConfirmation;
 		$dbLoadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
+		$assignmentFactory = MediaWikiServices::getInstance()->getService(
+			'BSPageAssignmentsAssignmentFactory'
+		);
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 		return new self(
 			$dbLoadBalancer,
-			$wgNamespacesWithEnabledReadConfirmation
+			$wgNamespacesWithEnabledReadConfirmation,
+			$assignmentFactory,
+			$notificationsManager
 		);
 	}
 
@@ -45,10 +66,15 @@ class NonMinorEdit implements IMechanism {
 	 * NonMinorEdit constructor.
 	 * @param LoadBalancer $dbLoadBalancer
 	 * @param array $enabledNamespaces
+	 * @param AssignmentFactory $assignmentFactory
+	 * @param NotificationManager $notificationsManager
 	 */
-	protected function __construct( $dbLoadBalancer, $enabledNamespaces ) {
+	protected function __construct( $dbLoadBalancer, $enabledNamespaces, $assignmentFactory,
+		$notificationsManager ) {
 		$this->dbLoadBalancer = $dbLoadBalancer;
 		$this->enabledNamespaces = $enabledNamespaces;
+		$this->assignmentFactory = $assignmentFactory;
+		$this->notificationsManager = $notificationsManager;
 	}
 
 	/**
@@ -61,6 +87,28 @@ class NonMinorEdit implements IMechanism {
 	 * @return void
 	 */
 	public function autoNotify() {
+		$titles = [];
+		$recordSet = $this->assignmentFactory->getStore()->getReader()->read(
+			new ReaderParams( [
+				ReaderParams::PARAM_LIMIT => ReaderParams::LIMIT_INFINITE
+			] )
+		);
+		foreach ( $recordSet->getRecords() as $record ) {
+			$id = $record->get( Record::PAGE_ID, 0 );
+			if ( $id < 1 || isset( $titles[$id] ) ) {
+				continue;
+			}
+			$title = Title::newFromID( $id );
+			if ( !$title || !$this->isNamespaceEnabled( $title ) ) {
+				continue;
+			}
+			$titles[$id] = $title;
+		}
+		$userAgent = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getMaintenanceUser()->getUser();
+		foreach ( $titles as $title ) {
+			$this->notify( $title, $userAgent );
+		}
 	}
 
 	/**
@@ -73,14 +121,10 @@ class NonMinorEdit implements IMechanism {
 		if ( $target === false ) {
 			return false;
 		}
-		/** @var NotificationManager $notificationsManager */
-		$notificationsManager = MediaWikiServices::getInstance()->getService(
-			'BSNotificationManager'
-		);
-		$notifier = $notificationsManager->getNotifier();
+
 		$notifyUsers = $this->getNotifyUsers( $target );
 		$notification = new Remind( $userAgent, $title, [], $notifyUsers );
-		$notifier->notify( $notification );
+		$this->notificationsManager->getNotifier()->notify( $notification );
 
 		$notifiedUsers = [];
 		foreach ( $notifyUsers as $userId ) {
@@ -308,7 +352,7 @@ class NonMinorEdit implements IMechanism {
 		}
 
 		/** @var TitleTarget $target */
-		$target = $this->getAssignmentFactory()->newFromTargetTitle( $title );
+		$target = $this->assignmentFactory->newFromTargetTitle( $title );
 		if ( $target === false || empty( $target->getAssignedUserIDs() ) ) {
 			return false;
 		}
@@ -396,16 +440,6 @@ class NonMinorEdit implements IMechanism {
 			return true;
 		}
 		return false;
-	}
-
-	/**
-	 * @return AssignmentFactory
-	 */
-	private function getAssignmentFactory() {
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSPageAssignmentsAssignmentFactory'
-		);
-		return $factory;
 	}
 
 	/**
