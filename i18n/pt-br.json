@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"McDutchie"
 		]
 	},
 	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura para uma página",

@@ -1,8 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Megakott"
 		]
 	},
-	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений"
+	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений",
+	"bs-readconfirmation-column-read": "Читать?",
+	"bs-readconfirmation-column-read-at": "Прочитано",
+	"bs-readconfirmation-not-read": "не прочитано",
+	"bs-readconfirmation-confirm-read-button-label": "Подтвердить",
+	"bs-readconfirmation-action-apiread-confirm-description": "Отметить $1 как прочитано",
+	"bs-readconfirmation-disabled-ns-short": "Выключен",
+	"bs-readconfirmation-graphicallist-btn-read": "Читать",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)"
 }

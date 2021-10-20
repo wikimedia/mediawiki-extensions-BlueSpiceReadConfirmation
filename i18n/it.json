@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"Stefano",
 			"ValeJappo"
 		]
 	},
@@ -9,5 +10,11 @@
 	"bs-readconfirmation-action-apiread-confirm-description": "Segna $1 come letto",
 	"notification-bs-readconfirmation-remind-summary": "$1 ti ricorda di leggere $3",
 	"bs-readconfirmation-disabled-ns-short": "Disattivato",
-	"bs-readconfirmation-graphicallist-btn-read": "Leggi"
+	"bs-readconfirmation-graphicallist-btn-read": "Leggi",
+	"bs-readconfirmation-action-remind-confirm": "Richiedere conferma di lettura?",
+	"bs-readconfirmation-confirm-read-heading": "Conferma di lettura",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Sì, ho letto la pagina per intero.",
+	"echo-category-title-bs-readconfirmation-cat": "Conferma di lettura",
+	"bs-readconfirmation-label-ns-manager": "Conferma di lettura",
+	"bs-readconfirmation-disabled-ns": "Richiesta di lettura non abilitata"
 }
