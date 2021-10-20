@@ -3,13 +3,14 @@
 		"authors": [
 			"Golmore",
 			"Gomoko",
+			"McDutchie",
 			"Thibaut120094",
 			"Verdy p"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
 	"bs-readconfirmation-column-read": "Lu ?",
-	"bs-readconfirmation-column-read-at": "Poursuivre la lecture",
+	"bs-readconfirmation-column-read-at": "Lu le",
 	"bs-readconfirmation-not-read": "non lu",
 	"bs-readconfirmation-action-remind": "Requête de confirmation de lecture",
 	"bs-readconfirmation-action-log": "Journal de confirmation de lecture",
@@ -45,5 +46,7 @@
 	"action-readconfirmationremind": "rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"right-readconfirmationremind": "Rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"logeventslist-bs-readconfirmation-log": "Lire le journal de confirmation",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)",
+	"bs-readconfirmation-uto-task-header": "Confirmation de lecture obligatoire",
+	"bs-readconfirmation-uto-task-body-diff": "Voir les modifications depuis la dernière confirmation de lecture"
 }

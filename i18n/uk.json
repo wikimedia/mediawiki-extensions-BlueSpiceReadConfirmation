@@ -44,5 +44,7 @@
 	"action-readconfirmationremind": "нагадування користувачам, що вони мають підтвердити прочитання сторінки",
 	"right-readconfirmationremind": "Нагадування користувачам, що вони мають підтвердити прочитання сторінки",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(станом на $1)",
-	"logeventslist-bs-readconfirmation-log": "Журнал підтвердження прочитань"
+	"logeventslist-bs-readconfirmation-log": "Журнал підтвердження прочитань",
+	"bs-readconfirmation-uto-task-header": "Потрібне підтвердження читання",
+	"bs-readconfirmation-uto-task-body-diff": "Переглянути зміни після підтвердження останнього читання"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Leonid Verhovskij",
+			"McDutchie",
 			"Mglaser",
 			"Robert Vogel"
 		]
@@ -30,7 +31,7 @@
 	"log-name-bs-readconfirmation": "Lesebestätigungs-Logbuch",
 	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch",
 	"log-description-bs-readconfirmation": "Logbuch über Lesebestätigungen",
-	"log-show-hide-bs-readconfirmation": "$1 Lesebestätigungs-Logbuch",
+	"log-show-hide-bs-readconfirmation": "Lesebestätigungs-Logbuch $1",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|hat}} bestätigt, die Seite $3 gelesen zu haben",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|hat}} $4 aufgefordert, eine Lesebestätigung für die Seite $3 abzugeben",
 	"apihelp-bs-readconfirmation-tasks-summary": "API-Endpunkt für die Erweiterung Lesebestätigung",

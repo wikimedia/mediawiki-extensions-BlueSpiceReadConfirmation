@@ -3,7 +3,8 @@
 		"authors": [
 			")8",
 			"Lakejason0",
-			"沈澄心"
+			"沈澄心",
+			"落花有意12138"
 		]
 	},
 	"bs-readconfirmation-confirm-read-button-label": "确认",
@@ -12,5 +13,8 @@
 	"bs-readconfirmation-column-read": "已读取？",
 	"bs-readconfirmation-action-apiread-confirm-description": "标记$1为已读",
 	"bs-readconfirmation-graphicallist-btn-read": "阅读",
-	"bs-readconfirmation-api-error-no-non-minor-revision": "找不到修订版本"
+	"bs-readconfirmation-api-error-no-non-minor-revision": "找不到修订版本",
+	"bs-readconfirmation-column-read-at": "继续读取",
+	"bs-readconfirmation-not-read": "未读取",
+	"bs-readconfirmation-action-remind": "请求读取允许"
 }
