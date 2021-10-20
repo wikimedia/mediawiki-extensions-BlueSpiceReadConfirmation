@@ -42,5 +42,7 @@
 	"bs-readconfirmation-api-error-cant-confirm": "Non ge pozze processà 'a conferme de letture pe sta vôsce",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Avvisame quanne agghie apirte 'na conferme de letture",
 	"logeventslist-bs-readconfirmation-log": "Archivije de le conferme de letture",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(cumme de $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(cumme de $1)",
+	"bs-readconfirmation-uto-task-header": "Conferme de letture cercate",
+	"bs-readconfirmation-uto-task-body-diff": "'Ndruche le cangiaminde da l'urtema conferme de letture"
 }

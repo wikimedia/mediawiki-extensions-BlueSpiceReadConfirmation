@@ -46,5 +46,7 @@
 	"bs-readconfirmation-api-error-cant-confirm": "Impossible de traiter la confirmation de lecture pour cette page",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Me notifier quand j’ai des confirmations de lecture ouvertes",
 	"logeventslist-bs-readconfirmation-log": "Lire le journal de confirmation",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)",
+	"bs-readconfirmation-uto-task-header": "Confirmation de lecture obligatoire",
+	"bs-readconfirmation-uto-task-body-diff": "Voir les modifications depuis la dernière confirmation de lecture"
 }
