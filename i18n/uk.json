@@ -44,5 +44,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: ви підтвердили прочитання сторінки $1 (версія $2) $3",
 	"action-readconfirmationremind": "нагадування користувачам, що вони мають підтвердити прочитання сторінки",
 	"right-readconfirmationremind": "Нагадування користувачам, що вони мають підтвердити прочитання сторінки",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(станом на $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(станом на $1)",
+	"bs-readconfirmation-uto-task-header": "Потрібне підтвердження читання",
+	"bs-readconfirmation-uto-task-body-diff": "Переглянути зміни після підтвердження останнього читання"
 }
