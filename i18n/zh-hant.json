@@ -42,5 +42,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation：您已確認在$3閱讀了頁面$1（修訂：$2）",
 	"action-readconfirmationremind": "提醒使用者他們需確認已閱讀過頁面",
 	"right-readconfirmationremind": "提醒使用者他們需確認已讀取過頁面",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "（截至 $1）"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "（截至 $1）",
+	"bs-readconfirmation-uto-task-header": "需要閱讀確認",
+	"bs-readconfirmation-uto-task-body-diff": "查看自上一次閱讀確認後的更改"
 }
