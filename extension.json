@@ -43,7 +43,8 @@
 	"requires": {
 		"MediaWiki": ">= 1.36.0",
 		"extensions": {
-			"BlueSpiceFoundation": ">= 4.1"
+			"BlueSpiceFoundation": ">= 4.1",
+			"BlueSpicePageAssignments": ">= 4.1"
 		}
 	},
 	"TestAutoloadNamespaces": {
