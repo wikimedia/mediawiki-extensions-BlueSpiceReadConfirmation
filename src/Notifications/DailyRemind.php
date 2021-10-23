@@ -23,7 +23,7 @@ class DailyRemind extends BaseNotification {
 
 	/**
 	 *
-	 * @return type
+	 * @return array
 	 */
 	public function getParams() {
 		return array_merge( parent::getParams(), [
