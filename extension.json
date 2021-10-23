@@ -43,7 +43,8 @@
 	"requires": {
 		"MediaWiki": "~1.31",
 		"extensions": {
-			"BlueSpiceFoundation": "~3.2"
+			"BlueSpiceFoundation": "~3.2",
+			"BlueSpicePageAssignments": "~3.2"
 		}
 	},
 	"AutoloadNamespaces": {
