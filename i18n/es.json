@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Avengium",
 			"Canaan9801",
 			"Fitoschido",
 			"Madamebiblio"
@@ -18,6 +19,9 @@
 	"bs-readconfirmation-api-error-cant-confirm": "No se puede procesar la confirmación de lectura de esta página",
 	"bs-readconfirmation-api-error-no-page": "No se indicó ninguna página",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmación de lectura",
+	"notification-bs-readconfirmation-remind-daily-summary": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Confirme que ha leído $1.",
 	"log-name-bs-readconfirmation": "Registro de confirmaciones de lectura",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|ha}} pedido que el usuario $4 confirme la lectura del artículo $3",
 	"bs-readconfirmation-label-ns-manager": "Confirmación de lectura",
