@@ -4,6 +4,7 @@
 			"Leonid Verhovskij",
 			"McDutchie",
 			"Mglaser",
+			"MrFraggle",
 			"Robert Vogel"
 		]
 	},
@@ -28,6 +29,9 @@
 	"notification-bs-readconfirmation-remind-summary": "$1 erinnert dich daran, $3 zu lesen",
 	"notification-bs-readconfirmation-remind-subject": "Erinnerung an Seite $2",
 	"notification-bs-readconfirmation-remind-body": "$1 möchte dich daran erinnern, für $2 eine Lesebestätigung abzugeben.",
+	"notification-bs-readconfirmation-remind-daily-summary": "Erinnerung zur Bestätigung, dass du $1 gelesen hast.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Erinnerung zur Bestätigung, dass du $1 gelesen hast.",
+	"notification-bs-readconfirmation-remind-daily-body": "Bitte bestätige, dass du $1 gelesen hast.",
 	"log-name-bs-readconfirmation": "Lesebestätigungs-Logbuch",
 	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch",
 	"log-description-bs-readconfirmation": "Logbuch über Lesebestätigungen",
