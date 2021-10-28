@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Avengium",
 			"Canaan9801",
 			"Fitoschido",
 			"Madamebiblio"
@@ -24,5 +25,10 @@
 	"bs-readconfirmation-api-error-not-active-ns": "La confirmación de lectura no está activada en este espacio de nombres",
 	"bs-readconfirmation-disabled-ns-short": "Desactivado",
 	"bs-readconfirmation-graphicallist-btn-read": "Lectura",
-	"right-readconfirmationremind": "Recordar a usuarios que tienen que confirmar que han leído la página"
+	"right-readconfirmationremind": "Recordar a usuarios que tienen que confirmar que han leído la página",
+	"notification-bs-readconfirmation-remind-daily-summary": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Confirme que ha leído $1.",
+	"bs-readconfirmation-uto-task-header": "Se requiere confirmación de lectura",
+	"bs-readconfirmation-uto-task-body-diff": "Ver cambios desde la última confirmación de lectura"
 }

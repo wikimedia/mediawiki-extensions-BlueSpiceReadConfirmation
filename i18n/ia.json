@@ -44,5 +44,8 @@
 	"right-readconfirmationremind": "Rememorar a usatores que debe confirmar de haber legite le pagina",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(de $1)",
 	"bs-readconfirmation-uto-task-header": "Confirmation de lectura requirite",
-	"bs-readconfirmation-uto-task-body-diff": "Vider le cambiamentos depost le ultime confirmation de lectura"
+	"bs-readconfirmation-uto-task-body-diff": "Vider le cambiamentos depost le ultime confirmation de lectura",
+	"notification-bs-readconfirmation-remind-daily-summary": "Rememoration pro confirmar que tu ha legite $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Rememoration pro confirmar que tu ha legite $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Per favor confirma que tu ha legite $1."
 }
