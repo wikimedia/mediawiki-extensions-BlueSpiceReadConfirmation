@@ -4,6 +4,7 @@
 			"Leonid Verhovskij",
 			"McDutchie",
 			"Mglaser",
+			"MrFraggle",
 			"Robert Vogel"
 		]
 	},
@@ -45,5 +46,8 @@
 	"action-readconfirmationremind": "Benutzer zu erinnern, dass sie das Lesen der Seite bestätigen müssen",
 	"right-readconfirmationremind": "Benutzer erinnern, dass sie das Lesen der Seite bestätigen müssen",
 	"logeventslist-bs-readconfirmation-log": "Lesebestätigungs-Logbuch",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(seit $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(seit $1)",
+	"notification-bs-readconfirmation-remind-daily-summary": "Erinnerung zur Bestätigung, dass du $1 gelesen hast.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Erinnerung zur Bestätigung, dass du $1 gelesen hast.",
+	"notification-bs-readconfirmation-remind-daily-body": "Bitte bestätige, dass du $1 gelesen hast."
 }
