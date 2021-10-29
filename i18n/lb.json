@@ -11,6 +11,7 @@
 	"bs-readconfirmation-confirm-read-button-label": "Confirméieren",
 	"bs-readconfirmation-action-apiread-confirm-description": "$1 als gelies markéieren",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Keng Versioune fonnt",
+	"notification-bs-readconfirmation-remind-daily-body": "Confirméiert wgl., datt Dir $1 geliest hutt.",
 	"bs-readconfirmation-disabled-ns-short": "Desaktivéiert",
 	"bs-readconfirmation-graphicallist-btn-read": "Liesen"
 }
