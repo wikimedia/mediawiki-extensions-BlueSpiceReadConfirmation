@@ -55,7 +55,7 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 	 */
 	public function onUnifiedTaskOverviewGetTaskDescriptors( &$descriptors, $user ) {
 		$readConfirmationsDescriptors = $this->getReadConfirmationTasks( $user );
-		$descriptors += $readConfirmationsDescriptors;
+		$descriptors = array_merge( $descriptors, $readConfirmationsDescriptors );
 	}
 
 	/**
