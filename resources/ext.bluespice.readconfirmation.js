@@ -6,9 +6,16 @@
 		var html =
 			'<div id="bs-readconfirmation-container">' +
 				'<h3>{0}</h3>' +
-				'<input type="checkbox" id="bs-rc-cb-ack"/>' +
-				'<label for="bs-rc-cb-ack">{1}</label>' +
-				'<button disabled id="bs-rc-btn-ack">{2}</button>' +
+				'<table><tr>' +
+					'<td>' +
+					'<div class="mw-ui-checkbox">' +
+						'<input type="checkbox" id="bs-rc-cb-ack"/>' +
+						'<label for="bs-rc-cb-ack">{1}</label>' +
+					'</div>' +
+				'</td><td>' +
+					'<button disabled id="bs-rc-btn-ack" class="mw-ui-button mw-ui-progressive">{2}</button>' +
+					'</td>' +
+				'</tr><table>' +
 			'</div>';
 
 
@@ -79,7 +86,9 @@
 		bs.api.tasks.execSilent( 'readconfirmation', 'check', data )
 			.done(function( response, xhr ){
 				if( response.success && response.payload.userHasConfirmed === false ) {
-					_buildMessage( curPageId );
+					mw.loader.using( 'mediawiki.ui.checkbox' ).done( function() {
+						_buildMessage( curPageId );
+					});
 				}
 			});
 	};
