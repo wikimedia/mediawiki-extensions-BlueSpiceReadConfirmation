@@ -4,12 +4,13 @@
 			"Golmore",
 			"Gomoko",
 			"Thibaut120094",
-			"Verdy p"
+			"Verdy p",
+			"McDutchie"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
 	"bs-readconfirmation-column-read": "Lu ?",
-	"bs-readconfirmation-column-read-at": "Poursuivre la lecture",
+	"bs-readconfirmation-column-read-at": "Lu le",
 	"bs-readconfirmation-not-read": "non lu",
 	"bs-readconfirmation-action-remind": "Requête de confirmation de lecture",
 	"bs-readconfirmation-action-log": "Journal de confirmation de lecture",
