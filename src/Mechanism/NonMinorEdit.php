@@ -219,7 +219,7 @@ class NonMinorEdit implements IMechanism {
 	}
 
 	/**
-	 * Gets THE LATEST read revisions of each page for each user specified
+	 * Gets THE LATEST read pages revisions for each user specified
 	 *
 	 * @param array $userIds List of user IDs
 	 * @return array Array with such structure:
