@@ -41,11 +41,11 @@ interface IMechanism {
 	public function wireUpNotificationTrigger();
 
 	/**
-	 * Gets all read confirmation data related to specified pages and users.
+	 * Gets all read confirmation data related to specified users.
 	 * For each user specified there will be information about all pages which he marked as "read".
 	 * For all of these pages will be returned page's the latest revision, and the latest revision,
 	 * marked as "read" by user.
-	 * Page will not be included in the list, if none of its revisions was marked as "read".
+	 * Page will not be included in the list if none of its revisions was marked as "read".
 	 *
 	 * @param array $userIds List of user IDs
 	 * @return array Array with such structure:

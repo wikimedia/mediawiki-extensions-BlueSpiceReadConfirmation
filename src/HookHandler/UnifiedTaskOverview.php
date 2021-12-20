@@ -5,6 +5,7 @@ namespace BlueSpice\ReadConfirmation\HookHandler;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
 use BlueSpice\ReadConfirmation\UnifiedTaskOverview\ReadConfirmationDescriptor;
+use Config;
 use MediaWiki\Extension\UnifiedTaskOverview\Hook\GetTaskDescriptors;
 use MediaWiki\User\UserGroupManager;
 use Title;
@@ -36,18 +37,49 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 	private $readConfirmationMechanism;
 
 	/**
+	 * Array with namespaces with enabled "Read Confirmation"
+	 *
+	 * @var array
+	 */
+	private $enabledNamespaces;
+
+	/**
 	 * @param ILoadBalancer $loadBalancer
 	 * @param UserGroupManager $groupManager
 	 * @param MechanismFactory $readConfirmationMechanismFactory
+	 * @param Config $mainConfig
+	 * @return UnifiedTaskOverview
+	 */
+	public static function factory(
+		ILoadBalancer $loadBalancer,
+		UserGroupManager $groupManager,
+		MechanismFactory $readConfirmationMechanismFactory,
+		Config $mainConfig
+	): UnifiedTaskOverview {
+		return new static(
+			$loadBalancer,
+			$groupManager,
+			$readConfirmationMechanismFactory,
+			$mainConfig->get( 'NamespacesWithEnabledReadConfirmation' )
+		);
+	}
+
+	/**
+	 * @param ILoadBalancer $loadBalancer
+	 * @param UserGroupManager $groupManager
+	 * @param MechanismFactory $readConfirmationMechanismFactory
+	 * @param array $enabledNamespaces
 	 */
 	public function __construct(
 		ILoadBalancer $loadBalancer,
 		UserGroupManager $groupManager,
-		MechanismFactory $readConfirmationMechanismFactory
+		MechanismFactory $readConfirmationMechanismFactory,
+		array $enabledNamespaces
 	) {
 		$this->dbr = $loadBalancer->getConnection( DB_REPLICA );
 		$this->groupManager = $groupManager;
 		$this->readConfirmationMechanism = $readConfirmationMechanismFactory->getMechanismInstance();
+		$this->enabledNamespaces = $enabledNamespaces;
 	}
 
 	/**
@@ -79,8 +111,7 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 
 		$userId = $user->getId();
 		$readConfirmations = $this->readConfirmationMechanism->getLatestReadConfirmations(
-			[ $userId ],
-			$userAssignedPages
+			[ $userId ]
 		);
 		$userReadConfirmations = $readConfirmations[$userId];
 
@@ -112,20 +143,28 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 
 	/**
 	 * Gets pages, which specified conditions (like usernames and user groups) are assigned to.
-	 * That means that they SHOULD mark such pages as read.
+	 * That means that they SHOULD mark such pages as read (if read confirmation is enabled for these pages namespaces).
 	 * But it gives no information regarding if pages are already marked as read.
 	 *
-	 * @param array $conds String keys of assignees, whose assigned pages will be looked for.
-	 *	Can be either array of usernames or array of user groups (or combination of usernames and user groups)
+	 * @param array $conds Conditions for lookup in "bs_pageassignments" table
 	 * @return int[] Array with pages IDs, which assignees are assigned to
+	 *
+	 * @see \BlueSpice\ReadConfirmation\HookHandler\UnifiedTaskOverview::getReadConfirmationTasks()
 	 */
 	private function getAssignedPagesFor( array $conds ): array {
+		if ( $this->enabledNamespaces ) {
+			$conds['page_namespace'] = array_keys( $this->enabledNamespaces );
+		}
+
 		// There can be a case when read confirmation task is already assigned to both user and
 		// user group (which user is member of). There also can be a case when user is member of
 		// several groups and all (or just some of them) are assigned to a page.
 		// So we use "DISTINCT" to avoid duplicates
 		$res = $this->dbr->select(
-			'bs_pageassignments',
+			[
+				'page',
+				'bs_pageassignments'
+			],
 			[
 				'pa_page_id'
 			],
@@ -133,6 +172,11 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 			__METHOD__,
 			[
 				'DISTINCT'
+			],
+			[
+				'page' => [
+					'INNER JOIN', 'page_id = pa_page_id'
+				]
 			]
 		);
 

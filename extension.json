@@ -155,8 +155,8 @@
 	},
 	"HookHandlers": {
 		"addUTOReadConfirmations": {
-			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\UnifiedTaskOverview",
-			"services": [ "DBLoadBalancer", "UserGroupManager", "BSReadConfirmationMechanismFactory" ]
+			"factory": "\\BlueSpice\\ReadConfirmation\\HookHandler\\UnifiedTaskOverview::factory",
+			"services": [ "DBLoadBalancer", "UserGroupManager", "BSReadConfirmationMechanismFactory", "MainConfig" ]
 		},
 		"skin": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\Skin"
