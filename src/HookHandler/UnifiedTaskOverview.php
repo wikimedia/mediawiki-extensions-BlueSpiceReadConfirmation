@@ -56,11 +56,16 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 		MechanismFactory $readConfirmationMechanismFactory,
 		Config $mainConfig
 	): UnifiedTaskOverview {
+		$enabledNamespaces = $mainConfig->get( 'NamespacesWithEnabledReadConfirmation' );
+		if ( $enabledNamespaces === null ) {
+			$enabledNamespaces = [];
+		}
+
 		return new static(
 			$loadBalancer,
 			$groupManager,
 			$readConfirmationMechanismFactory,
-			$mainConfig->get( 'NamespacesWithEnabledReadConfirmation' )
+			$enabledNamespaces
 		);
 	}
 
@@ -128,7 +133,7 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 				if ( $pageLatestRevId !== $userLatestReadId ) {
 					$readConfirmationTasks[] = new ReadConfirmationDescriptor( $title, $userLatestReadId );
 				} else {
-					// If marked as "read" revision is the latest - no task needed
+					// If marked as "read" revision is the latest - no task is needed
 				}
 
 				continue;
@@ -152,9 +157,11 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 	 * @see \BlueSpice\ReadConfirmation\HookHandler\UnifiedTaskOverview::getReadConfirmationTasks()
 	 */
 	private function getAssignedPagesFor( array $conds ): array {
-		if ( $this->enabledNamespaces ) {
-			$conds['page_namespace'] = array_keys( $this->enabledNamespaces );
+		if ( !$this->enabledNamespaces ) {
+			return [];
 		}
+
+		$conds['page_namespace'] = array_keys( $this->enabledNamespaces );
 
 		// There can be a case when read confirmation task is already assigned to both user and
 		// user group (which user is member of). There also can be a case when user is member of
