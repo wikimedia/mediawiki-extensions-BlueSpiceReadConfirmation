@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Can"
 		]
 	},
 	"bs-readconfirmation-desc": "Bir sayfa için okuma onaylarını toplama uzantısı",
@@ -26,7 +27,11 @@
 	"notification-bs-readconfirmation-remind-summary": "$1 size $3 okumanızı hatırlatır",
 	"notification-bs-readconfirmation-remind-subject": "$2 sayfa hatırlatması",
 	"notification-bs-readconfirmation-remind-body": "$1, $2 okuduğunuzu onaylamanızı hatırlatmak istiyor.",
+	"notification-bs-readconfirmation-remind-daily-summary": "$1 sayfasını okuduğunuza doğrulamaya ilişkin hatırlatıcı.",
+	"notification-bs-readconfirmation-remind-daily-subject": "$1 sayfasını okuduğunuza doğrulamaya ilişkin hatırlatıcı.",
+	"notification-bs-readconfirmation-remind-daily-body": "Lütfen, $1 sayfasını okuduğunuzu onaylayın.",
 	"log-name-bs-readconfirmation": "Onay günlüğünü okuyun",
+	"logeventslist-bs-readconfirmation-log": "Onay günlüğünü okuyun",
 	"log-description-bs-readconfirmation": "Okuma onayları için günlük",
 	"log-show-hide-bs-readconfirmation": "$1 okuma onay günlüğü",
 	"logentry-bs-readconfirmation-confirm": "$1, $3 sayfayı okuduğunu {{GENDER:$2|onayladı}}",
@@ -42,6 +47,6 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: $3 üzerinde $1 (revizyon $2) sayfasını okudunuz",
 	"action-readconfirmationremind": "kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
 	"right-readconfirmationremind": "Kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
-	"logeventslist-bs-readconfirmation-log": "Onay günlüğünü okuyun",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)",
+	"bs-readconfirmation-uto-task-header": "Okuma onayı gerekiyor"
 }
