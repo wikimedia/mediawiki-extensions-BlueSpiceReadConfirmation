@@ -26,6 +26,9 @@
 	"notification-bs-readconfirmation-remind-summary": "$1 recorda-lhe para ler $3",
 	"notification-bs-readconfirmation-remind-subject": "Aviso para a página $2",
 	"notification-bs-readconfirmation-remind-body": "$1 gostaria de recordar-lhe para confirmar que leu $2.",
+	"notification-bs-readconfirmation-remind-daily-summary": "Lembrete para confirmar que leu $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Lembrete para confirmar que leu $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Confirme que leu $1, por favor.",
 	"log-name-bs-readconfirmation": "Registo de confirmações de leitura",
 	"logeventslist-bs-readconfirmation-log": "Registo de confirmações de leitura",
 	"log-description-bs-readconfirmation": "Registo para confirmações de leitura",
@@ -43,5 +46,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: você confirmou ter lido a página $1 (revisão $2) a $3",
 	"action-readconfirmationremind": "recordar aos utilizadores que têm de confirmar ter lido a página",
 	"right-readconfirmationremind": "Recordar aos utilizadores que têm de confirmar ter lido a página",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(em $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(em $1)",
+	"bs-readconfirmation-uto-task-header": "Confirmação de leitura obrigatória",
+	"bs-readconfirmation-uto-task-body-diff": "Ver mudanças desde a última confirmação de leitura"
 }
