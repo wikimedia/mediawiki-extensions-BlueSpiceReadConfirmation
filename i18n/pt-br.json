@@ -3,7 +3,8 @@
 		"authors": [
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
-			"McDutchie"
+			"McDutchie",
+			"Juan90264"
 		]
 	},
 	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura para uma página",
@@ -27,7 +28,11 @@
 	"notification-bs-readconfirmation-remind-summary": "$1 lembra você para ler $3",
 	"notification-bs-readconfirmation-remind-subject": "Lembrete para a página $2",
 	"notification-bs-readconfirmation-remind-body": "$1 gostaria de lembrá-lo para confirmar que você leu $2.",
+	"notification-bs-readconfirmation-remind-daily-summary": "Lembrete para confirmar que você leu $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Lembrete para confirmar que leu $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Por favor, confirme que você leu $1.",
 	"log-name-bs-readconfirmation": "Registro de confirmação de leitura",
+	"logeventslist-bs-readconfirmation-log": "Registro de confirmação de leitura",
 	"log-description-bs-readconfirmation": "Registro para confirmações de leitura",
 	"log-show-hide-bs-readconfirmation": "$1 leu o registro de confirmação",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|tem}} confirmado ter lido a página $3",
@@ -43,6 +48,7 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Você confirmou a leitura da página $1 (revisão $2) em $3",
 	"action-readconfirmationremind": "lembrar aos usuários que eles precisam confirmar para ler a página",
 	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página",
-	"logeventslist-bs-readconfirmation-log": "Registro de confirmação de leitura",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)",
+	"bs-readconfirmation-uto-task-header": "Confirmação de leitura obrigatória",
+	"bs-readconfirmation-uto-task-body-diff": "Ver as alterações desde a última confirmação de leitura"
 }
