@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Can",
 			"MuratTheTurkish"
 		]
 	},
@@ -43,5 +44,9 @@
 	"action-readconfirmationremind": "kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
 	"right-readconfirmationremind": "Kullanıcılara sayfayı okuduklarını onaylamaları gerektiğini hatırlat",
 	"logeventslist-bs-readconfirmation-log": "Onay günlüğünü okuyun",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 itibariyle)",
+	"notification-bs-readconfirmation-remind-daily-summary": "$1 sayfasını okuduğunuza doğrulamaya ilişkin hatırlatıcı.",
+	"notification-bs-readconfirmation-remind-daily-subject": "$1 sayfasını okuduğunuza doğrulamaya ilişkin hatırlatıcı.",
+	"notification-bs-readconfirmation-remind-daily-body": "Lütfen, $1 sayfasını okuduğunuzu onaylayın.",
+	"bs-readconfirmation-uto-task-header": "Okuma onayı gerekiyor"
 }
