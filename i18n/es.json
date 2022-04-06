@@ -3,9 +3,12 @@
 		"authors": [
 			"Canaan9801",
 			"Fitoschido",
-			"Madamebiblio"
+			"Madamebiblio",
+			"Avengium",
+			"DiegoAmbrocio"
 		]
 	},
+	"bs-readconfirmation-column-read": "¿Leer?",
 	"bs-readconfirmation-column-read-at": "Leída el",
 	"bs-readconfirmation-not-read": "no leída",
 	"bs-readconfirmation-action-remind": "Pedir confirmación de lectura",
