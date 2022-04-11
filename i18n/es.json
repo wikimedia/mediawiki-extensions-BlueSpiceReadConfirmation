@@ -4,9 +4,11 @@
 			"Avengium",
 			"Canaan9801",
 			"Fitoschido",
-			"Madamebiblio"
+			"Madamebiblio",
+			"DiegoAmbrocio"
 		]
 	},
+	"bs-readconfirmation-column-read": "¿Leer?",
 	"bs-readconfirmation-column-read-at": "Leída el",
 	"bs-readconfirmation-not-read": "no leída",
 	"bs-readconfirmation-action-remind": "Pedir confirmación de lectura",
@@ -19,6 +21,9 @@
 	"bs-readconfirmation-api-error-cant-confirm": "No se puede procesar la confirmación de lectura de esta página",
 	"bs-readconfirmation-api-error-no-page": "No se indicó ninguna página",
 	"echo-category-title-bs-readconfirmation-cat": "Confirmación de lectura",
+	"notification-bs-readconfirmation-remind-daily-summary": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-subject": "Recordatorio para confirmar que has leído $1.",
+	"notification-bs-readconfirmation-remind-daily-body": "Confirme que ha leído $1.",
 	"log-name-bs-readconfirmation": "Registro de confirmaciones de lectura",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|ha}} pedido que el usuario $4 confirme la lectura del artículo $3",
 	"bs-readconfirmation-label-ns-manager": "Confirmación de lectura",
@@ -26,9 +31,6 @@
 	"bs-readconfirmation-disabled-ns-short": "Desactivado",
 	"bs-readconfirmation-graphicallist-btn-read": "Lectura",
 	"right-readconfirmationremind": "Recordar a usuarios que tienen que confirmar que han leído la página",
-	"notification-bs-readconfirmation-remind-daily-summary": "Recordatorio para confirmar que has leído $1.",
-	"notification-bs-readconfirmation-remind-daily-subject": "Recordatorio para confirmar que has leído $1.",
-	"notification-bs-readconfirmation-remind-daily-body": "Confirme que ha leído $1.",
 	"bs-readconfirmation-uto-task-header": "Se requiere confirmación de lectura",
 	"bs-readconfirmation-uto-task-body-diff": "Ver cambios desde la última confirmación de lectura"
 }
