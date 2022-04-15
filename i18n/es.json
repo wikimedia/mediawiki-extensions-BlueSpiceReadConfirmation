@@ -28,6 +28,7 @@
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Notificarme cuando tenga confirmaciones de lectura abiertas",
 	"notification-bs-readconfirmation-remind-summary": "$1 te recuerda que debes leer $3",
 	"notification-bs-readconfirmation-remind-subject": "Recordatorio para la página $2",
+	"notification-bs-readconfirmation-remind-body": "1$ le recuerda que debe confirmar que ha leído 2$.",
 	"notification-bs-readconfirmation-remind-daily-summary": "Recordatorio para confirmar que has leído $1.",
 	"notification-bs-readconfirmation-remind-daily-subject": "Recordatorio para confirmar que has leído $1.",
 	"notification-bs-readconfirmation-remind-daily-body": "Confirme que ha leído $1.",
