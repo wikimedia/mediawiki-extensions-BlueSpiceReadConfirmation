@@ -9,5 +9,6 @@
 	"notification-bs-readconfirmation-remind-subject": "ページ $2 のための注意喚起",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|}} はページ $3 を読んだことを確認しました。",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|}} がユーザー $4 にページ $3 を読んだことを確認するよう依頼しました。",
+	"bs-readconfirmation-disabled-ns-short": "無効",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 以降)"
 }
