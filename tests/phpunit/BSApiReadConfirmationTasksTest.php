@@ -6,7 +6,6 @@ use BlueSpice\Tests\BSApiTasksTestBase;
 use MediaWiki\MediaWikiServices;
 use Title;
 use User;
-use WikiPage;
 
 /**
  * @group Broken
@@ -135,7 +134,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 	 */
 	public function testConfirm() {
 		$oTitle = Title::newFromId( 1 );
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $oTitle );
 		$iPageID = $oTitle->getArticleID();
 		$oExecutingUser = self::$users['sysop']->user;
 
