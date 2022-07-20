@@ -11,5 +11,6 @@
 	"bs-readconfirmation-column-read-at": "خوانده‌شده در",
 	"bs-readconfirmation-not-read": "خوانده‌نشده",
 	"bs-readconfirmation-action-apiread-confirm-description": "علامت‌گذاری $1 به‌عنوان خوانده‌شده",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(تا $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(تا $1)",
+	"echo-category-title-bs-readconfirmation-cat": "تأییدیه خوانده‌شده"
 }
