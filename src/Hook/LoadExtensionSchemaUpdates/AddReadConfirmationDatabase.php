@@ -10,11 +10,12 @@ class AddReadConfirmationDatabase extends LoadExtensionSchemaUpdates {
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$dir = $this->getExtensionPath() . '/maintenance/db';
+		$dbType = $this->updater->getDB()->getType();
+		$dir = $this->getExtensionPath();
 
 		$this->updater->addExtensionTable(
 			'bs_readconfirmation',
-			"$dir/bs_readconfirmation.sql"
+			"$dir/maintenance/db/sql/$dbType/bs_readconfirmation-generated.sql"
 		);
 		return true;
 	}
