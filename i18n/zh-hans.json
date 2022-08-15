@@ -3,6 +3,7 @@
 		"authors": [
 			")8",
 			"Lakejason0",
+			"Wzl19371",
 			"沈澄心",
 			"落花有意12138"
 		]
@@ -16,5 +17,6 @@
 	"bs-readconfirmation-api-error-no-non-minor-revision": "找不到修订版本",
 	"bs-readconfirmation-column-read-at": "继续读取",
 	"bs-readconfirmation-not-read": "未读取",
-	"bs-readconfirmation-action-remind": "请求读取允许"
+	"bs-readconfirmation-action-remind": "请求读取允许",
+	"bs-readconfirmation-api-error-no-page": "未提供页面"
 }
