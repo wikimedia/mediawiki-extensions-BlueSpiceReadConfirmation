@@ -51,5 +51,6 @@
 	"right-readconfirmationremind": "{{doc-right|readconfirmationremind}}",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "Suffix to be appended to the entry on [[Special:Log]] when a revision information is available\n* $1 - a formatted timestamp",
 	"bs-readconfirmation-uto-task-header": "Header message for read confirmation user task in UnifiedTaskOverview",
-	"bs-readconfirmation-uto-task-body-diff": "Body message for read confirmation user task in UnifiedTaskOverview in case when there are some changes since the latest read revision"
+	"bs-readconfirmation-uto-task-body-diff": "Body message for read confirmation user task in UnifiedTaskOverview in case when there are some changes since the latest read revision",
+	"bs-readconfirmation-confirm-read-aria-description": "Aria descriptionto inform about requested read confirmation"
 }
