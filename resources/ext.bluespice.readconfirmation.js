@@ -9,7 +9,7 @@
 				'<table><tr>' +
 					'<td>' +
 					'<div class="mw-ui-checkbox">' +
-						'<input type="checkbox" id="bs-rc-cb-ack"/>' +
+						'<input type="checkbox" aria-description="{3}" id="bs-rc-cb-ack"/>' +
 						'<label for="bs-rc-cb-ack">{1}</label>' +
 					'</div>' +
 				'</td><td>' +
@@ -22,7 +22,8 @@
 		var $message = $( html.format(
 			mw.message( 'bs-readconfirmation-confirm-read-heading' ).plain(),
 			mw.message( 'bs-readconfirmation-confirm-read-checkbox-label' ).plain(),
-			mw.message( 'bs-readconfirmation-confirm-read-button-label' ).plain()
+			mw.message( 'bs-readconfirmation-confirm-read-button-label' ).plain(),
+			mw.message( 'bs-readconfirmation-confirm-read-aria-description' ).plain()
 		));
 
 		var $button = $message.find( '#bs-rc-btn-ack' );

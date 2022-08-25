@@ -51,5 +51,6 @@
 	"notification-bs-readconfirmation-remind-daily-subject": "Erinnerung zur Bestätigung, dass du $1 gelesen hast.",
 	"notification-bs-readconfirmation-remind-daily-body": "Bitte bestätige, dass du $1 gelesen hast.",
 	"bs-readconfirmation-uto-task-header": "Lesebestätigung angefordert",
-	"bs-readconfirmation-uto-task-body-diff": "Betrachte die Änderungen seit der letzten Lesebestätigung"
+	"bs-readconfirmation-uto-task-body-diff": "Betrachte die Änderungen seit der letzten Lesebestätigung",
+	"bs-readconfirmation-confirm-read-aria-description": "Lesebestätigung erbeten"
 }
