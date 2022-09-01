@@ -43,18 +43,18 @@ class NonMinorEdit implements IMechanism {
 	 */
 	protected $notificationsManager = null;
 
+	/** @var MediaWikiServices */
+	private $services = null;
+
 	/**
 	 * @return NonMinorEdit
 	 */
 	public static function factory() {
 		global $wgNamespacesWithEnabledReadConfirmation;
-		$dbLoadBalancer = MediaWikiServices::getInstance()->getDBLoadBalancer();
-		$assignmentFactory = MediaWikiServices::getInstance()->getService(
-			'BSPageAssignmentsAssignmentFactory'
-		);
-		$notificationsManager = MediaWikiServices::getInstance()->getService(
-			'BSNotificationManager'
-		);
+		$services = MediaWikiServices::getInstance();
+		$dbLoadBalancer = $services->getDBLoadBalancer();
+		$assignmentFactory = $services->getService( 'BSPageAssignmentsAssignmentFactory' );
+		$notificationsManager = $services->getService( 'BSNotificationManager' );
 		return new self(
 			$dbLoadBalancer,
 			$wgNamespacesWithEnabledReadConfirmation,
@@ -76,6 +76,7 @@ class NonMinorEdit implements IMechanism {
 		$this->enabledNamespaces = $enabledNamespaces;
 		$this->assignmentFactory = $assignmentFactory;
 		$this->notificationsManager = $notificationsManager;
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	/**
@@ -105,7 +106,7 @@ class NonMinorEdit implements IMechanism {
 			}
 			$titles[$id] = $title;
 		}
-		$userAgent = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$userAgent = $this->services->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 		foreach ( $titles as $title ) {
 			$this->notifyDaily( $title, $userAgent );
@@ -128,8 +129,9 @@ class NonMinorEdit implements IMechanism {
 		$this->notificationsManager->getNotifier()->notify( $notification );
 
 		$notifiedUsers = [];
+		$userFactory = $this->services->getUserFactory();
 		foreach ( $notifyUsers as $userId ) {
-			$user = User::newFromId( $userId );
+			$user = $userFactory->newFromId( $userId );
 			if ( !$user ) {
 				continue;
 			}
