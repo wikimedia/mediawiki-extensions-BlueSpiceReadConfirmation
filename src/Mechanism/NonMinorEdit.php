@@ -44,7 +44,7 @@ class NonMinorEdit implements IMechanism {
 	protected $notificationsManager = null;
 
 	/** @var MediaWikiServices */
-	private $services = null;
+	protected $services = null;
 
 	/**
 	 * @return NonMinorEdit
