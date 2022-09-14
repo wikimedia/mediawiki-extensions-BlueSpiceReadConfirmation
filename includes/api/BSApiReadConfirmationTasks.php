@@ -44,7 +44,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $result;
 		}
-		$revision = $this->getServices()->getRevisionStore()->getRevisionByTitle( $title );
+		$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
 		$revId = $revision ? $revision->getId() : 0;
 
 		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
@@ -84,7 +84,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $result;
 		}
-		$revision = $this->getServices()->getRevisionStore()->getRevisionByTitle( $title );
+		$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
 		$revId = $revision ? $revision->getId() : 0;
 
 		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
@@ -125,7 +125,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 		$userDisplayNames = [];
 		foreach ( $notifiedUsers as $notifiedUser ) {
-			$userDisplayNames[] = $this->getServices()->getService( 'BSUtilityFactory' )
+			$userDisplayNames[] = $this->services->getService( 'BSUtilityFactory' )
 				->getUserHelper( $notifiedUser )->getDisplayName();
 		}
 
@@ -230,9 +230,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 */
 	private function getMechanismInstance() {
 		/** @var MechanismFactory $factory */
-		$factory = $this->getServices()->getService(
-			'BSReadConfirmationMechanismFactory'
-		);
+		$factory = $this->services->getService( 'BSReadConfirmationMechanismFactory' );
 
 		return $factory->getMechanismInstance();
 	}
