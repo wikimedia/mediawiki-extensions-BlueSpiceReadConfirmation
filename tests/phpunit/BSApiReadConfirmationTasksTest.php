@@ -5,7 +5,6 @@ namespace BlueSpice\ReadConfirmation\Tests;
 use BlueSpice\Tests\BSApiTasksTestBase;
 use MediaWiki\MediaWikiServices;
 use Title;
-use User;
 
 /**
  * @group Broken
@@ -58,7 +57,8 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 	public function testCheck() {
 		$oTitle = Title::newFromId( 1 );
 		$iPageID = $oTitle->getArticleID();
-		$oExecutingUser = User::newFromName( 'Apitestsysop' );
+		$oExecutingUser = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( 'Apitestsysop' );
 
 		$oResponse = $this->executeTask(
 			'check',
