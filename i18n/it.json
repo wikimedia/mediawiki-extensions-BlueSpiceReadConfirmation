@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"GpieroMW",
 			"Stefano",
 			"ValeJappo"
 		]
@@ -16,5 +17,18 @@
 	"bs-readconfirmation-confirm-read-checkbox-label": "Sì, ho letto la pagina per intero.",
 	"echo-category-title-bs-readconfirmation-cat": "Conferma di lettura",
 	"bs-readconfirmation-label-ns-manager": "Conferma di lettura",
-	"bs-readconfirmation-disabled-ns": "Richiesta di lettura non abilitata"
+	"bs-readconfirmation-disabled-ns": "Richiesta di lettura non abilitata",
+	"bs-readconfirmation-desc": "Estensione per raccogliere conferme di lettura per una pagina",
+	"bs-readconfirmation-action-remind": "Richiedi conferma di lettura",
+	"bs-readconfirmation-api-error-cant-confirm": "Impossibile elaborare la conferma di lettura per questa pagina",
+	"bs-readconfirmation-api-error-no-non-minor-revision": "Non sono state trovate versioni",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "Avvisami quando ho aperto le conferme di lettura",
+	"notification-bs-readconfirmation-remind-subject": "Promemoria per pagina $2",
+	"log-name-bs-readconfirmation": "Leggi il registro di conferma",
+	"logeventslist-bs-readconfirmation-log": "Leggi il registro di conferma",
+	"bs-readconfirmation-api-error-not-active-ns": "La conferma di lettura non è abilitata per questo namespace",
+	"bs-readconfirmation-navigation-link-title": "Mostra una panoramica di tutte le conferme di lettura in sospeso",
+	"bs-readconfirmation-navigation-link-text": "Conferme di lettura richieste",
+	"right-readconfirmationremind": "Ricorda agli utenti che devono confermare di aver letto la pagina",
+	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura"
 }
