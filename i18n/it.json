@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
+			"Beta16",
 			"GpieroMW",
 			"Stefano",
 			"ValeJappo"
@@ -20,8 +21,8 @@
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Avvisami quando ho aperto le conferme di lettura",
 	"notification-bs-readconfirmation-remind-summary": "$1 ti ricorda di leggere $3",
 	"notification-bs-readconfirmation-remind-subject": "Promemoria per pagina $2",
-	"log-name-bs-readconfirmation": "Leggi il registro di conferma",
-	"logeventslist-bs-readconfirmation-log": "Leggi il registro di conferma",
+	"log-name-bs-readconfirmation": "Registro conferme di lettura",
+	"logeventslist-bs-readconfirmation-log": "Registro conferme di lettura",
 	"bs-readconfirmation-label-ns-manager": "Conferma di lettura",
 	"bs-readconfirmation-api-error-not-active-ns": "La conferma di lettura non è abilitata per questo namespace",
 	"bs-readconfirmation-disabled-ns": "Richiesta di lettura non abilitata",
