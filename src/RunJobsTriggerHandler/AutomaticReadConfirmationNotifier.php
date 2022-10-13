@@ -5,7 +5,6 @@ namespace BlueSpice\ReadConfirmation\RunJobsTriggerHandler;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
 use BlueSpice\RunJobsTriggerHandler;
-use MediaWiki\MediaWikiServices;
 
 class AutomaticReadConfirmationNotifier extends RunJobsTriggerHandler {
 
@@ -23,9 +22,7 @@ class AutomaticReadConfirmationNotifier extends RunJobsTriggerHandler {
 	 */
 	private function getReadConfirmationMechanism() {
 		/** @var MechanismFactory $factory */
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSReadConfirmationMechanismFactory'
-		);
+		$factory = $this->services->getService( 'BSReadConfirmationMechanismFactory' );
 
 		return $factory->getMechanismInstance();
 	}
