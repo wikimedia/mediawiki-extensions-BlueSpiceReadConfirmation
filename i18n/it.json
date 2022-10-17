@@ -31,5 +31,10 @@
 	"bs-readconfirmation-navigation-link-title": "Mostra una panoramica di tutte le conferme di lettura in sospeso",
 	"bs-readconfirmation-navigation-link-text": "Conferme di lettura richieste",
 	"right-readconfirmationremind": "Ricorda agli utenti che devono confermare di aver letto la pagina",
-	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura"
+	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura",
+	"notification-bs-readconfirmation-remind-daily-summary": "Promemoria per confermare che hai letto $1 .",
+	"notification-bs-readconfirmation-remind-daily-subject": "Promemoria per confermare che hai letto $1 .",
+	"notification-bs-readconfirmation-remind-daily-body": "Conferma di aver letto $1 .",
+	"log-description-bs-readconfirmation": "Registro per conferme di lettura",
+	"log-show-hide-bs-readconfirmation": "Registro di conferma lettura $1"
 }
