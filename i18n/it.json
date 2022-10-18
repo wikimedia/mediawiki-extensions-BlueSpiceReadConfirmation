@@ -36,5 +36,8 @@
 	"notification-bs-readconfirmation-remind-daily-subject": "Promemoria per confermare che hai letto $1 .",
 	"notification-bs-readconfirmation-remind-daily-body": "Conferma di aver letto $1 .",
 	"log-description-bs-readconfirmation": "Registro per conferme di lettura",
-	"log-show-hide-bs-readconfirmation": "Registro di conferma lettura $1"
+	"log-show-hide-bs-readconfirmation": "Registro di conferma lettura $1",
+	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|ha}} confermato di aver letto la pagina $3",
+	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|ha}} richiesto all'utente $4 di confermare la lettura della pagina $3",
+	"bs-readconfirmation-uto-task-header": "Richiesta la conferma di lettura"
 }
