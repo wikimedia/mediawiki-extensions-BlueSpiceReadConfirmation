@@ -48,5 +48,6 @@
 	"right-readconfirmationremind": "Recordar aos utilizadores que têm de confirmar ter lido a página",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(em $1)",
 	"bs-readconfirmation-uto-task-header": "Confirmação de leitura obrigatória",
-	"bs-readconfirmation-uto-task-body-diff": "Ver mudanças desde a última confirmação de leitura"
+	"bs-readconfirmation-uto-task-body-diff": "Ver mudanças desde a última confirmação de leitura",
+	"bs-readconfirmation-confirm-read-aria-description": "Confirmação de leitura pedida"
 }

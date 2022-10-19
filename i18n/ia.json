@@ -47,5 +47,6 @@
 	"bs-readconfirmation-uto-task-body-diff": "Vider le cambiamentos depost le ultime confirmation de lectura",
 	"notification-bs-readconfirmation-remind-daily-summary": "Rememoration pro confirmar que tu ha legite $1.",
 	"notification-bs-readconfirmation-remind-daily-subject": "Rememoration pro confirmar que tu ha legite $1.",
-	"notification-bs-readconfirmation-remind-daily-body": "Per favor confirma que tu ha legite $1."
+	"notification-bs-readconfirmation-remind-daily-body": "Per favor confirma que tu ha legite $1.",
+	"bs-readconfirmation-confirm-read-aria-description": "Confirmation de lectura requestate"
 }
