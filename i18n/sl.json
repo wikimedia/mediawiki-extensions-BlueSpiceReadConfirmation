@@ -4,5 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"bs-readconfirmation-disabled-ns-short": "Onemogočeno"
+	"bs-readconfirmation-disabled-ns-short": "Onemogočeno",
+	"bs-readconfirmation-confirm-read-aria-description": "Zahtevana potrditev branja"
 }
