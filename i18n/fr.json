@@ -5,7 +5,8 @@
 			"Gomoko",
 			"McDutchie",
 			"Thibaut120094",
-			"Verdy p"
+			"Verdy p",
+			"Wladek92"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
@@ -51,5 +52,6 @@
 	"right-readconfirmationremind": "Rappelle aux utilisateurs qu’ils doivent confirmer avoir lu la page",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(comme pour $1)",
 	"bs-readconfirmation-uto-task-header": "Confirmation de lecture obligatoire",
-	"bs-readconfirmation-uto-task-body-diff": "Voir les modifications depuis la dernière confirmation de lecture"
+	"bs-readconfirmation-uto-task-body-diff": "Voir les modifications depuis la dernière confirmation de lecture",
+	"bs-readconfirmation-confirm-read-aria-description": "Confirmation de lecture demandée"
 }
