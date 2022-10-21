@@ -2,7 +2,6 @@
 
 namespace BlueSpice\ReadConfirmation\Mechanism;
 
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\NotificationManager;
 use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\PageAssignments\Data\Record;
@@ -11,6 +10,7 @@ use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\Notifications\DailyRemind;
 use BlueSpice\ReadConfirmation\Notifications\Remind;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Title;
 use User;
 use Wikimedia\Rdbms\LoadBalancer;
