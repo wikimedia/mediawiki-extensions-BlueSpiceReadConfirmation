@@ -152,7 +152,7 @@
 		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
 		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback",
 		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations",
-		"PersonalUrls": "skin"
+		"SkinTemplateNavigation::Universal": "skin"
 	},
 	"HookHandlers": {
 		"addUTOReadConfirmations": {
