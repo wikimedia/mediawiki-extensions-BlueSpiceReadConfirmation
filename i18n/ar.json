@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد"
 		]
 	},
@@ -39,5 +40,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "قراءة",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: لقد أكدت قراءة صفحة $1 (revision $2) في $3",
 	"action-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
-	"right-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة"
+	"right-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
+	"logeventslist-bs-readconfirmation-log": "سجل تأكيد القراءة"
 }
