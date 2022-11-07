@@ -41,5 +41,13 @@
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: لقد أكدت قراءة صفحة $1 (revision $2) في $3",
 	"action-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
 	"right-readconfirmationremind": "تذكير المستخدمين بأن عليهم تأكيد قيامهم بقراءة الصفحة",
-	"logeventslist-bs-readconfirmation-log": "سجل تأكيد القراءة"
+	"logeventslist-bs-readconfirmation-log": "سجل تأكيد القراءة",
+	"echo-pref-tooltip-bs-readconfirmation-cat": "إعلامي عندما أقوم بفتح تأكيدات القراءة",
+	"notification-bs-readconfirmation-remind-daily-summary": "تذكير للتأكيد أنك قد قرأت $1 .",
+	"notification-bs-readconfirmation-remind-daily-subject": "تذكير للتأكيد ، أنك قد قرأت $1 .",
+	"notification-bs-readconfirmation-remind-daily-body": "يُرجى تأكيد أنك قرأت $1 .",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(بدءًا من $1 )",
+	"bs-readconfirmation-uto-task-header": "مطلوب تأكيد القراءة",
+	"bs-readconfirmation-uto-task-body-diff": "انظر التغييرات منذ آخر قراءة تأكيد",
+	"bs-readconfirmation-confirm-read-aria-description": "طلب تأكيد القراءة"
 }
