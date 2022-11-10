@@ -41,6 +41,7 @@
 	"bs-readconfirmation-navigation-link-title": "Mostra una panoramica di tutte le conferme di lettura in sospeso",
 	"bs-readconfirmation-navigation-link-text": "Conferme di lettura richieste",
 	"bs-readconfirmation-graphicallist-btn-read": "Leggi",
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Hai confermato di leggere la pagina $1 (revisione $2) su $3",
 	"right-readconfirmationremind": "Ricorda agli utenti che devono confermare di aver letto la pagina",
 	"bs-readconfirmation-uto-task-header": "Richiesta la conferma di lettura",
 	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura",
