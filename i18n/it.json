@@ -44,5 +44,6 @@
 	"bs-readconfirmation-action-apiread-remind-description": "Richiedi conferma di lettura per $1",
 	"bs-readconfirmation-api-error-no-page": "Non è stata indicata nessuna pagina",
 	"notification-bs-readconfirmation-remind-body": "$1 vorrebbe ricordarti di confermare la lettura di $2 .",
-	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura"
+	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura",
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Hai confermato di leggere la pagina $1 (revisione $2) su $3"
 }
