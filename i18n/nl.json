@@ -49,5 +49,6 @@
 	"notification-bs-readconfirmation-remind-daily-subject": "Herinnering om te bevestigen dat u $1 hebt gelezen.",
 	"notification-bs-readconfirmation-remind-daily-body": "Bevestig a.u.b. dat u $1 hebt gelezen.",
 	"bs-readconfirmation-uto-task-header": "Leesbevestiging vereist",
-	"bs-readconfirmation-uto-task-body-diff": "De wijzigingen sinds de laatste leesbevestiging inzien"
+	"bs-readconfirmation-uto-task-body-diff": "De wijzigingen sinds de laatste leesbevestiging inzien",
+	"bs-readconfirmation-confirm-read-aria-description": "Leesbevestiging gevraagd"
 }
