@@ -49,5 +49,6 @@
 	"right-readconfirmationremind": "Gebruikers eraan herinneren dat ze moeten bevestigen dat ze de pagina hebben gelezen",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(d.d. $1)",
 	"bs-readconfirmation-uto-task-header": "Leesbevestiging vereist",
-	"bs-readconfirmation-uto-task-body-diff": "De wijzigingen sinds de laatste leesbevestiging inzien"
+	"bs-readconfirmation-uto-task-body-diff": "De wijzigingen sinds de laatste leesbevestiging inzien",
+	"bs-readconfirmation-confirm-read-aria-description": "Leesbevestiging gevraagd"
 }
