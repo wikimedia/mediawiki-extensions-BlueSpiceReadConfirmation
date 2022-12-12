@@ -4,5 +4,7 @@
 			"Yupik"
 		]
 	},
-	"bs-readconfirmation-confirm-read-button-label": "Priim"
+	"bs-readconfirmation-confirm-read-button-label": "Priim",
+	"bs-readconfirmation-column-read": "Lokkum?",
+	"bs-readconfirmation-graphicallist-btn-read": "Lokkum"
 }
