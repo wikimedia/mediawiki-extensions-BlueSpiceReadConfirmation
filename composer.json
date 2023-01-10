@@ -32,5 +32,10 @@
 	},
 	"extra": {
 		"installer-name": "BlueSpiceReadConfirmation"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
