@@ -4,7 +4,8 @@
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
 			"Juan90264",
-			"McDutchie"
+			"McDutchie",
+			"Mello25"
 		]
 	},
 	"bs-readconfirmation-desc": "Extensão para coletar confirmações de leitura para uma página",
@@ -50,5 +51,6 @@
 	"right-readconfirmationremind": "Lembre aos usuários que eles precisam confirmar para ler a página",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)",
 	"bs-readconfirmation-uto-task-header": "Confirmação de leitura obrigatória",
-	"bs-readconfirmation-uto-task-body-diff": "Ver as alterações desde a última confirmação de leitura"
+	"bs-readconfirmation-uto-task-body-diff": "Ver as alterações desde a última confirmação de leitura",
+	"bs-readconfirmation-confirm-read-aria-description": "Pedido de confirmação de leitura"
 }
