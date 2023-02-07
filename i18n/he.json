@@ -13,5 +13,7 @@
 	"bs-readconfirmation-column-read": "נקרא?",
 	"bs-readconfirmation-column-read-at": "נקרא ב־",
 	"bs-readconfirmation-not-read": "לא נקרא",
-	"bs-readconfirmation-graphicallist-btn-read": "לקרוא"
+	"bs-readconfirmation-graphicallist-btn-read": "לקרוא",
+	"bs-readconfirmation-disabled-ns-short": "כבוי",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(נכון ל־$1)"
 }
