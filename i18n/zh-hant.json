@@ -47,5 +47,6 @@
 	"bs-readconfirmation-uto-task-body-diff": "查看自上一次閱讀確認後的更改",
 	"notification-bs-readconfirmation-remind-daily-summary": "提醒確認，您有讀過$1。",
 	"notification-bs-readconfirmation-remind-daily-subject": "提醒確認，您有讀過$1。",
-	"notification-bs-readconfirmation-remind-daily-body": "請確認，您有讀過$1。"
+	"notification-bs-readconfirmation-remind-daily-body": "請確認，您有讀過$1。",
+	"bs-readconfirmation-confirm-read-aria-description": "已請求閱讀確認"
 }
