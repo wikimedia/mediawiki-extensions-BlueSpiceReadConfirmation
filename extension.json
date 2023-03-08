@@ -185,6 +185,9 @@
 	"config": {
 		"Mechanism": {
 			"value": "BlueSpice\\ReadConfirmation\\Mechanism\\NonMinorEdit::factory"
+		},
+		"PageApprovedReminderDelay": {
+			"value": 168
 		}
 	},
 	"manifest_version": 2
