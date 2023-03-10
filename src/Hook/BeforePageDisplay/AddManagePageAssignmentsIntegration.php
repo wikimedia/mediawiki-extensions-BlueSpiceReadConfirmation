@@ -12,7 +12,7 @@ class AddManagePageAssignmentsIntegration extends BeforePageDisplay {
 	 */
 	protected function skipProcessing() {
 		if ( !$this->out->getTitle()->isSpecial( 'ManagePageAssignments' ) ) {
-			return false;
+			return true;
 		}
 		return false;
 	}
@@ -22,6 +22,15 @@ class AddManagePageAssignmentsIntegration extends BeforePageDisplay {
 	 * @return bool
 	 */
 	protected function doProcess() {
+		$namespaces = isset( $GLOBALS['wgNamespacesWithEnabledReadConfirmation'] )
+			? array_keys( $GLOBALS['wgNamespacesWithEnabledReadConfirmation'] )
+			: [];
+
+		$this->out->addJsConfigVars(
+			'bsgReadConfirmationActivatedNamespaces',
+			$namespaces
+		);
+
 		$this->out->addModuleStyles(
 			'ext.readconfirmation.pageassignmentsintegration.styles'
 		);
