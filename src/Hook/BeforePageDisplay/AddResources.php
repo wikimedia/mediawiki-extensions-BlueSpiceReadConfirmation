@@ -6,20 +6,30 @@ use BlueSpice\Hook\BeforePageDisplay;
 
 class AddResources extends BeforePageDisplay {
 
-	protected function doProcess() {
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function skipProcessing() {
 		global $wgNamespacesWithEnabledReadConfirmation;
 
 		$namespaces = isset( $wgNamespacesWithEnabledReadConfirmation )
 			? array_keys( $GLOBALS['wgNamespacesWithEnabledReadConfirmation'] )
 			: [];
 
-		$this->out->addJsConfigVars(
-			'bsgReadConfirmationActivatedNamespaces',
-			$namespaces
-		);
+		$title = $this->out->getTitle();
+		$namespace = $title->getNamespace();
 
+		if ( !in_array( $namespace, $namespaces ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	protected function doProcess() {
 		$this->out->addModuleStyles( 'ext.readconfirmation.styles' );
 		$this->out->addModules( 'ext.readconfirmation.scripts' );
+
 		return true;
 	}
 
