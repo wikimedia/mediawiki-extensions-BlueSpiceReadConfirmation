@@ -19,7 +19,7 @@
 	"bs-readconfirmation-action-apiread-remind-description": "Be om lesebekreftelse for $1",
 	"bs-readconfirmation-api-error-cant-confirm": "Kan ikke prosessere lesebekreftelse for denne siden",
 	"bs-readconfirmation-api-error-no-page": "Ingen side gitt",
-	"bs-readconfirmation-api-error-no-non-minor-revision": "Ingen revisjon funnet",
+	"bs-readconfirmation-api-error-no-non-minor-revision": "Ingen sideversjon funnet",
 	"echo-category-title-bs-readconfirmation-cat": "Lesebekreftelse",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Varsle meg når jeg har åpne lesebekreftelser",
 	"notification-bs-readconfirmation-remind-summary": "$1 minner deg om å lese $3",
@@ -39,7 +39,7 @@
 	"bs-readconfirmation-navigation-link-title": "Viser en oversikt over ventende lesebekreftelser",
 	"bs-readconfirmation-navigation-link-text": "Forespurte lesebekreftelser",
 	"bs-readconfirmation-graphicallist-btn-read": "Les",
-	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du bekreftet at du har lest siden $1 (revisjon $2) $3",
+	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: Du bekreftet at du har lest siden $1 (sideversjon $2) $3",
 	"action-readconfirmationremind": "minne brukere på at de må bekrefte å ha lest siden",
 	"right-readconfirmationremind": "Minne brukere på at de må bekrefte å ha lest siden",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(per $1)"
