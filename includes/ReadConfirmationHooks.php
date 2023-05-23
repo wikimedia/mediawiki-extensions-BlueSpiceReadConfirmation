@@ -105,33 +105,6 @@ class ReadConfirmationHooks {
 
 	/**
 	 * Hook handler for
-	 * NamespaceManager::WriteNamespaceConfiguration
-	 *
-	 * @param string &$sSaveContent
-	 * @param string $sConstName
-	 * @param int $iNs
-	 * @param array $aDefinition
-	 * @return bool Always true
-	 */
-	public static function onNamespaceManager_writeNamespaceConfiguration( &$sSaveContent, $sConstName,
-		$iNs, $aDefinition ) {
-		global $wgNamespacesWithEnabledReadConfirmation;
-		if ( isset( $aDefinition[ 'read_confirmation' ] )
-			&& $aDefinition['read_confirmation'] === true ) {
-			$sSaveContent .= "\$GLOBALS['wgNamespacesWithEnabledReadConfirmation'][{$sConstName}] = true;\n";
-		} elseif ( isset( $aDefinition[ 'read_confirmation' ] )
-			&& $aDefinition['read_confirmation'] === false ) {
-			return true;
-		}
-		if ( isset( $wgNamespacesWithEnabledReadConfirmation[$iNs] )
-			&& $wgNamespacesWithEnabledReadConfirmation[$iNs] === true ) {
-			$sSaveContent .= "\$GLOBALS['wgNamespacesWithEnabledReadConfirmation'][{$sConstName}] = true;\n";
-		}
-		return true;
-	}
-
-	/**
-	 * Hook handler for
 	 * BSApiNamespaceStoreMakeData
 	 *
 	 * @param array &$aResult
