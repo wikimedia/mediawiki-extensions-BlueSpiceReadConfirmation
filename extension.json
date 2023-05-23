@@ -148,11 +148,11 @@
 		"PageSaveComplete": "ReadConfirmationHooks::onPageSaveComplete",
 		"NamespaceManager::getMetaFields": "ReadConfirmationHooks::onNamespaceManager_getMetaFields",
 		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
-		"NamespaceManager::writeNamespaceConfiguration": "ReadConfirmationHooks::onNamespaceManager_writeNamespaceConfiguration",
 		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
 		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback",
 		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations",
-		"SkinTemplateNavigation::Universal": "skin"
+		"SkinTemplateNavigation::Universal": "skin",
+		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration"
 	},
 	"HookHandlers": {
 		"addUTOReadConfirmations": {
@@ -161,6 +161,9 @@
 		},
 		"skin": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\Skin"
+		},
+		"writeNamespaceConfiguration": {
+			"class": "\\BlueSpice\\ReadConfirmation\\Hook\\WriteNamespaceConfiguration"
 		}
 	},
 	"LogTypes": [
