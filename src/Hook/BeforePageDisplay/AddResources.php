@@ -21,6 +21,9 @@ class AddResources extends BeforePageDisplay {
 		$namespace = $title->getNamespace();
 
 		if ( !in_array( $namespace, $namespaces ) ) {
+			if ( $title->isSpecial( 'ManagePageAssignments' ) ) {
+				return false;
+			}
 			return true;
 		}
 		return false;
@@ -29,6 +32,17 @@ class AddResources extends BeforePageDisplay {
 	protected function doProcess() {
 		$this->out->addModuleStyles( 'ext.readconfirmation.styles' );
 		$this->out->addModules( 'ext.readconfirmation.scripts' );
+
+		$isAllowed = false;
+		$user = $this->skin->getUser();
+		$permissionManager = $this->getServices()->getPermissionManager();
+		if ( $user &&
+			$permissionManager->userHasRight( $user, 'readconfirmationviewconfirmations' )
+		) {
+			$isAllowed = true;
+		}
+
+		$this->out->addJsConfigVars( 'bsReadConfirmationsViewRight', $isAllowed );
 
 		return true;
 	}
