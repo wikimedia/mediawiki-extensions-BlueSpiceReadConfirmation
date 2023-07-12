@@ -25,14 +25,6 @@
 						"admin",
 						"maintenanceadmin"
 					]
-				},
-				"readconfirmationviewconfirmations": {
-					"type": "global",
-					"roles": [
-						"admin",
-						"maintenanceadmin",
-						"structureadmin"
-					]
 				}
 			},
 			"NotificationRegistrationFunctions": [
@@ -119,37 +111,15 @@
 				"bs-readconfirmation-action-log",
 				"bs-readconfirmation-action-remind-confirm",
 				"bs-readconfirmation-disabled-ns",
-				"bs-readconfirmation-disabled-ns-short",
-				"bs-readconfirmation-view-confirmations"
+				"bs-readconfirmation-disabled-ns-short"
 			],
 			"dependencies": [
-				"ext.bluespice",
-				"ext.oOJSPlus.dialogs"
+				"ext.bluespice"
 			]
 		},
 		"ext.readconfirmation.uto.styles": {
 			"styles": [
 				"ext.bluespice.readconfirmation.uto.less"
-			]
-		},
-		"ext.readconfirmation.dialog.pages": {
-			"scripts": [
-				"ui/page/ReadConfirmationPage.js"
-			],
-			"messages": [
-				"bs-readconfirmation-dlg-title",
-				"bs-readconfirmation-dlg-label-page"
-			],
-			"dependencies": [
-				"ext.oOJSPlus.dialogs"
-			]
-		},
-		"ext.readconfirmation.dialog.info.page": {
-			"scripts": [
-				"ui/page/ReadConfirmationInformationPage.js"
-			],
-			"messages": [
-				"bs-readconfirmation-page-info-read-confirmations"
 			]
 		}
 	},
@@ -182,8 +152,7 @@
 		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback",
 		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations",
 		"SkinTemplateNavigation::Universal": "skin",
-		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
-		"StandardDialogsRegisterPageInfoPanelModules": "standard-dialogs"
+		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration"
 	},
 	"HookHandlers": {
 		"addUTOReadConfirmations": {
@@ -195,25 +164,8 @@
 		},
 		"writeNamespaceConfiguration": {
 			"class": "\\BlueSpice\\ReadConfirmation\\Hook\\WriteNamespaceConfiguration"
-		},
-		"standard-dialogs": {
-			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\StandardDialogs"
 		}
 	},
-	"RestRoutes": [
-		{
-			"path": "/readconfirmation/{pageId}",
-			"method": "GET",
-			"class": "\\BlueSpice\\ReadConfirmation\\Rest\\GetReadConfirmations",
-			"services": [
-				"BSReadConfirmationMechanismFactory",
-				"BSPageAssignmentsAssignmentFactory",
-				"TitleFactory",
-				"UserFactory",
-				"PermissionManager"
-			]
-		}
-	],
 	"LogTypes": [
 		"bs-readconfirmation"
 	],
@@ -226,13 +178,11 @@
 	},
 	"GroupPermissions": {
 		"sysop": {
-			"readconfirmationremind": true,
-			"readconfirmationviewconfirmations": true
+			"readconfirmationremind": true
 		}
 	},
 	"AvailableRights": [
-		"readconfirmationremind",
-		"readconfirmationviewconfirmations"
+		"readconfirmationremind"
 	],
 	"config_prefix": "bsgReadConfirmation",
 	"config": {

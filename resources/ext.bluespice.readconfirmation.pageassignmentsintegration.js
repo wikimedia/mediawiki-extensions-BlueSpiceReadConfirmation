@@ -11,27 +11,6 @@
 		return false;
 	};
 
-	function __showDialog( pageId, pageTitle ) {
-		var dialog = new OOJSPlus.ui.dialog.BookletDialog( {
-			id: 'bs-readconfirmation-user-list',
-			pages: function() {
-				var dfd = $.Deferred();
-				mw.loader.using( "ext.readconfirmation.dialog.pages", function() {
-					dfd.resolve( [ new bs.readconfirmation.ui.ReadConfirmationPage( {
-						data: {
-							page: pageTitle,
-							pageId: pageId
-						}
-					} ) ] );
-				}, function( e ) {
-					dfd.reject( e );
-				} );
-					return dfd.promise();
-				}
-		} );
-		dialog.show();
-	}
-
 	$( d ).on( 'BSPageAssignmentsManagerPanelInit', function( e, sender, cols, fields, actions ){
 		fields.push( 'all_assignees_have_read' );
 
@@ -100,20 +79,6 @@
 				return record.get( 'all_assignees_have_read' ) || !activated( record.get( 'page_namespace' ) );
 			}
 		});
-
-		if ( mw.config.get( 'bsReadConfirmationsViewRight' ) ) {
-			actions.push( {
-				iconCls: 'bs-icon-eye bs-extjs-actioncolumn-icon',
-				glyph: true,
-				tooltip: mw.message( 'bs-readconfirmation-view-confirmations' ).plain(),
-				handler: function( view, rowIndex, colIndex,item, e, record, row ) {
-					var pageId = record.get( 'page_id' );
-					var pageTitle = record.get( 'page_title' );
-					__showDialog( pageId, pageTitle );
-				},
-				scope: this
-			} );
-		}
 	});
 
 	$( d ).on( 'BSPageAssignmentsOverviewPanelInit', function( e, sender, cols, fields, actions ){
