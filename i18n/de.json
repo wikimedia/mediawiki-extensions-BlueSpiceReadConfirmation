@@ -52,5 +52,15 @@
 	"notification-bs-readconfirmation-remind-daily-body": "Bitte bestätige, dass du $1 gelesen hast.",
 	"bs-readconfirmation-uto-task-header": "Lesebestätigung angefordert",
 	"bs-readconfirmation-uto-task-body-diff": "Betrachte die Änderungen seit der letzten Lesebestätigung",
-	"bs-readconfirmation-confirm-read-aria-description": "Lesebestätigung erbeten"
+	"bs-readconfirmation-confirm-read-aria-description": "Lesebestätigung erbeten",
+	"bs-readconfirmation-dlg-title": "Lesebestätigungen",
+	"bs-readconfirmation-dlg-label-page": "Lesebestätigungen für Seite \"$1\"",
+	"bs-readconfirmation-view-confirmations": "Lesebestätigungen ansehen",
+	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Kein gültiger Seitentitel vorhanden",
+	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Lesebestätigung bei diesem Seitentitel nicht aktiv",
+	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Kein gültiger Titel bei der Seitenzuweisung vorhanden",
+	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Keine Berechtigung, Lesebestätigungen zu sehen",
+	"bs-readconfirmation-page-info-read-confirmations": "Lesebestätigungen",
+	"action-readconfirmationviewconfirmations": "Status der Lesebestätigungen anzusehen",
+	"right-readconfirmationviewconfirmations": "Status der Lesebestätigungen sehen"
 }
