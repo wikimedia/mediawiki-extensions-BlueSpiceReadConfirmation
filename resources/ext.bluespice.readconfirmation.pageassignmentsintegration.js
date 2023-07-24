@@ -111,6 +111,9 @@
 					var pageTitle = record.get( 'page_title' );
 					__showDialog( pageId, pageTitle );
 				},
+				isDisabled: function( view, rowIndex, colIndex, item, record  ) {
+					return !activated( record.get( 'page_namespace' ) );
+				},
 				scope: this
 			} );
 		}
