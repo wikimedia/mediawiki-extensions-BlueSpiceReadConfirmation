@@ -53,7 +53,7 @@
 	"bs-readconfirmation-uto-task-header": "Header message for read confirmation user task in UnifiedTaskOverview",
 	"bs-readconfirmation-uto-task-body-diff": "Body message for read confirmation user task in UnifiedTaskOverview in case when there are some changes since the latest read revision",
 	"bs-readconfirmation-confirm-read-aria-description": "Aria descriptionto inform about requested read confirmation",
-	"bs-readconfirmation-dlg-title": "Title of dialog which shows if page has been read of each assigned user",
+	"bs-readconfirmation-dlg-title": "Title of dialog that shows if a page has been read by each assigned user.",
 	"bs-readconfirmation-dlg-label-page": "Label to indicate page for which read confirmations are visible",
 	"bs-readconfirmation-view-confirmations": "Button label in an ExtJS manager column that shows a list confirmations of all assigned users",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Error message returned by an API module in case there is no valid title",
