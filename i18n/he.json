@@ -49,7 +49,7 @@
 	"right-readconfirmationremind": "שליחת תזכורת למשתמשים שהם צריכים לאשר שהם קראו את הדף",
 	"bs-readconfirmation-uto-task-header": "נדרש אישור קריאה",
 	"bs-readconfirmation-uto-task-body-diff": "ר' שינויים מאז אישור הקריאה האחרון",
-	"bs-readconfirmation-confirm-read-aria-description": "נדרש אישור התבקש",
+	"bs-readconfirmation-confirm-read-aria-description": "התבקש אישור קריאה",
 	"bs-readconfirmation-dlg-title": "אישורי קריאה",
 	"bs-readconfirmation-dlg-label-page": "אישור קריאה עבור הדף \"$1\"",
 	"bs-readconfirmation-view-confirmations": "צפייה באישורי קריאה",
