@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Tmv",
-			"Shirayuki"
+			"Shirayuki",
+			"MagicAho"
 		]
 	},
 	"bs-readconfirmation-desc": "あるページの読み取りの確認を集計するための拡張機能",
@@ -11,5 +12,7 @@
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|}} はページ $3 を読んだことを確認しました。",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|}} が利用者 $4 にページ $3 を読んだことを確認するよう依頼しました",
 	"bs-readconfirmation-disabled-ns-short": "無効",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 以降)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 以降)",
+	"bs-readconfirmation-dlg-title": "確認を読む",
+	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "このページ タイトルに対して既読確認が有効になっていません"
 }

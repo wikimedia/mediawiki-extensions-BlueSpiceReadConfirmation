@@ -52,9 +52,11 @@
 	"bs-readconfirmation-uto-task-header": "Leesbevestiging vereist",
 	"bs-readconfirmation-uto-task-body-diff": "De wijzigingen sinds de laatste leesbevestiging inzien",
 	"bs-readconfirmation-confirm-read-aria-description": "Leesbevestiging gevraagd",
+	"bs-readconfirmation-dlg-title": "Leesbevestigingen",
 	"bs-readconfirmation-dlg-label-page": "Leesbevestiging voor pagina \"$1\"",
 	"bs-readconfirmation-view-confirmations": "Bekijk leesbevestigingen",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Geen geldige paginatitel beschikbaar",
+	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Leesbevestiging niet geactiveerd voor deze paginatitel",
 	"bs-readconfirmation-page-info-read-confirmations": "Bevestigingen lezen",
 	"action-readconfirmationviewconfirmations": "de status van leesbevestigingen bekijken",
 	"right-readconfirmationviewconfirmations": "De status van leesbevestigingen bekijken"
