@@ -3,6 +3,7 @@
 		"authors": [
 			")8",
 			"Lakejason0",
+			"Vikarna",
 			"Wzl19371",
 			"沈澄心",
 			"落花有意12138"
@@ -18,5 +19,8 @@
 	"bs-readconfirmation-column-read-at": "继续读取",
 	"bs-readconfirmation-not-read": "未读取",
 	"bs-readconfirmation-action-remind": "请求读取允许",
-	"bs-readconfirmation-api-error-no-page": "未提供页面"
+	"bs-readconfirmation-api-error-no-page": "未提供页面",
+	"log-show-hide-bs-readconfirmation": "$1读取确认日志",
+	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|已}}确认阅读过页面$3",
+	"logentry-bs-readconfirmation-remind": "$1{{GENDER:$2|已}}请求用户$4去确认页面$3的阅读"
 }
