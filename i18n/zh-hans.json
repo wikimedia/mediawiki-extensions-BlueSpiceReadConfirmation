@@ -5,7 +5,8 @@
 			"Lakejason0",
 			"Wzl19371",
 			"沈澄心",
-			"落花有意12138"
+			"落花有意12138",
+			"Vikarna"
 		]
 	},
 	"bs-readconfirmation-column-read": "已读取？",
@@ -17,6 +18,8 @@
 	"bs-readconfirmation-action-apiread-confirm-description": "标记$1为已读",
 	"bs-readconfirmation-api-error-no-page": "未提供页面",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "找不到修订版本",
+	"log-show-hide-bs-readconfirmation": "$1读取确认日志",
+	"logentry-bs-readconfirmation-confirm": "$1{{GENDER:$2|已}}确认阅读过页面$3",
 	"bs-readconfirmation-disabled-ns-short": "已禁用",
 	"bs-readconfirmation-graphicallist-btn-read": "阅读"
 }
