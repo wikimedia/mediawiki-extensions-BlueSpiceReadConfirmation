@@ -3,7 +3,9 @@
 namespace BlueSpice\ReadConfirmation\UnifiedTaskOverview;
 
 use MediaWiki\Extension\UnifiedTaskOverview\ITaskDescriptor;
+use MediaWiki\MediaWikiServices;
 use Message;
+use PageProps;
 use RawMessage;
 use Title;
 
@@ -23,6 +25,10 @@ class ReadConfirmationDescriptor implements ITaskDescriptor {
 	 * @var int
 	 */
 	private $latestReadRevision = null;
+	/**
+	 * @var PageProps
+	 */
+	private PageProps $pageProps;
 
 	/**
 	 * @param Title $title Title, which user should mark as "read"
@@ -31,6 +37,7 @@ class ReadConfirmationDescriptor implements ITaskDescriptor {
 	 */
 	public function __construct( Title $title, int $latestReadRevision = null ) {
 		$this->title = $title;
+		$this->pageProps = MediaWikiServices::getInstance()->getPageProps();
 
 		if ( $latestReadRevision ) {
 			$this->latestReadRevision = $latestReadRevision;
@@ -51,9 +58,16 @@ class ReadConfirmationDescriptor implements ITaskDescriptor {
 	 * @inheritDoc
 	 */
 	public function getHeader(): Message {
-		$message = $this->title ? $this->title->getPrefixedText() : '';
+		if ( !$this->title ) {
+			return new RawMessage( '' );
+		}
 
-		return new RawMessage( $message );
+		$displayTitleProperties = $this->pageProps->getProperties( $this->title, 'displaytitle' );
+		if ( count( $displayTitleProperties ) === 1 ) {
+			$displayTitle = $displayTitleProperties[$this->title->getArticleID()];
+		}
+
+		return new RawMessage( $displayTitle ?? $this->title->getSubpageText() );
 	}
 
 	/**
