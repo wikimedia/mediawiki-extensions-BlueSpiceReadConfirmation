@@ -12,7 +12,7 @@ class WriteNamespaceConfiguration implements NamespaceManagerBeforePersistSettin
 	public function onNamespaceManagerBeforePersistSettings(
 		array &$configuration, int $id, array $definition, array $mwGlobals
 	): void {
-		$globalValue = $mwGlobals['wgNamespacesWithEnabledReadConfirmation'];
+		$globalValue = $mwGlobals['wgNamespacesWithEnabledReadConfirmation'] ?? [];
 		if ( isset( $definition['read_confirmation'] ) && $definition['read_confirmation'] === true ) {
 			$configuration['wgNamespacesWithEnabledReadConfirmation'][$id] = true;
 		} elseif ( isset( $definition[ 'read_confirmation' ] ) && $definition['read_confirmation'] === false ) {
