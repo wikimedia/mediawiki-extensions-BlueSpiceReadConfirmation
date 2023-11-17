@@ -75,9 +75,10 @@ class GetReadConfirmations extends SimpleHandler {
 		}
 		$mechanismInstance = $this->mechanismFactory->getMechanismInstance();
 		if ( !$mechanismInstance->mustRead( $title ) ) {
-			throw new HttpException( Message::newFromKey(
-				"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active"
-			) );
+			return $this->getResponseFactory()->createJson( [
+				'success' => true,
+				'results' => []
+			] );
 		}
 
 		$assignmentTitle = $this->assignmentFactory->newFromTargetTitle( $title );
