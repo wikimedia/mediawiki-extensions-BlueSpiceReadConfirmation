@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Golmore",
 			"Gomoko",
 			"McDutchie",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92",
-			"Amire80"
+			"Wladek92"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",

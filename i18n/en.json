@@ -34,7 +34,7 @@
 	"log-description-bs-readconfirmation": "Log for read confirmations",
 	"log-show-hide-bs-readconfirmation": "$1 read confirmation log",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|has}} confirmed to have read the page $3",
-	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|has}} asked the user $4 to confirme reading of the page $3",
+	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|has}} asked the user $4 to confirm reading of the page $3",
 	"apihelp-bs-readconfirmation-tasks-summary": "API endpoint for extension ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Read Confirmation",
 	"bs-readconfirmation-api-error-not-active-ns": "Read Confirmation is not enabled for this namespace",
