@@ -52,5 +52,14 @@
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "Suffix to be appended to the entry on [[Special:Log]] when a revision information is available\n* $1 - a formatted timestamp",
 	"bs-readconfirmation-uto-task-header": "Header message for read confirmation user task in UnifiedTaskOverview",
 	"bs-readconfirmation-uto-task-body-diff": "Body message for read confirmation user task in UnifiedTaskOverview in case when there are some changes since the latest read revision",
-	"bs-readconfirmation-confirm-read-aria-description": "Aria descriptionto inform about requested read confirmation"
+	"bs-readconfirmation-confirm-read-aria-description": "Aria descriptionto inform about requested read confirmation",
+	"bs-readconfirmation-dlg-title": "Title of dialog that shows if a page has been read by each assigned user.",
+	"bs-readconfirmation-dlg-label-page": "Label to indicate page for which read confirmations are visible",
+	"bs-readconfirmation-view-confirmations": "Button label in an ExtJS manager column that shows a list confirmations of all assigned users",
+	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Error message returned by an API module in case there is no valid title",
+	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Error message returned by an API module in case there is no valid title for page assignments",
+	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Error message returned by an API module in case user has no right to view read confirmations",
+	"bs-readconfirmation-page-info-read-confirmations": "Label for menu entry to select panel with read confirmation status list",
+	"action-readconfirmationviewconfirmations": "{{doc-action|readconfirmationviewconfirmations}}",
+	"right-readconfirmationviewconfirmations": "{{doc-right|readconfirmationviewconfirmations}}"
 }
