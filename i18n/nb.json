@@ -53,7 +53,6 @@
 	"bs-readconfirmation-dlg-label-page": "Lesebekreftelse for siden «$1»",
 	"bs-readconfirmation-view-confirmations": "Vis lesebekreftelser",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Ingen gyldig sidetittel tilgjengelig",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Lesebekreftelse ikke aktivert for denne sidetittelen",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Ingen gyldig tittel for sidetildelinger tilgjengelig",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Ingen tillatelse til å vise lesebekreftelser",
 	"bs-readconfirmation-page-info-read-confirmations": "Lesebekreftelser",

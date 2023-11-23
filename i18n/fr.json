@@ -59,7 +59,6 @@
 	"bs-readconfirmation-dlg-label-page": "Confirmation de lecture pour la page « $1 »",
 	"bs-readconfirmation-view-confirmations": "Afficher les confirmations de lecture",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Aucun titre de page valide disponible",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Confirmation de lecture non activée pour ce titre de page",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Aucun titre valide disponible pour les affectations de page",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Aucun droit pour afficher les confirmations de lecture",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmations de lecture",

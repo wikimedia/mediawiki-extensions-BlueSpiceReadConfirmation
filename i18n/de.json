@@ -57,7 +57,6 @@
 	"bs-readconfirmation-dlg-label-page": "Lesebestätigungen für Seite \"$1\"",
 	"bs-readconfirmation-view-confirmations": "Lesebestätigungen ansehen",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Kein gültiger Seitentitel vorhanden",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Lesebestätigung bei diesem Seitentitel nicht aktiv",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Kein gültiger Titel bei der Seitenzuweisung vorhanden",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Keine Berechtigung, Lesebestätigungen zu sehen",
 	"bs-readconfirmation-page-info-read-confirmations": "Lesebestätigungen",
