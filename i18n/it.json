@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"Stefano",
-			"ValeJappo",
 			"Beta16",
-			"GpieroMW"
+			"GpieroMW",
+			"Stefano",
+			"ValeJappo"
 		]
 	},
 	"bs-readconfirmation-desc": "Estensione per raccogliere conferme di lettura per una pagina",

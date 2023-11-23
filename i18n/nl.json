@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"HanV",
 			"Mainframe98",
 			"McDutchie",
-			"Romaine",
-			"HanV"
+			"Romaine"
 		]
 	},
 	"bs-readconfirmation-desc": "Uitbreiding om leesbevestigingen voor een pagina te verzamelen",

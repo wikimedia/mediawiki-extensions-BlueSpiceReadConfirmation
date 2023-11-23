@@ -3,11 +3,11 @@
 		"authors": [
 			")8",
 			"Lakejason0",
-			"Wzl19371",
-			"沈澄心",
-			"落花有意12138",
 			"Vikarna",
-			"Xyb"
+			"Wzl19371",
+			"Xyb",
+			"沈澄心",
+			"落花有意12138"
 		]
 	},
 	"bs-readconfirmation-column-read": "已读取？",
@@ -37,5 +37,6 @@
 	"bs-readconfirmation-uto-task-header": "需要阅读确认",
 	"bs-readconfirmation-dlg-title": "阅读确认",
 	"bs-readconfirmation-view-confirmations": "查看阅读确认",
-	"bs-readconfirmation-page-info-read-confirmations": "阅读确认"
+	"bs-readconfirmation-page-info-read-confirmations": "阅读确认",
+	"logentry-bs-readconfirmation-remind": "$1{{GENDER:$2|已}}请求用户$4去确认页面$3的阅读"
 }
