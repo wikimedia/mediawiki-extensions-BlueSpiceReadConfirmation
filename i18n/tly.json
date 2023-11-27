@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patriot Kor"
+			"Patriot Kor",
+			"Гусейн"
 		]
 	},
 	"bs-readconfirmation-column-read": "Hande?",
-	"bs-readconfirmation-graphicallist-btn-read": "Hande"
+	"bs-readconfirmation-graphicallist-btn-read": "Byhand"
 }
