@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Upwinxp"
 		]
 	},
 	"bs-readconfirmation-desc": "Razširitev za zbiranje potrditev branja strani",
@@ -33,7 +34,7 @@
 	"log-description-bs-readconfirmation": "Dnevnik za potrditve branja",
 	"log-show-hide-bs-readconfirmation": "$1 dnevnik potrditev branja",
 	"logentry-bs-readconfirmation-confirm": "$1 je {{GENDER:$2|potrdil|potrdila|potrdil_a}}, da je {{GENDER:$2|prebral|prebrala|prebral_a}} stran $3",
-	"logentry-bs-readconfirmation-remind": "$1 je {{GENDER:$2|prosil|prosila|prosil_a}} uporabnika_co $4, naj potrdi branje strani $3",
+	"logentry-bs-readconfirmation-remind": "$1 je {{GENDER:$2|prosil|prosila|prosil/a}} uporabnika/co $4, naj potrdi branje strani $3",
 	"apihelp-bs-readconfirmation-tasks-summary": "Končna točka API-ja za razširitev ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Potrditev branja",
 	"bs-readconfirmation-api-error-not-active-ns": "Potrditev branja ni omogočena za ta imenski prostor",
