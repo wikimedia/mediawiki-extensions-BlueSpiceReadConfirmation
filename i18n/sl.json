@@ -1,11 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Upwinxp"
 		]
 	},
-	"bs-readconfirmation-disabled-ns-short": "Onemogočeno",
-	"bs-readconfirmation-confirm-read-aria-description": "Zahtevana potrditev branja",
 	"bs-readconfirmation-desc": "Razširitev za zbiranje potrditev branja strani",
 	"bs-readconfirmation-column-read": "Prebrano?",
 	"bs-readconfirmation-column-read-at": "Prebrano",
@@ -35,11 +34,12 @@
 	"log-description-bs-readconfirmation": "Dnevnik za potrditve branja",
 	"log-show-hide-bs-readconfirmation": "$1 dnevnik potrditev branja",
 	"logentry-bs-readconfirmation-confirm": "$1 je {{GENDER:$2|potrdil|potrdila|potrdil_a}}, da je {{GENDER:$2|prebral|prebrala|prebral_a}} stran $3",
-	"logentry-bs-readconfirmation-remind": "$1 je {{GENDER:$2|prosil|prosila|prosil_a}} uporabnika_co $4, naj potrdi branje strani $3",
+	"logentry-bs-readconfirmation-remind": "$1 je {{GENDER:$2|prosil|prosila|prosil/a}} uporabnika/co $4, naj potrdi branje strani $3",
 	"apihelp-bs-readconfirmation-tasks-summary": "Končna točka API-ja za razširitev ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Potrditev branja",
 	"bs-readconfirmation-api-error-not-active-ns": "Potrditev branja ni omogočena za ta imenski prostor",
 	"bs-readconfirmation-disabled-ns": "Potrditev branja ni omogočena",
+	"bs-readconfirmation-disabled-ns-short": "Onemogočeno",
 	"bs-readconfirmation-navigation-link-title": "Prikaže pregled vseh čakajočih potrditev branja",
 	"bs-readconfirmation-navigation-link-text": "Zahtevane potrditve branja",
 	"bs-readconfirmation-graphicallist-btn-read": "Preberi",
@@ -49,6 +49,7 @@
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(dne $1)",
 	"bs-readconfirmation-uto-task-header": "Potrebna je potrditev branja",
 	"bs-readconfirmation-uto-task-body-diff": "Oglejte si spremembe od zadnje potrditve branja",
+	"bs-readconfirmation-confirm-read-aria-description": "Zahtevana potrditev branja",
 	"bs-readconfirmation-dlg-title": "Potrditve branja",
 	"bs-readconfirmation-dlg-label-page": "Potrditev branja za stran »$1«",
 	"bs-readconfirmation-view-confirmations": "Prikaži potrditve branja",
