@@ -19,7 +19,7 @@ class ConfirmFormatter extends LogFormatter {
 	/**
 	 * @inheritDoc
 	 */
-	protected function __construct( LogEntry $entry ) {
+	public function __construct( LogEntry $entry ) {
 		parent::__construct( $entry );
 		$this->initRevId();
 	}
