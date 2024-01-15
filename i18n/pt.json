@@ -35,7 +35,7 @@
 	"log-show-hide-bs-readconfirmation": "$1 o registo de confirmação de leitura",
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|confirmou}} ter lido a página $3",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|pediu}} ao utilizador $4 para confirmar que leu a página $3",
-	"apihelp-bs-readconfirmation-tasks-summary": "Ponto final da API para a extensão ReadConfirmation",
+	"apihelp-bs-readconfirmation-tasks-summary": "Ponto de terminação da API para a extensão ReadConfirmation",
 	"bs-readconfirmation-label-ns-manager": "Confirmação de leitura",
 	"bs-readconfirmation-api-error-not-active-ns": "A 'Confirmação de leitura' não está ativada para este espaço nominal",
 	"bs-readconfirmation-disabled-ns": "Confirmação de leitura não ativada",
