@@ -131,7 +131,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 		$this->logTaskAction(
 			'remind',
-			[ '4::users' => implode( ', ',  $userDisplayNames ) ],
+			[ '4::users' => implode( ', ', $userDisplayNames ) ],
 			[ 'target' => $title ]
 		);
 
