@@ -60,5 +60,11 @@
 	"action-readconfirmationviewconfirmations": "view the status of read confirmations",
 	"right-readconfirmationviewconfirmations": "View the status of read confirmations",
 	"bs-readconfirmation-page-info-user": "User",
-	"bs-readconfirmation-page-info-confirmation": "Confirmation"
+	"bs-readconfirmation-page-info-confirmation": "Confirmation",
+	"readconfirmation-event-confirmation-request-key-desc": "Read confirmation needed",
+	"readconfirmation-event-confirmation-request": "{{GENDER:$1|requested}} a read confirmation for the page $2",
+	"readconfirmation-event-confirmation-request-bot": "You have been requested to confirm that you have read the page $1",
+	"readconfirmation-event-confirmation-remind-key-desc": "Reminder for a pending read confirmation",
+	"readconfirmation-event-confirmation-remind-bot": "Reminder to confirm that you have read the page $1",
+	"readconfirmation-event-confirmation-links-intro": "Please visit the page at the following link to confirm the page as read"
 }
