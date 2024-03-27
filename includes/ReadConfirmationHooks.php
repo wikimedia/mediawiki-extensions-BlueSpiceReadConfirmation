@@ -31,7 +31,8 @@ class ReadConfirmationHooks {
 			return true;
 		}
 
-		$factory = MediaWikiServices::getInstance()->getService(
+		$services = MediaWikiServices::getInstance();
+		$factory = $services->getService(
 			'BSPageAssignmentsAssignmentFactory'
 		);
 		if ( !$factory ) {
@@ -50,7 +51,7 @@ class ReadConfirmationHooks {
 			'rc_user_id' => $user->getId()
 		];
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$dbw->delete( 'bs_readconfirmation', $aRow );
 		$aRow['rc_timestamp'] = wfTimestampNow();
 		$dbw->insert( 'bs_readconfirmation', $aRow );

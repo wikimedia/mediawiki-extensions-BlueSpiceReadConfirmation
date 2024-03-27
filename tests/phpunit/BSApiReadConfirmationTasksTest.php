@@ -26,14 +26,15 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		$oExecutingUser = self::$users['sysop']->user;
 		$oAssignedUser = self::$users['uploader']->user;
 
-		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
+		$services = MediaWikiServices::getInstance();
+		$userOptionsManager = $services->getUserOptionsManager();
 		$userOptionsManager->setOption( $oExecutingUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
 		$userOptionsManager->saveOptions( $oExecutingUser );
 		$userOptionsManager->setOption( $oAssignedUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
 		$userOptionsManager->saveOptions( $oAssignedUser );
 
-		$oDbw = wfGetDB( DB_PRIMARY );
-		$oDbw->delete( 'bs_pageassignments', [ 'pa_page_id' => $oTitle->getArticleID() ] );
+		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw->delete( 'bs_pageassignments', [ 'pa_page_id' => $oTitle->getArticleID() ] );
 		$aPAData = [
 				[
 					'pa_page_id' => $oTitle->getArticleID(),
@@ -48,7 +49,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 					'pa_position' => 0
 				]
 			];
-		$oDbw->insert( 'bs_pageassignments', $aPAData, __METHOD__ );
+		$dbw->insert( 'bs_pageassignments', $aPAData, __METHOD__ );
 	}
 
 	/**
