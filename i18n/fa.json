@@ -21,7 +21,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "عنوان صفحه معتبری در دسترس نیست",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "عنوان معتبری برای تکالیف صفحه موجود نیست",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "هیچ مجوزی برای مشاهده تأییدیه‌های خواندن وجود ندارد",
-	"bs-readconfirmation-page-info-read-confirmations": "تاییدیه ها را بخوانید",
-	"action-readconfirmationviewconfirmations": "مشاهده وضعیت تایید خواندن",
-	"right-readconfirmationviewconfirmations": "وضعیت تایید خواندن را مشاهده کنید"
+	"bs-readconfirmation-page-info-read-confirmations": "تاییدیه‌ها را بخوانید",
+	"action-readconfirmationviewconfirmations": "مشاهده وضعیت تأیید خواندن",
+	"right-readconfirmationviewconfirmations": "وضعیت تأیید خواندن را مشاهده کنید"
 }
