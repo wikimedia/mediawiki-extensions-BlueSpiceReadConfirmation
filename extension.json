@@ -149,7 +149,9 @@
 				"ui/page/ReadConfirmationInformationPage.js"
 			],
 			"messages": [
-				"bs-readconfirmation-page-info-read-confirmations"
+				"bs-readconfirmation-page-info-read-confirmations",
+				"bs-readconfirmation-page-info-user",
+				"bs-readconfirmation-page-info-confirmation"
 			]
 		}
 	},

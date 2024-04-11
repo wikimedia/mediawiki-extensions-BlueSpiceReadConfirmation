@@ -14,14 +14,15 @@
 		if ( me.readConfirmationGrid === null ) {
 			mw.loader.using( [ 'ext.oOJSPlus.data', 'oojs-ui.styles.icons-user' ] ).done( function () {
 				me.readConfirmationGrid = new OOJSPlus.ui.data.GridWidget( {
-					noHeader: true,
 					toolbar: null,
 					paginator: null,
 					columns: {
 						user: {
+							headerText:  mw.message( 'bs-readconfirmation-page-info-user' ).text(),
 							type: "text"
 						},
 						confirmation: {
+							headerText: mw.message( 'bs-readconfirmation-page-info-confirmation' ).text(),
 							type: "boolean"
 						}
 					},

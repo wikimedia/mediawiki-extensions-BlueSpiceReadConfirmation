@@ -58,5 +58,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "No permission to view read confirmations",
 	"bs-readconfirmation-page-info-read-confirmations": "Read confirmations",
 	"action-readconfirmationviewconfirmations": "view the status of read confirmations",
-	"right-readconfirmationviewconfirmations": "View the status of read confirmations"
+	"right-readconfirmationviewconfirmations": "View the status of read confirmations",
+	"bs-readconfirmation-page-info-user": "User",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation"
 }

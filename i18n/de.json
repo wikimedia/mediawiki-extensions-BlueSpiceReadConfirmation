@@ -62,5 +62,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Kein gültiger Titel bei der Seitenzuweisung vorhanden",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Keine Berechtigung, Lesebestätigungen zu sehen",
 	"action-readconfirmationviewconfirmations": "Status der Lesebestätigungen anzusehen",
-	"right-readconfirmationviewconfirmations": "Status der Lesebestätigungen sehen"
+	"right-readconfirmationviewconfirmations": "Status der Lesebestätigungen sehen",
+	"bs-readconfirmation-page-info-user": "Benutzer",
+	"bs-readconfirmation-page-info-confirmation": "Bestätigung"
 }
