@@ -61,5 +61,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Error message returned by an API module in case user has no right to view read confirmations",
 	"bs-readconfirmation-page-info-read-confirmations": "Label for menu entry to select panel with read confirmation status list",
 	"action-readconfirmationviewconfirmations": "{{doc-action|readconfirmationviewconfirmations}}",
-	"right-readconfirmationviewconfirmations": "{{doc-right|readconfirmationviewconfirmations}}"
+	"right-readconfirmationviewconfirmations": "{{doc-right|readconfirmationviewconfirmations}}",
+	"bs-readconfirmation-page-info-user": "Header title for column which shows user",
+	"bs-readconfirmation-page-info-confirmation": "Header title for column which shows confirmation state"
 }

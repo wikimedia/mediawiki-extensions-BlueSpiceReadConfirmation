@@ -96,8 +96,10 @@ class GetReadConfirmations extends SimpleHandler {
 			if ( isset( $readConfirmations[ $pageId ][ $userId ] ) ) {
 				$confirmation = true;
 			}
+			$user = $this->userFactory->newFromId( $userId );
+			$username = !empty( $user->getRealName() ) ? $user->getRealName() : $user->getName();
 			$usersConfirmation[] = [
-				'user' => $this->userFactory->newFromId( $userId )->getName(),
+				'user' => $username,
 				'confirmation' => $confirmation
 			];
 		}
