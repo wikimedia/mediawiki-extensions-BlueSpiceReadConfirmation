@@ -11,7 +11,8 @@ class AddManagePageAssignmentsIntegration extends BeforePageDisplay {
 	 * @return bool
 	 */
 	protected function skipProcessing() {
-		if ( !$this->out->getTitle()->isSpecial( 'ManagePageAssignments' ) ) {
+		$title = $this->out->getTitle();
+		if ( $title && !$title->isSpecial( 'ManagePageAssignments' ) ) {
 			return true;
 		}
 		return false;
