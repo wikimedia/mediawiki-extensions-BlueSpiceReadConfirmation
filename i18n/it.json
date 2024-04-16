@@ -45,5 +45,6 @@
 	"right-readconfirmationremind": "Ricorda agli utenti che devono confermare di aver letto la pagina",
 	"bs-readconfirmation-uto-task-header": "Richiesta la conferma di lettura",
 	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura",
-	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura"
+	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura",
+	"bs-readconfirmation-page-info-user": "Utente"
 }

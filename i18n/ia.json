@@ -57,5 +57,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Nulle permission de vider le confirmationes de lectura",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmationes de lectura",
 	"action-readconfirmationviewconfirmations": "vider le stato de confirmationes de lectura",
-	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura"
+	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura",
+	"bs-readconfirmation-page-info-user": "Usator",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation"
 }

@@ -58,5 +58,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "אין הרשאה לצפות באישורי קריאה",
 	"bs-readconfirmation-page-info-read-confirmations": "אישורי קריאה",
 	"action-readconfirmationviewconfirmations": "לצפות במצב אישורי קריאה",
-	"right-readconfirmationviewconfirmations": "צפייה במצב אישורי קריאה"
+	"right-readconfirmationviewconfirmations": "צפייה במצב אישורי קריאה",
+	"bs-readconfirmation-page-info-user": "משתמש",
+	"bs-readconfirmation-page-info-confirmation": "מצב אישור"
 }
