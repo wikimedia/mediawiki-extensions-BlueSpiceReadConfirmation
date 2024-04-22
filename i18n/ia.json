@@ -53,10 +53,11 @@
 	"bs-readconfirmation-dlg-label-page": "Confirmation de lectura pro le pagina \"$1\"",
 	"bs-readconfirmation-view-confirmations": "Vider confirmationes de lectura",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Necun titulo de pagina valide es disponibile",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Le confirmation de lectura non ha essite activate pro iste titulo de pagina",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Necun titulo valide es disponibile pro le assignationes de paginas",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Nulle permission de vider le confirmationes de lectura",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmationes de lectura",
 	"action-readconfirmationviewconfirmations": "vider le stato de confirmationes de lectura",
-	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura"
+	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura",
+	"bs-readconfirmation-page-info-user": "Usator",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation"
 }

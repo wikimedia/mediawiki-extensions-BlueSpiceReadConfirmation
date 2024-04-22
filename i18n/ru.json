@@ -3,7 +3,8 @@
 		"authors": [
 			"DDPAT",
 			"Ice bulldog",
-			"Megakott"
+			"Megakott",
+			"Dirruw'o"
 		]
 	},
 	"bs-readconfirmation-column-read": "Читать?",
@@ -14,5 +15,7 @@
 	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений",
 	"bs-readconfirmation-disabled-ns-short": "Выключен",
 	"bs-readconfirmation-graphicallist-btn-read": "Читать",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)",
+	"bs-readconfirmation-page-info-user": "Участник",
+	"bs-readconfirmation-page-info-confirmation": "Подтверждение"
 }

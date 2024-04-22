@@ -26,5 +26,7 @@
 	"bs-readconfirmation-label-ns-manager": "읽음 여부 확인",
 	"bs-readconfirmation-disabled-ns-short": "비활성화됨",
 	"bs-readconfirmation-navigation-link-text": "읽음 여부 확인을 요청함",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 기준)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 기준)",
+	"bs-readconfirmation-page-info-user": "사용자",
+	"bs-readconfirmation-page-info-confirmation": "확인"
 }

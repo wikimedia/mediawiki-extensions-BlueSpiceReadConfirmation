@@ -5,7 +5,8 @@
 			"Canaan9801",
 			"DiegoAmbrocio",
 			"Fitoschido",
-			"Madamebiblio"
+			"Madamebiblio",
+			"Eulalio"
 		]
 	},
 	"bs-readconfirmation-desc": "Extensión para recoger las confirmaciones de lectura de una página",
@@ -49,5 +50,7 @@
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(a partir de $1)",
 	"bs-readconfirmation-uto-task-header": "Se requiere confirmación de lectura",
 	"bs-readconfirmation-uto-task-body-diff": "Ver cambios desde la última confirmación de lectura",
-	"bs-readconfirmation-confirm-read-aria-description": "Se solicitó confirmación de lectura"
+	"bs-readconfirmation-confirm-read-aria-description": "Se solicitó confirmación de lectura",
+	"bs-readconfirmation-page-info-user": "Usuario",
+	"bs-readconfirmation-page-info-confirmation": "Confirmación"
 }

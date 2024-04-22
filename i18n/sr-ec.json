@@ -4,6 +4,7 @@
 			"Milicevic01"
 		]
 	},
+	"logentry-bs-readconfirmation-remind": "$1 је {{GENDER:$2|питао|питала}} $4 да прочита страницу $3",
 	"bs-readconfirmation-page-info-read-confirmations": "Прочитај потврде",
-	"logentry-bs-readconfirmation-remind": "$1 је {{GENDER:$2|питао|питала}} $4 да прочита страницу $3"
+	"bs-readconfirmation-page-info-user": "Корисник"
 }
