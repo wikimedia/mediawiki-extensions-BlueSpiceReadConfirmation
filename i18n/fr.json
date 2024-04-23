@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alien333",
 			"Amire80",
 			"Golmore",
 			"Gomoko",
@@ -63,5 +64,7 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Aucun droit pour afficher les confirmations de lecture",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmations de lecture",
 	"action-readconfirmationviewconfirmations": "afficher l’état des confirmations de lecture",
-	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture"
+	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture",
+	"bs-readconfirmation-page-info-user": "Utilisateur",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation"
 }
