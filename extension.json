@@ -35,9 +35,6 @@
 					]
 				}
 			},
-			"NotificationRegistrationFunctions": [
-				"\\BlueSpice\\ReadConfirmation\\Notifications\\Registrator::registerNotifications"
-			],
 			"RunJobsTriggerHandlerRegistry": {
 				"bs-readconfirmation-autonotifier": "BlueSpice\\ReadConfirmation\\RunJobsTriggerHandler\\AutomaticReadConfirmationNotifier::factory"
 			}
@@ -56,6 +53,22 @@
 			"AttentionIndicatorCollectionRegistry": [
 				"readconfirmation"
 			]
+		},
+		"Notifications": {
+			"Events": {
+				"bs-rc-request": {
+					"spec": {
+						"class": "\\BlueSpice\\ReadConfirmation\\Event\\ConfirmationRequestEvent"
+					},
+					"buckets": [ "personal" ]
+				},
+				"bs-rc-remind": {
+					"spec": {
+						"class": "\\BlueSpice\\ReadConfirmation\\Event\\ConfirmationRemindEvent"
+					},
+					"buckets": [ "personal" ]
+				}
+			}
 		}
 	},
 	"requires": {

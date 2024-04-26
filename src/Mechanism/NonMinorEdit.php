@@ -2,15 +2,16 @@
 
 namespace BlueSpice\ReadConfirmation\Mechanism;
 
-use BlueSpice\NotificationManager;
 use BlueSpice\PageAssignments\AssignmentFactory;
 use BlueSpice\PageAssignments\Data\Record;
 use BlueSpice\PageAssignments\TitleTarget;
+use BlueSpice\ReadConfirmation\Event\ConfirmationRemindEvent;
+use BlueSpice\ReadConfirmation\Event\ConfirmationRequestEvent;
 use BlueSpice\ReadConfirmation\IMechanism;
-use BlueSpice\ReadConfirmation\Notifications\DailyRemind;
-use BlueSpice\ReadConfirmation\Notifications\Remind;
+use Exception;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
+use MWStake\MediaWiki\Component\Events\Notifier;
 use Title;
 use User;
 use Wikimedia\Rdbms\LoadBalancer;
@@ -39,9 +40,9 @@ class NonMinorEdit implements IMechanism {
 	protected $assignmentFactory = null;
 
 	/**
-	 * @var NotificationManager
+	 * @var Notifier
 	 */
-	protected $notificationsManager = null;
+	protected $notifier;
 
 	/** @var MediaWikiServices */
 	protected $services = null;
@@ -54,12 +55,12 @@ class NonMinorEdit implements IMechanism {
 		$services = MediaWikiServices::getInstance();
 		$dbLoadBalancer = $services->getDBLoadBalancer();
 		$assignmentFactory = $services->getService( 'BSPageAssignmentsAssignmentFactory' );
-		$notificationsManager = $services->getService( 'BSNotificationManager' );
+		$notifier = $services->getService( 'MWStake.Notifier' );
 		return new self(
 			$dbLoadBalancer,
 			$wgNamespacesWithEnabledReadConfirmation,
 			$assignmentFactory,
-			$notificationsManager
+			$notifier
 		);
 	}
 
@@ -68,14 +69,13 @@ class NonMinorEdit implements IMechanism {
 	 * @param LoadBalancer $dbLoadBalancer
 	 * @param array $enabledNamespaces
 	 * @param AssignmentFactory $assignmentFactory
-	 * @param NotificationManager $notificationsManager
+	 * @param Notifier $notifier
 	 */
-	protected function __construct( $dbLoadBalancer, $enabledNamespaces, $assignmentFactory,
-		$notificationsManager ) {
+	protected function __construct( $dbLoadBalancer, $enabledNamespaces, $assignmentFactory, Notifier $notifier ) {
 		$this->dbLoadBalancer = $dbLoadBalancer;
 		$this->enabledNamespaces = $enabledNamespaces;
 		$this->assignmentFactory = $assignmentFactory;
-		$this->notificationsManager = $notificationsManager;
+		$this->notifier = $notifier;
 		$this->services = MediaWikiServices::getInstance();
 	}
 
@@ -106,10 +106,8 @@ class NonMinorEdit implements IMechanism {
 			}
 			$titles[$id] = $title;
 		}
-		$userAgent = $this->services->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->getUser();
 		foreach ( $titles as $title ) {
-			$this->notifyDaily( $title, $userAgent );
+			$this->notifyDaily( $title );
 		}
 	}
 
@@ -125,8 +123,7 @@ class NonMinorEdit implements IMechanism {
 		}
 
 		$notifyUsers = $this->getNotifyUsers( $target );
-		$notification = new Remind( $userAgent, $title, [], $notifyUsers );
-		$this->notificationsManager->getNotifier()->notify( $notification );
+		$this->notifier->emit( new ConfirmationRequestEvent( $userAgent, $title, $notifyUsers ) );
 
 		$notifiedUsers = [];
 		$userFactory = $this->services->getUserFactory();
@@ -144,18 +141,18 @@ class NonMinorEdit implements IMechanism {
 
 	/**
 	 * @param Title $title
-	 * @param User $userAgent
 	 * @return bool
+	 * @throws Exception
 	 */
-	private function notifyDaily( Title $title, User $userAgent ) {
+	private function notifyDaily( Title $title ) {
 		$target = $this->getTargetFromTitle( $title );
 		if ( $target === false ) {
 			return false;
 		}
 
 		$notifyUsers = $this->getNotifyUsers( $target );
-		$notification = new DailyRemind( $userAgent, $title, [], $notifyUsers );
-		$this->notificationsManager->getNotifier()->notify( $notification );
+		$event = new ConfirmationRemindEvent( $title, $notifyUsers );
+		$this->notifier->emit( $event );
 		return true;
 	}
 
