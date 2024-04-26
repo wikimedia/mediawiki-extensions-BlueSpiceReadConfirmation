@@ -384,16 +384,17 @@ class NonMinorEdit implements IMechanism {
 	private function getRecentRevisions( $pageIds = [] ) {
 		$recentData = [];
 
-		$conds = [ 'rev_minor_edit' => 0 ];
-
-		if ( !empty( $pageIds ) ) {
-			$conds['rev_page'] = $pageIds;
+		if ( empty( $pageIds ) ) {
+			return [];
 		}
 
 		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
 			'revision',
 			[ 'rev_id', 'rev_page', 'rev_minor_edit' ],
-			$conds,
+			[
+				'rev_minor_edit' => 0,
+				'rev_page' => $pageIds
+			],
 			__METHOD__,
 			[ 'ORDER BY' => 'rev_id DESC' ]
 		);
