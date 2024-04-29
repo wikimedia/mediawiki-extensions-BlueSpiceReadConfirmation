@@ -58,5 +58,13 @@
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Nulle permission de vider le confirmationes de lectura",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmationes de lectura",
 	"action-readconfirmationviewconfirmations": "vider le stato de confirmationes de lectura",
-	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura"
+	"right-readconfirmationviewconfirmations": "Vider le stato de confirmationes de lectura",
+	"bs-readconfirmation-page-info-user": "Usator",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation",
+	"readconfirmation-event-confirmation-request-key-desc": "Confirmation de lectura necessari",
+	"readconfirmation-event-confirmation-request": "{{GENDER:$1|ha requestate}} un confirmation de lectura pro le pagina $2",
+	"readconfirmation-event-confirmation-request-bot": "Te es requestate de confirmar que tu ha legite le pagina $1",
+	"readconfirmation-event-confirmation-remind-key-desc": "Rememoration pro un confirmation de lectura pendente",
+	"readconfirmation-event-confirmation-remind-bot": "Rememoration pro confirmar que tu ha legite le pagina $1",
+	"readconfirmation-event-confirmation-links-intro": "Per favor visita le pagina per le ligamine sequente pro confirmar le pagina como legite"
 }

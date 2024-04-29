@@ -4,6 +4,7 @@
 			"Milicevic01"
 		]
 	},
-	"bs-readconfirmation-page-info-read-confirmations": "Прочитај потврде",
-	"logentry-bs-readconfirmation-remind": "$1 је {{GENDER:$2|питао|питала}} $4 да прочита страницу $3"
+	"bs-readconfirmation-page-info-read-confirmations": "\u041f\u0440\u043e\u0447\u0438\u0442\u0430\u0458 \u043f\u043e\u0442\u0432\u0440\u0434\u0435",
+	"logentry-bs-readconfirmation-remind": "$1 \u0458\u0435 {{GENDER:$2|\u043f\u0438\u0442\u0430\u043e|\u043f\u0438\u0442\u0430\u043b\u0430}} $4 \u0434\u0430 \u043f\u0440\u043e\u0447\u0438\u0442\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 $3",
+	"bs-readconfirmation-page-info-user": "\u041a\u043e\u0440\u0438\u0441\u043d\u0438\u043a"
 }

@@ -63,5 +63,11 @@
 	"action-readconfirmationviewconfirmations": "{{doc-action|readconfirmationviewconfirmations}}",
 	"right-readconfirmationviewconfirmations": "{{doc-right|readconfirmationviewconfirmations}}",
 	"bs-readconfirmation-page-info-user": "Header title for column which shows user",
-	"bs-readconfirmation-page-info-confirmation": "Header title for column which shows confirmation state"
+	"bs-readconfirmation-page-info-confirmation": "Header title for column which shows confirmation state",
+	"readconfirmation-event-confirmation-request-key-desc": "Notification title label",
+	"readconfirmation-event-confirmation-request": "Notification message when read confirmation is requested.\n$1 - agent\n$2 - page anchor",
+	"readconfirmation-event-confirmation-request-bot": "Notification message when read confirmation is requested by a bot.\n$1 - page anchor",
+	"readconfirmation-event-confirmation-remind-key-desc": "Notification title label",
+	"readconfirmation-event-confirmation-remind-bot": "Notification message when reminding that read confirmation is requested.\n$1 - page anchor",
+	"readconfirmation-event-confirmation-links-intro": "Label for the email notification link to the page"
 }

@@ -2,17 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
+			"Dirruw'o",
 			"Ice bulldog",
 			"Megakott"
 		]
 	},
-	"bs-readconfirmation-column-read": "Читать?",
-	"bs-readconfirmation-column-read-at": "Прочитано",
-	"bs-readconfirmation-not-read": "не прочитано",
-	"bs-readconfirmation-confirm-read-button-label": "Подтвердить",
-	"bs-readconfirmation-action-apiread-confirm-description": "Отметить $1 как прочитано",
-	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений",
-	"bs-readconfirmation-disabled-ns-short": "Выключен",
-	"bs-readconfirmation-graphicallist-btn-read": "Читать",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)"
+	"bs-readconfirmation-column-read": "\u0427\u0438\u0442\u0430\u0442\u044c?",
+	"bs-readconfirmation-column-read-at": "\u041f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043e",
+	"bs-readconfirmation-not-read": "\u043d\u0435 \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043e",
+	"bs-readconfirmation-confirm-read-button-label": "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044c",
+	"bs-readconfirmation-action-apiread-confirm-description": "\u041e\u0442\u043c\u0435\u0442\u0438\u0442\u044c $1 \u043a\u0430\u043a \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043e",
+	"logeventslist-bs-readconfirmation-log": "\u0427\u0438\u0442\u0430\u0442\u044c \u0436\u0443\u0440\u043d\u0430\u043b \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0439",
+	"bs-readconfirmation-disabled-ns-short": "\u0412\u044b\u043a\u043b\u044e\u0447\u0435\u043d",
+	"bs-readconfirmation-graphicallist-btn-read": "\u0427\u0438\u0442\u0430\u0442\u044c",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(\u043e\u0442 $1)",
+	"bs-readconfirmation-page-info-user": "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a",
+	"bs-readconfirmation-page-info-confirmation": "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u0435"
 }

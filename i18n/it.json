@@ -12,13 +12,13 @@
 	"bs-readconfirmation-action-remind": "Richiedi conferma di lettura",
 	"bs-readconfirmation-action-remind-confirm": "Richiedere conferma di lettura?",
 	"bs-readconfirmation-confirm-read-heading": "Conferma di lettura",
-	"bs-readconfirmation-confirm-read-checkbox-label": "Sì, ho letto la pagina per intero.",
+	"bs-readconfirmation-confirm-read-checkbox-label": "S\u00ec, ho letto la pagina per intero.",
 	"bs-readconfirmation-confirm-read-button-label": "Conferma",
 	"bs-readconfirmation-action-apiread-check-description": "controllare la conferma di lettura per $1",
 	"bs-readconfirmation-action-apiread-confirm-description": "Segna $1 come letto",
 	"bs-readconfirmation-action-apiread-remind-description": "Richiedi conferma di lettura per $1",
 	"bs-readconfirmation-api-error-cant-confirm": "Impossibile elaborare la conferma di lettura per questa pagina",
-	"bs-readconfirmation-api-error-no-page": "Non è stata indicata nessuna pagina",
+	"bs-readconfirmation-api-error-no-page": "Non \u00e8 stata indicata nessuna pagina",
 	"bs-readconfirmation-api-error-no-non-minor-revision": "Non sono state trovate versioni",
 	"echo-category-title-bs-readconfirmation-cat": "Conferma di lettura",
 	"echo-pref-tooltip-bs-readconfirmation-cat": "Avvisami quando ho aperto le conferme di lettura",
@@ -35,7 +35,7 @@
 	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|ha}} confermato di aver letto la pagina $3",
 	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|ha}} richiesto all'utente $4 di confermare la lettura della pagina $3",
 	"bs-readconfirmation-label-ns-manager": "Conferma di lettura",
-	"bs-readconfirmation-api-error-not-active-ns": "La conferma di lettura non è abilitata per questo namespace",
+	"bs-readconfirmation-api-error-not-active-ns": "La conferma di lettura non \u00e8 abilitata per questo namespace",
 	"bs-readconfirmation-disabled-ns": "Richiesta di lettura non abilitata",
 	"bs-readconfirmation-disabled-ns-short": "Disattivato",
 	"bs-readconfirmation-navigation-link-title": "Mostra una panoramica di tutte le conferme di lettura in sospeso",
@@ -45,5 +45,6 @@
 	"right-readconfirmationremind": "Ricorda agli utenti che devono confermare di aver letto la pagina",
 	"bs-readconfirmation-uto-task-header": "Richiesta la conferma di lettura",
 	"bs-readconfirmation-uto-task-body-diff": "Visualizza le modifiche dall'ultima conferma di lettura",
-	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura"
+	"bs-readconfirmation-confirm-read-aria-description": "Richiesta la conferma di lettura",
+	"bs-readconfirmation-page-info-user": "Utente"
 }
