@@ -6,6 +6,7 @@
 			"Golmore",
 			"Gomoko",
 			"McDutchie",
+			"SleaY",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92"
@@ -66,5 +67,6 @@
 	"action-readconfirmationviewconfirmations": "afficher l’état des confirmations de lecture",
 	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture",
 	"bs-readconfirmation-page-info-user": "Utilisateur",
-	"bs-readconfirmation-page-info-confirmation": "Confirmation"
+	"bs-readconfirmation-page-info-confirmation": "Confirmation",
+	"readconfirmation-event-confirmation-request-key-desc": "Confirmation de lecture demandée"
 }

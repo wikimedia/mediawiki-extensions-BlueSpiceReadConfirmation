@@ -60,5 +60,11 @@
 	"action-readconfirmationviewconfirmations": "לצפות במצב אישורי קריאה",
 	"right-readconfirmationviewconfirmations": "צפייה במצב אישורי קריאה",
 	"bs-readconfirmation-page-info-user": "משתמש",
-	"bs-readconfirmation-page-info-confirmation": "מצב אישור"
+	"bs-readconfirmation-page-info-confirmation": "מצב אישור",
+	"readconfirmation-event-confirmation-request-key-desc": "נדרש אישור קריאה",
+	"readconfirmation-event-confirmation-request": "{{GENDER:$1|ביקש|ביקשה}} אישור קריאה עבור הדף $2",
+	"readconfirmation-event-confirmation-request-bot": "התבקשת לאשר שקראת את הדף $1",
+	"readconfirmation-event-confirmation-remind-key-desc": "תזכורת לאישור קריאה ממתין",
+	"readconfirmation-event-confirmation-remind-bot": "תזכורת לאשר שקראת את הדף $1.",
+	"readconfirmation-event-confirmation-links-intro": "נא לבקר בדף בקישור הבא כדי לאשר שהדף נקרא"
 }
