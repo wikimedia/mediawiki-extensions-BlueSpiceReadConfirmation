@@ -7,7 +7,8 @@
 			"McDutchie",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Alien333"
 		]
 	},
 	"bs-readconfirmation-desc": "Extension pour collecter les confirmations de lecture d’un article",
@@ -59,10 +60,11 @@
 	"bs-readconfirmation-dlg-label-page": "Confirmation de lecture pour la page « $1 »",
 	"bs-readconfirmation-view-confirmations": "Afficher les confirmations de lecture",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Aucun titre de page valide disponible",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Confirmation de lecture non activée pour ce titre de page",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Aucun titre valide disponible pour les affectations de page",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Aucun droit pour afficher les confirmations de lecture",
 	"bs-readconfirmation-page-info-read-confirmations": "Confirmations de lecture",
 	"action-readconfirmationviewconfirmations": "afficher l’état des confirmations de lecture",
-	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture"
+	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture",
+	"bs-readconfirmation-page-info-user": "Utilisateur",
+	"bs-readconfirmation-page-info-confirmation": "Confirmation"
 }
