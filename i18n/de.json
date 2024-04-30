@@ -5,7 +5,8 @@
 			"McDutchie",
 			"Mglaser",
 			"MrFraggle",
-			"Robert Vogel"
+			"Robert Vogel",
+			"TomatoCake"
 		]
 	},
 	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen für eine Seite einzuholen",
@@ -63,5 +64,6 @@
 	"action-readconfirmationviewconfirmations": "Status der Lesebestätigungen anzusehen",
 	"right-readconfirmationviewconfirmations": "Status der Lesebestätigungen sehen",
 	"bs-readconfirmation-page-info-user": "Benutzer",
-	"bs-readconfirmation-page-info-confirmation": "Bestätigung"
+	"bs-readconfirmation-page-info-confirmation": "Bestätigung",
+	"readconfirmation-event-confirmation-request-key-desc": "Lesebestätigung erforderlich"
 }
