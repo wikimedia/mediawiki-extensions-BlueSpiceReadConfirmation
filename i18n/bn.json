@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"\u0986\u09ab\u09a4\u09be\u09ac\u09c1\u099c\u09cd\u099c\u09be\u09ae\u09be\u09a8"
+			"আফতাবুজ্জামান"
 		]
 	},
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 \u0985\u09a8\u09c1\u09af\u09be\u09af\u09bc\u09c0)",
-	"bs-readconfirmation-page-info-user": "\u09ac\u09cd\u09af\u09ac\u09b9\u09be\u09b0\u0995\u09be\u09b0\u09c0",
-	"bs-readconfirmation-page-info-confirmation": "\u09a8\u09bf\u09b6\u09cd\u099a\u09bf\u09a4\u0995\u09b0\u09a3"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 অনুযায়ী)",
+	"bs-readconfirmation-page-info-user": "ব্যবহারকারী",
+	"bs-readconfirmation-page-info-confirmation": "নিশ্চিতকরণ"
 }

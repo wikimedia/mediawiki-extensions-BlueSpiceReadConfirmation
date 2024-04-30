@@ -6,13 +6,13 @@
 			"Tmv"
 		]
 	},
-	"bs-readconfirmation-desc": "\u3042\u308b\u30da\u30fc\u30b8\u306e\u8aad\u307f\u53d6\u308a\u306e\u78ba\u8a8d\u3092\u96c6\u8a08\u3059\u308b\u305f\u3081\u306e\u62e1\u5f35\u6a5f\u80fd",
-	"bs-readconfirmation-confirm-read-checkbox-label": "\u306f\u3044\u3001\u79c1\u306f\u3053\u306e\u30da\u30fc\u30b8\u3092\u5168\u90e8\u8aad\u307f\u307e\u3057\u305f\u3002",
-	"notification-bs-readconfirmation-remind-subject": "\u30da\u30fc\u30b8 $2 \u306e\u305f\u3081\u306e\u6ce8\u610f\u559a\u8d77",
-	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|}} \u306f\u30da\u30fc\u30b8 $3 \u3092\u8aad\u3093\u3060\u3053\u3068\u3092\u78ba\u8a8d\u3057\u307e\u3057\u305f\u3002",
-	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|}} \u304c\u5229\u7528\u8005 $4 \u306b\u30da\u30fc\u30b8 $3 \u3092\u8aad\u3093\u3060\u3053\u3068\u3092\u78ba\u8a8d\u3059\u308b\u3088\u3046\u4f9d\u983c\u3057\u307e\u3057\u305f",
-	"bs-readconfirmation-disabled-ns-short": "\u7121\u52b9",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 \u4ee5\u964d)",
-	"bs-readconfirmation-dlg-title": "\u78ba\u8a8d\u3092\u8aad\u3080",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "\u3053\u306e\u30da\u30fc\u30b8 \u30bf\u30a4\u30c8\u30eb\u306b\u5bfe\u3057\u3066\u65e2\u8aad\u78ba\u8a8d\u304c\u6709\u52b9\u306b\u306a\u3063\u3066\u3044\u307e\u305b\u3093"
+	"bs-readconfirmation-desc": "あるページの読み取りの確認を集計するための拡張機能",
+	"bs-readconfirmation-confirm-read-checkbox-label": "はい、私はこのページを全部読みました。",
+	"notification-bs-readconfirmation-remind-subject": "ページ $2 のための注意喚起",
+	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|}} はページ $3 を読んだことを確認しました。",
+	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|}} が利用者 $4 にページ $3 を読んだことを確認するよう依頼しました",
+	"bs-readconfirmation-disabled-ns-short": "無効",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 以降)",
+	"bs-readconfirmation-dlg-title": "確認を読む",
+	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "このページ タイトルに対して既読確認が有効になっていません"
 }
