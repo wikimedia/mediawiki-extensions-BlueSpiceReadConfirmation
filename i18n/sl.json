@@ -54,10 +54,17 @@
 	"bs-readconfirmation-dlg-label-page": "Potrditev branja za stran »$1«",
 	"bs-readconfirmation-view-confirmations": "Prikaži potrditve branja",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Ni veljavnega naslova strani",
-	"bs-readconfirmation-api-confirmation-error-no-read-confirmation-active": "Za ta naslov strani potrditev branja ni aktivirana",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "Ni razpložljivih veljavnih naslovov za dodelitve strani",
 	"bs-readconfirmation-api-confirmation-error-no-read-permission": "Ni dovoljenja za ogled potrditev branja",
 	"bs-readconfirmation-page-info-read-confirmations": "Potrditve branja",
 	"action-readconfirmationviewconfirmations": "ogled stanja potrditev branja",
-	"right-readconfirmationviewconfirmations": "Ogled stanja potrditev branja"
+	"right-readconfirmationviewconfirmations": "Ogled stanja potrditev branja",
+	"bs-readconfirmation-page-info-user": "Uporabnik",
+	"bs-readconfirmation-page-info-confirmation": "Potrditev",
+	"readconfirmation-event-confirmation-request-key-desc": "Potrebna je potrditev branja",
+	"readconfirmation-event-confirmation-request": "{{GENDER:$1|je zahteval|je zahtevaka|je zahteval_a}} potrditev branja za stran $2",
+	"readconfirmation-event-confirmation-request-bot": "Potrebna je potrditev, da ste prebrali stran $1",
+	"readconfirmation-event-confirmation-remind-key-desc": "Opomnik na čakajočo potrditev branja",
+	"readconfirmation-event-confirmation-remind-bot": "Opomnik za potrditev, da ste prebrali $1.",
+	"readconfirmation-event-confirmation-links-intro": "Obiščite stran na naslednji povezavi, da potrdite, da ste prebrali stran"
 }
