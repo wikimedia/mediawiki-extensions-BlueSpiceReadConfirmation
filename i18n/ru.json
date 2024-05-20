@@ -4,12 +4,14 @@
 			"DDPAT",
 			"Dirruw'o",
 			"Ice bulldog",
-			"Megakott"
+			"Megakott",
+			"Yurina Tatiana"
 		]
 	},
 	"bs-readconfirmation-column-read": "Читать?",
 	"bs-readconfirmation-column-read-at": "Прочитано",
 	"bs-readconfirmation-not-read": "не прочитано",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Да, я полностью прочитал(-а) эту страницу.",
 	"bs-readconfirmation-confirm-read-button-label": "Подтвердить",
 	"bs-readconfirmation-action-apiread-confirm-description": "Отметить $1 как прочитано",
 	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений",
