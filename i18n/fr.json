@@ -5,6 +5,7 @@
 			"Amire80",
 			"Golmore",
 			"Gomoko",
+			"Graineahumus",
 			"McDutchie",
 			"SleaY",
 			"Thibaut120094",
@@ -68,5 +69,8 @@
 	"right-readconfirmationviewconfirmations": "Afficher l’état des confirmations de lecture",
 	"bs-readconfirmation-page-info-user": "Utilisateur",
 	"bs-readconfirmation-page-info-confirmation": "Confirmation",
-	"readconfirmation-event-confirmation-request-key-desc": "Confirmation de lecture demandée"
+	"readconfirmation-event-confirmation-request-key-desc": "Confirmation de lecture demandée",
+	"readconfirmation-event-confirmation-remind-key-desc": "Rappel pour une confirmation de lecture en attente",
+	"readconfirmation-event-confirmation-remind-bot": "Rappel pour confirmer que vous avez lu la page $1",
+	"readconfirmation-event-confirmation-links-intro": "Veuillez visiter la page au lien suivant pour confirmer la page comme lue"
 }
