@@ -8,7 +8,9 @@ use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
 class Handler implements IPrivacyHandler {
+	/** @var IDatabase */
 	protected $db;
+	/** @var \Language */
 	protected $language;
 
 	/**
