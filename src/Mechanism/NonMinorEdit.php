@@ -345,14 +345,18 @@ class NonMinorEdit implements IMechanism {
 			[ $target->getTitle()->getArticleID() ]
 		);
 
-		$affectedUsers = array_filter(
+		$notReadUserIds = array_filter(
 			$target->getAssignedUserIDs(),
 			static function ( $e ) use( $target, $currentReads ) {
 				return !isset( $currentReads[$target->getTitle()->getArticleID()][$e] );
 			}
 		);
 
-		return $affectedUsers;
+		$notReadUsers = array_map( function ( $id ) {
+			return $this->services->getUserFactory()->newFromId( $id );
+		}, $notReadUserIds );
+
+		return array_filter( $notReadUsers );
 	}
 
 	/**
