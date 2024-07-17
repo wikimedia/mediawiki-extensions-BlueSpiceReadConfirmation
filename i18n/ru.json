@@ -4,7 +4,8 @@
 			"DDPAT",
 			"Dirruw'o",
 			"Ice bulldog",
-			"Megakott"
+			"Megakott",
+			"Yurina Tatiana"
 		]
 	},
 	"bs-readconfirmation-column-read": "Читать?",
@@ -17,5 +18,6 @@
 	"bs-readconfirmation-graphicallist-btn-read": "Читать",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)",
 	"bs-readconfirmation-page-info-user": "Участник",
-	"bs-readconfirmation-page-info-confirmation": "Подтверждение"
+	"bs-readconfirmation-page-info-confirmation": "Подтверждение",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Да, я полностью прочитал(-а) эту страницу."
 }
