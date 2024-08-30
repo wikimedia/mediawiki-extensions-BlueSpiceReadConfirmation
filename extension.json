@@ -54,7 +54,7 @@
 				"readconfirmation"
 			]
 		},
-		"Notifications": {
+		"NotifyMe": {
 			"Events": {
 				"bs-rc-request": {
 					"spec": {
