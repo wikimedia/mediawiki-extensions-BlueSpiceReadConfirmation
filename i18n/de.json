@@ -6,7 +6,8 @@
 			"Mglaser",
 			"MrFraggle",
 			"Robert Vogel",
-			"TomatoCake"
+			"TomatoCake",
+			"Vhoesl"
 		]
 	},
 	"bs-readconfirmation-desc": "Ermöglicht es Lesebestätigungen für eine Seite einzuholen",
@@ -66,5 +67,10 @@
 	"right-readconfirmationviewconfirmations": "Status der Lesebestätigungen sehen",
 	"bs-readconfirmation-page-info-user": "Benutzer",
 	"bs-readconfirmation-page-info-confirmation": "Bestätigung",
-	"readconfirmation-event-confirmation-request-key-desc": "Lesebestätigung erforderlich"
+	"readconfirmation-event-confirmation-request-key-desc": "Lesebestätigung erforderlich",
+	"readconfirmation-event-confirmation-request": "{{GENDER:$1:|hat}} eine Lesebestätigung für die Seite $2 angefordert",
+	"readconfirmation-event-confirmation-request-bot": "Du wurdest aufgefordert zu bestätigen, dass du die Seite $1 gelesen hast",
+	"readconfirmation-event-confirmation-remind-key-desc": "Erinnerung an eine ausstehende Lesebestätigung",
+	"readconfirmation-event-confirmation-remind-bot": "Erinnerung zur Bestätigung, dass du die Seite $1 gelesen hast",
+	"readconfirmation-event-confirmation-links-intro": "Bitte besuche die Seite unter dem folgenden Link, um zu bestätigen, dass du die Seite gelesen hast"
 }
