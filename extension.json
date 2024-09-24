@@ -137,6 +137,7 @@
 			],
 			"dependencies": [
 				"ext.bluespice",
+				"ext.bluespice.extjs",
 				"ext.oOJSPlus.dialogs"
 			]
 		},
@@ -184,7 +185,7 @@
 		"BSApiExtJSStoreBaseBeforePostProcessData": "ReadConfirmationPageAssignmentHooks::onBSApiExtJSStoreBaseBeforePostProcessData",
 		"BSPageStoreDataProviderBeforeAppendRow": "ReadConfirmationPageAssignmentHooks::onBSPageStoreDataProviderBeforeAppendRow",
 		"BSPageAssignmentsManager": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
-		"BSPageAssignmentsOverview": "ReadConfirmationPageAssignmentHooks::onBSPageAssignmentsSpecialPages",
+		"BSPageAssignmentsOverview": "addReadConfirmationInfoToPageAssignments",
 		"LoadExtensionSchemaUpdates": "\\BlueSpice\\ReadConfirmation\\Hook\\LoadExtensionSchemaUpdates\\AddReadConfirmationDatabase::callback",
 		"BeforePageDisplay": [
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddManagePageAssignmentsIntegration::callback",
@@ -213,6 +214,9 @@
 		},
 		"standard-dialogs": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\StandardDialogs"
+		},
+		"addReadConfirmationInfoToPageAssignments": {
+			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\AddReadConfirmationInfoToPageAssignments"
 		}
 	},
 	"RestRoutes": [

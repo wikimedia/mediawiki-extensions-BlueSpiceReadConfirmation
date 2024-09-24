@@ -102,17 +102,6 @@ class ReadConfirmationPageAssignmentHooks {
 	}
 
 	/**
-	 *
-	 * @param \SpecialPageAssignments|\SpecialManagePageAssignments $oSender
-	 * @param array &$aDeps
-	 * @return bool
-	 */
-	public static function onBSPageAssignmentsSpecialPages( $oSender, &$aDeps ) {
-		$aDeps[] = 'ext.readconfirmation.pageassignmentsintegration';
-		return true;
-	}
-
-	/**
 	 * @return IMechanism
 	 */
 	public static function getReadConfirmationMechanismInstance() {
