@@ -119,32 +119,25 @@
 		}
 	});
 
-	$( d ).on( 'BSPageAssignmentsOverviewPanelInit', function( e, sender, cols, fields, actions ){
-		fields.push( 'read_confirmation' );
-
-		cols.push({
-			text: mw.message('bs-readconfirmation-column-read-at').plain(),
-			xtype: 'datecolumn',
-			format: 'Y-m-d H:i', //Doesn't work with custom renderer :(
-			dataIndex: 'read_confirmation',
+	mw.hook( 'BSPageAssignmentsOverviewPanelInit' ).add( ( gridCfg ) => {
+		gridCfg.columns.read_confirmation = { // eslint-disable-line camelcase
+			headerText: mw.message( 'bs-readconfirmation-column-read-at' ).plain(),
+			type: 'text',
 			sortable: true,
-			filter:{
-				type: 'date'
-			},
-			renderer: function( value, metaData, record, rowIndex, colIndex, store, view ) {
-				if( !value ) {
-					metaData.tdCls += ' bs-rc-not-read';
-					return '<em>' + mw.message('bs-readconfirmation-not-read').plain() +'</em>';
+			filter: { type: 'date' },
+			valueParser: ( val ) => {
+				if ( !val ) {
+					return mw.message( 'bs-readconfirmation-not-read' ).plain();
 				}
-				if( value === 'disabled' ) {
-					return '<em>' + mw.message('bs-readconfirmation-disabled-ns').plain() +'</em>';
+				if ( val === 'disabled' ) {
+					return mw.message( 'bs-readconfirmation-disabled-ns' ).plain();
 				}
 
-				var date = Ext.Date.parse( value, "YmdHis");
-				var renderer = Ext.util.Format.dateRenderer( 'Y-m-d, H:i' );
+				const date = Ext.Date.parse( val, 'YmdHis' );
+				const dateRenderer = Ext.util.Format.dateRenderer( 'Y-m-d, H:i' );
 
-				return renderer( date );
+				return dateRenderer( date );
 			}
-		});
-	});
+		};
+	} );
 } )( document, mediaWiki, jQuery, blueSpice );
