@@ -123,6 +123,9 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 		$readConfirmationTasks = [];
 		foreach ( $userAssignedPages as $pageId ) {
 			$title = Title::newFromID( $pageId );
+			if ( !$this->readConfirmationMechanism->canConfirm( $title, $user ) ) {
+				continue;
+			}
 
 			// If user marked as "read" any of revisions of the page
 			if ( isset( $userReadConfirmations[$pageId] ) ) {
