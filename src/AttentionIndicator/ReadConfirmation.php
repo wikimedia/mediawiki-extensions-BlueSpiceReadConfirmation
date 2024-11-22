@@ -135,7 +135,11 @@ class ReadConfirmation extends AttentionIndicator {
 			if ( !$title || !$title->exists() ) {
 				continue;
 			}
-			if ( !$this->mechanismFactory->getMechanismInstance()->canConfirm( $title, $this->user ) ) {
+			if (
+				!$this->mechanismFactory->getMechanismInstance()->canConfirm(
+					$title, $this->user, $title->getLatestRevID()
+				)
+			) {
 				continue;
 			}
 			if ( empty( $userReadConfirmations[$id]['latest_read_rev'] ) ) {
