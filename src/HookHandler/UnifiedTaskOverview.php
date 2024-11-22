@@ -123,7 +123,7 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 		$readConfirmationTasks = [];
 		foreach ( $userAssignedPages as $pageId ) {
 			$title = Title::newFromID( $pageId );
-			if ( !$this->readConfirmationMechanism->canConfirm( $title, $user ) ) {
+			if ( !$this->readConfirmationMechanism->canConfirm( $title, $user, $title->getLatestRevID() ) ) {
 				continue;
 			}
 
