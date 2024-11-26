@@ -1,123 +1,99 @@
-( function( d, mw, $, bs, undefined ) {
+( ( mw, bs ) => {
 
-	var activated = function( ns ) {
-		var namespaces = mw.config.get( 'bsgReadConfirmationActivatedNamespaces', [] );
-		for( var i = 0; i < namespaces.length; i++ ) {
-			if ( parseInt( ns ) !== parseInt( namespaces[i] ) ) {
-				continue;
-			}
-			return true;
-		}
-		return false;
+	const isReadConfirmationNS = ( ns ) => {
+		const namespaces = mw.config.get( 'bsgReadConfirmationActivatedNamespaces', [] );
+		return ( namespaces.some( ( namespace ) => namespace == ns ) ); // eslint-disable-line eqeqeq
 	};
 
-	function __showDialog( pageId, pageTitle ) {
-		var dialog = new OOJSPlus.ui.dialog.BookletDialog( {
+	const showDialog = ( pageId, pageTitle ) => {
+		const dialog = new OOJSPlus.ui.dialog.BookletDialog( {
 			id: 'bs-readconfirmation-user-list',
-			pages: function() {
-				var dfd = $.Deferred();
-				mw.loader.using( "ext.readconfirmation.dialog.pages", function() {
-					dfd.resolve( [ new bs.readconfirmation.ui.ReadConfirmationPage( {
-						data: {
-							page: pageTitle,
-							pageId: pageId
-						}
-					} ) ] );
-				}, function( e ) {
-					dfd.reject( e );
+			pages: async () => {
+				await mw.loader.using( 'ext.readconfirmation.dialog.pages' );
+				return new bs.readconfirmation.ui.ReadConfirmationPage( {
+					data: {
+						page: pageTitle,
+						pageId: pageId
+					}
 				} );
-					return dfd.promise();
-				}
+			}
 		} );
 		dialog.show();
-	}
+	};
 
-	$( d ).on( 'BSPageAssignmentsManagerPanelInit', function( e, sender, cols, fields, actions ){
-		fields.push( 'all_assignees_have_read' );
-
-		cols.push({
-			text: mw.message('bs-readconfirmation-column-read').plain(),
-			dataIndex: 'all_assignees_have_read',
-			flex: 0,
-			width: 70,
-			align: 'center',
+	mw.hook( 'BSPageAssignmentsManagerPanelInit' ).add( ( gridCfg ) => {
+		gridCfg.columns.all_assignees_have_read = { // eslint-disable-line camelcase
+			headerText: mw.message( 'bs-readconfirmation-column-read' ).plain(),
+			type: 'text',
 			sortable: true,
-			filter:{
-				type: 'boolean'
-			},
-			renderer: function( value, metaData, record, rowIndex, colIndex, store, view ) {
-				if( activated( record.get( 'page_namespace' ) ) ) {
-					return mw.html.element( 'span', {
-						class: 'bs-rc-col ' + ( value ? 'bs-icon-checkmark-circle yes' : 'bs-icon-cancel-circle no' )
-					});
+			filter: { type: 'boolean' },
+			valueParser: ( val, row ) => {
+				if ( isReadConfirmationNS( row.page_namespace ) ) {
+					return new OO.ui.HtmlSnippet( mw.html.element(
+						'span',
+						{
+							class: 'oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-labelElement-invisible oo-ui-iconWidget ' +
+							( val ? 'oo-ui-icon-check' : 'oo-ui-icon-close' )
+						}
+					) );
 				}
-				return '<em>' + mw.message( 'bs-readconfirmation-disabled-ns-short' ).plain() +'</em>';
+				return mw.message( 'bs-readconfirmation-disabled-ns-short' ).plain();
 			}
-		});
-
-		actions.push({
-			tooltip: mw.message('bs-readconfirmation-action-log').plain(),
-			glyph: true, //Needed to have the "BS.override.grid.column.Action" render an <span> instead of an <img>
-			scope: this,
-			handler: function( view, rowIndex, colIndex,item, e, record, row ) {
-				window.open(
-					bs.util.wikiGetlink( {
-						page: record.get( 'page_prefixedtext' ),
+		};
+		gridCfg.actions.readConfirmationLog = {
+			headerText: mw.message( 'bs-readconfirmation-action-log' ).text(),
+			title: mw.message( 'bs-readconfirmation-action-log' ).text(),
+			type: 'action',
+			actionId: 'readConfirmationLog',
+			icon: 'article',
+			invisibleHeader: true,
+			width: 30,
+			doActionOnRow: ( row ) => {
+				window.location.href = mw.util.getUrl(
+					'Special:Log', {
+						page: row.page_prefixedtext,
 						type: 'bs-readconfirmation'
-					}, 'Special:Log' )
+					}
 				);
-			},
-			getClass: function( value, meta, record ) {
-				return "bs-icon-text bs-extjs-actioncolumn-icon bs-readconfirmation-action-log";
-			},
-			isDisabled: function( view, rowIndex, colIndex, item, record  ) {
-				return !activated( record.get( 'page_namespace' ) );
 			}
-		});
-
-		actions.push({
-			tooltip: mw.message('bs-readconfirmation-action-remind').plain(),
-			glyph: true, //Needed to have the "BS.override.grid.column.Action" render an <span> instead of an <img>
-			scope: this,
-			handler: function( view, rowIndex, colIndex,item, e, record, row ) {
+		};
+		gridCfg.actions.readConfirmationRemind = {
+			headerText: mw.message( 'bs-readconfirmation-action-remind' ).text(),
+			title: mw.message( 'bs-readconfirmation-action-remind' ).text(),
+			type: 'action',
+			actionId: 'readConfirmationRemind',
+			icon: 'bell',
+			invisibleHeader: true,
+			width: 30,
+			doActionOnRow: ( row ) => {
 				bs.util.confirm( 'bs-rc', {
 					textMsg: 'bs-readconfirmation-action-remind-confirm'
 				}, {
-					ok: function() {
-						bs.api.tasks.exec( 'readconfirmation', 'remind', {
-							pageId: record.get( 'page_id' )
+					ok: () => {
+						bs.api.tasks.execSilent( 'readconfirmation', 'remind', {
+							pageId: row.page_id
 						} );
 					}
-				});
-			},
-			getClass: function( value, meta, record ) {
-				return "bs-icon-bell bs-extjs-actioncolumn-icon bs-readconfirmation-action-remind";
-			},
-			isDisabled: function( view, rowIndex, colIndex, item, record  ) {
-				if( !record.get( 'assignments' ) || record.get( 'assignments' ).length < 1 ) {
-					return true;
-				}
-				return record.get( 'all_assignees_have_read' ) || !activated( record.get( 'page_namespace' ) );
+				} );
 			}
-		});
-
+		};
 		if ( mw.config.get( 'bsReadConfirmationsViewRight' ) ) {
-			actions.push( {
-				iconCls: 'bs-icon-eye bs-extjs-actioncolumn-icon',
-				glyph: true,
-				tooltip: mw.message( 'bs-readconfirmation-view-confirmations' ).plain(),
-				handler: function( view, rowIndex, colIndex,item, e, record, row ) {
-					var pageId = record.get( 'page_id' );
-					var pageTitle = record.get( 'page_title' );
-					__showDialog( pageId, pageTitle );
-				},
-				isDisabled: function( view, rowIndex, colIndex, item, record  ) {
-					return !activated( record.get( 'page_namespace' ) );
-				},
-				scope: this
-			} );
+			gridCfg.actions.readConfirmationView = {
+				headerText: mw.message( 'bs-readconfirmation-view-confirmations' ).text(),
+				title: mw.message( 'bs-readconfirmation-view-confirmations' ).text(),
+				type: 'action',
+				actionId: 'readConfirmationView',
+				icon: 'eye',
+				invisibleHeader: true,
+				width: 30,
+				doActionOnRow: ( row ) => {
+					const pageId = row.page_id;
+					const pageTitle = row.page_title;
+					showDialog( pageId, pageTitle );
+				}
+			};
 		}
-	});
+	} );
 
 	mw.hook( 'BSPageAssignmentsOverviewPanelInit' ).add( ( gridCfg ) => {
 		gridCfg.columns.read_confirmation = { // eslint-disable-line camelcase
@@ -140,4 +116,4 @@
 			}
 		};
 	} );
-} )( document, mediaWiki, jQuery, blueSpice );
+} )( mediaWiki, blueSpice );

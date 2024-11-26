@@ -137,7 +137,6 @@
 			],
 			"dependencies": [
 				"ext.bluespice",
-				"ext.bluespice.extjs",
 				"ext.oOJSPlus.dialogs"
 			]
 		},
