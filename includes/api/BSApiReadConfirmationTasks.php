@@ -45,13 +45,15 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $result;
 		}
-		$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
-		$revId = $revision ? $revision->getId() : 0;
-
-		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
-			if ( isset( $taskData->stableRevId ) ) {
-				$revId = $taskData->stableRevId;
+		if ( $taskData->revId ) {
+			$revision = $this->services->getRevisionStore()->getRevisionById( $taskData->revId );
+			if ( !$revision || $revision->getPage()->getId() != $title->getArticleID() ) {
+				$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
 			}
+		}
+		$revId = $revision ? $revision->getId() : null;
+		if ( isset( $taskData->stabilizedRevId ) && $taskData->stabilizedRevId !== $revId ) {
+			$revId = $taskData->stabilizedRevId;
 		}
 
 		$mechanismInstance = $this->getMechanismInstance();
@@ -85,13 +87,15 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
 			return $result;
 		}
-		$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
-		$revId = $revision ? $revision->getId() : 0;
-
-		if ( isset( $taskData->isStableRevision ) && $taskData->isStableRevision === true ) {
-			if ( isset( $taskData->stableRevId ) ) {
-				$revId = $taskData->stableRevId;
+		if ( $taskData->revId ) {
+			$revision = $this->services->getRevisionStore()->getRevisionById( $taskData->revId );
+			if ( !$revision || $revision->getPage()->getId() != $title->getArticleID() ) {
+				$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
 			}
+		}
+		$revId = $revision->getId();
+		if ( isset( $taskData->stabilizedRevId ) && $taskData->stabilizedRevId !== $revId ) {
+			$revId = $taskData->stabilizedRevId;
 		}
 
 		$result->success = true;
