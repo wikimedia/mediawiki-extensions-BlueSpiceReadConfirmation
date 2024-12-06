@@ -1,22 +1,17 @@
 ( ( mw, bs ) => {
 
-	const isReadConfirmationNS = ( ns ) => {
-		const namespaces = mw.config.get( 'bsgReadConfirmationActivatedNamespaces', [] );
-		return ( namespaces.some( ( namespace ) => namespace == ns ) ); // eslint-disable-line eqeqeq
-	};
+	const showDialog = async ( pageId, pageTitle ) => {
+		await mw.loader.using( 'ext.readconfirmation.dialog.pages' );
+		const assignmentPages = new bs.readconfirmation.ui.ReadConfirmationPage( {
+			data: {
+				page: pageTitle,
+				pageId: pageId
+			}
+		} );
 
-	const showDialog = ( pageId, pageTitle ) => {
 		const dialog = new OOJSPlus.ui.dialog.BookletDialog( {
 			id: 'bs-readconfirmation-user-list',
-			pages: async () => {
-				await mw.loader.using( 'ext.readconfirmation.dialog.pages' );
-				return new bs.readconfirmation.ui.ReadConfirmationPage( {
-					data: {
-						page: pageTitle,
-						pageId: pageId
-					}
-				} );
-			}
+			pages: [ assignmentPages ]
 		} );
 		dialog.show();
 	};
@@ -26,28 +21,48 @@
 			headerText: mw.message( 'bs-readconfirmation-column-read' ).plain(),
 			type: 'text',
 			sortable: true,
-			filter: { type: 'boolean' },
-			valueParser: ( val, row ) => {
-				if ( isReadConfirmationNS( row.page_namespace ) ) {
-					return new OO.ui.HtmlSnippet( mw.html.element(
-						'span',
-						{
-							class: 'oo-ui-widget oo-ui-widget-enabled oo-ui-iconElement oo-ui-iconElement-icon oo-ui-labelElement-invisible oo-ui-iconWidget ' +
-							( val ? 'oo-ui-icon-check' : 'oo-ui-icon-close' )
-						}
-					) );
+			filter: {
+				type: 'list',
+				list: [
+					{ data: true, label: mw.message( 'oojsplus-data-grid-filter-boolean-true' ).text() },
+					{ data: false, label: mw.message( 'oojsplus-data-grid-filter-boolean-false' ).text() },
+					{ data: 'disabled', label: mw.message( 'bs-readconfirmation-disabled-ns-short' ).text() }
+				]
+			},
+			valueParser: ( val ) => {
+				let icon;
+				let iconClass;
+				let disabled = false;
+				switch ( val ) {
+					case true:
+						icon = 'check';
+						iconClass = 'oo-ui-icon-color-check';
+						break;
+					case false:
+						icon = 'close';
+						iconClass = 'oo-ui-icon-color-cross';
+						break;
+					case 'disabled':
+						icon = 'subtract';
+						iconClass = 'oo-ui-widget-disabled';
+						disabled = true;
+						break;
 				}
-				return mw.message( 'bs-readconfirmation-disabled-ns-short' ).plain();
+
+				const iconWidget = new OO.ui.IconWidget( { // eslint-disable-line mediawiki/class-doc
+					icon: icon,
+					classes: [ iconClass ],
+					disabled: disabled
+				} );
+
+				return new OO.ui.HtmlSnippet( iconWidget.$element );
 			}
 		};
-		gridCfg.actions.readConfirmationLog = {
-			headerText: mw.message( 'bs-readconfirmation-action-log' ).text(),
+		gridCfg.actions.secondaryActions.actions.push( {
+			label: mw.message( 'bs-readconfirmation-action-log' ).text(),
 			title: mw.message( 'bs-readconfirmation-action-log' ).text(),
-			type: 'action',
-			actionId: 'readConfirmationLog',
+			data: 'readConfirmationLog',
 			icon: 'article',
-			invisibleHeader: true,
-			width: 30,
 			doActionOnRow: ( row ) => {
 				window.location.href = mw.util.getUrl(
 					'Special:Log', {
@@ -56,15 +71,12 @@
 					}
 				);
 			}
-		};
-		gridCfg.actions.readConfirmationRemind = {
-			headerText: mw.message( 'bs-readconfirmation-action-remind' ).text(),
+		} );
+		gridCfg.actions.secondaryActions.actions.push( {
+			label: mw.message( 'bs-readconfirmation-action-remind' ).text(),
 			title: mw.message( 'bs-readconfirmation-action-remind' ).text(),
-			type: 'action',
-			actionId: 'readConfirmationRemind',
+			data: 'readConfirmationRemind',
 			icon: 'bell',
-			invisibleHeader: true,
-			width: 30,
 			doActionOnRow: ( row ) => {
 				bs.util.confirm( 'bs-rc', {
 					textMsg: 'bs-readconfirmation-action-remind-confirm'
@@ -76,22 +88,19 @@
 					}
 				} );
 			}
-		};
+		} );
 		if ( mw.config.get( 'bsReadConfirmationsViewRight' ) ) {
-			gridCfg.actions.readConfirmationView = {
-				headerText: mw.message( 'bs-readconfirmation-view-confirmations' ).text(),
+			gridCfg.actions.secondaryActions.actions.push( {
+				label: mw.message( 'bs-readconfirmation-view-confirmations' ).text(),
 				title: mw.message( 'bs-readconfirmation-view-confirmations' ).text(),
-				type: 'action',
-				actionId: 'readConfirmationView',
+				data: 'readConfirmationView',
 				icon: 'eye',
-				invisibleHeader: true,
-				width: 30,
 				doActionOnRow: ( row ) => {
 					const pageId = row.page_id;
 					const pageTitle = row.page_title;
 					showDialog( pageId, pageTitle );
 				}
-			};
+			} );
 		}
 	} );
 

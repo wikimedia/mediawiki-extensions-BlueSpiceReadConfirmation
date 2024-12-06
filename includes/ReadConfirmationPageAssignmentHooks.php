@@ -18,7 +18,7 @@ class ReadConfirmationPageAssignmentHooks {
 		if ( !$dataProvider instanceof PrimaryDataProvider ) {
 			return true;
 		}
-		$dataSet->set( 'all_assignees_have_read', false );
+		$dataSet->set( 'all_assignees_have_read', 'disabled' );
 		if ( !self::getReadConfirmationMechanismInstance()->mustRead( $title ) ) {
 			return true;
 		}
