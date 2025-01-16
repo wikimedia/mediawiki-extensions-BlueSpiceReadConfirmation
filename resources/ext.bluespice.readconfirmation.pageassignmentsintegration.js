@@ -109,10 +109,7 @@
 					return mw.message( 'bs-readconfirmation-disabled-ns' ).plain();
 				}
 
-				const date = Ext.Date.parse( val, 'YmdHis' );
-				const dateRenderer = Ext.util.Format.dateRenderer( 'Y-m-d, H:i' );
-
-				return dateRenderer( date );
+				return bs.util.convertMWTimestampToISO( val );
 			}
 		};
 	} );
