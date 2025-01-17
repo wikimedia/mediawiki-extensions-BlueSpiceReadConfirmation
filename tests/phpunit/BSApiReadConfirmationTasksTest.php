@@ -4,7 +4,7 @@ namespace BlueSpice\ReadConfirmation\Tests;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @group Broken

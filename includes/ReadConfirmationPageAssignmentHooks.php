@@ -4,6 +4,7 @@ use BlueSpice\PageAssignments\Data\Page\PrimaryDataProvider;
 use BlueSpice\PageAssignments\Data\Page\Record;
 use BlueSpice\ReadConfirmation\IMechanism;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class ReadConfirmationPageAssignmentHooks {
 	/**
