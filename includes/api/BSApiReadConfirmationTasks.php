@@ -3,6 +3,7 @@
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
+use MediaWiki\Title\Title;
 
 class BSApiReadConfirmationTasks extends BSApiTasksBase {
 

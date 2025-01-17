@@ -5,6 +5,7 @@ namespace BlueSpice\ReadConfirmation\Privacy;
 use BlueSpice\Privacy\IPrivacyHandler;
 use BlueSpice\Privacy\Module\Transparency;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
 
 class Handler implements IPrivacyHandler {
@@ -72,7 +73,7 @@ class Handler implements IPrivacyHandler {
 			if ( !$rev ) {
 				continue;
 			}
-			$title = \Title::newFromID( $rev->getPageId() );
+			$title = Title::newFromID( $rev->getPageId() );
 			if ( !$title ) {
 				continue;
 			}

@@ -2,7 +2,7 @@
 
 namespace BlueSpice\ReadConfirmation;
 
-use Title;
+use MediaWiki\Title\Title;
 use User;
 
 interface IMechanism {
