@@ -11,9 +11,9 @@ use BlueSpice\ReadConfirmation\IMechanism;
 use Exception;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\Events\Notifier;
-use User;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class NonMinorEdit implements IMechanism {

@@ -8,8 +8,8 @@ use BlueSpice\ReadConfirmation\UnifiedTaskOverview\ReadConfirmationDescriptor;
 use Config;
 use MediaWiki\Extension\UnifiedTaskOverview\Hook\GetTaskDescriptors;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserGroupManager;
-use User;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 
