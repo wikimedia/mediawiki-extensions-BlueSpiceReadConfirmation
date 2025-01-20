@@ -105,7 +105,7 @@
 	} );
 
 	mw.hook( 'BSPageAssignmentsOverviewPanelInit' ).add( ( gridCfg ) => {
-		gridCfg.columns.read_confirmation = { // eslint-disable-line camelcase
+		gridCfg.columns.read_confirmation_display = { // eslint-disable-line camelcase
 			headerText: mw.message( 'bs-readconfirmation-column-read-at' ).plain(),
 			type: 'text',
 			sortable: true,
