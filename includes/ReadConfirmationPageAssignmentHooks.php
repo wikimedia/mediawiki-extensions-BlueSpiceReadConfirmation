@@ -3,6 +3,7 @@
 use BlueSpice\PageAssignments\Data\Page\PrimaryDataProvider;
 use BlueSpice\PageAssignments\Data\Page\Record;
 use BlueSpice\ReadConfirmation\IMechanism;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
