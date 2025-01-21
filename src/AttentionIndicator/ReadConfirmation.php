@@ -7,9 +7,9 @@ use BlueSpice\Discovery\IAttentionIndicator;
 use BlueSpice\ReadConfirmation\MechanismFactory;
 use Config;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupManager;
-use TitleFactory;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class ReadConfirmation extends AttentionIndicator {
