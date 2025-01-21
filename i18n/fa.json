@@ -12,7 +12,6 @@
 	"bs-readconfirmation-column-read-at": "خوانده‌شده در",
 	"bs-readconfirmation-not-read": "خوانده‌نشده",
 	"bs-readconfirmation-confirm-read-button-label": "تأیید",
-	"bs-readconfirmation-action-apiread-confirm-description": "علامت‌گذاری $1 به‌عنوان خوانده‌شده",
 	"echo-category-title-bs-readconfirmation-cat": "تأییدیه خوانده‌شده",
 	"bs-readconfirmation-disabled-ns-short": "غیرفعال",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(تا $1)",
