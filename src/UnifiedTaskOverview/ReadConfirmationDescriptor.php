@@ -4,8 +4,8 @@ namespace BlueSpice\ReadConfirmation\UnifiedTaskOverview;
 
 use MediaWiki\Extension\UnifiedTaskOverview\ITaskDescriptor;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
-use Message;
 use PageProps;
 use RawMessage;
 

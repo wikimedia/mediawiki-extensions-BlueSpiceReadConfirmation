@@ -6,8 +6,8 @@ use LogEntry;
 use LogFormatter;
 use LogPage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Revision\RevisionRecord;
-use Message;
 
 class ConfirmFormatter extends LogFormatter {
 
