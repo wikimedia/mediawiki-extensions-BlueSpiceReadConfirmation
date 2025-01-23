@@ -5,7 +5,7 @@ namespace BlueSpice\ReadConfirmation\AttentionIndicator;
 use BlueSpice\Discovery\AttentionIndicator;
 use BlueSpice\Discovery\IAttentionIndicator;
 use BlueSpice\ReadConfirmation\MechanismFactory;
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
