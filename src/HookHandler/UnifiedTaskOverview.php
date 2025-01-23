@@ -5,7 +5,7 @@ namespace BlueSpice\ReadConfirmation\HookHandler;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
 use BlueSpice\ReadConfirmation\UnifiedTaskOverview\ReadConfirmationDescriptor;
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\UnifiedTaskOverview\Hook\GetTaskDescriptors;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
