@@ -13,7 +13,7 @@
 						'<label for="bs-rc-cb-ack">{1}</label>' +
 					'</div>' +
 				'</td><td>' +
-					'<button disabled id="bs-rc-btn-ack" class="mw-ui-button mw-ui-progressive">{2}</button>' +
+					'<button disabled id="bs-rc-btn-ack" class="cdx-button cdx-button--weight-primary cdx-button--action-progressive">{2}</button>' +
 					'</td>' +
 				'</tr><table>' +
 			'</div>';
