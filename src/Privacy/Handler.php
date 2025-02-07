@@ -5,6 +5,7 @@ namespace BlueSpice\ReadConfirmation\Privacy;
 use BlueSpice\Privacy\IPrivacyHandler;
 use BlueSpice\Privacy\Module\Transparency;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Language\Language;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
@@ -14,7 +15,7 @@ use Wikimedia\Rdbms\IDatabase;
 class Handler implements IPrivacyHandler {
 	/** @var IDatabase */
 	protected $db;
-	/** @var \Language */
+	/** @var Language */
 	protected $language;
 
 	/**
