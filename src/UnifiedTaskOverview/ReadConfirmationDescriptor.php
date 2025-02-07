@@ -5,8 +5,8 @@ namespace BlueSpice\ReadConfirmation\UnifiedTaskOverview;
 use MediaWiki\Extension\UnifiedTaskOverview\ITaskDescriptor;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
+use MediaWiki\Page\PageProps;
 use MediaWiki\Title\Title;
-use PageProps;
 use RawMessage;
 
 class ReadConfirmationDescriptor implements ITaskDescriptor {
