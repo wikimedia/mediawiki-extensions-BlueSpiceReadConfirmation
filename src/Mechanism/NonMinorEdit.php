@@ -10,6 +10,7 @@ use BlueSpice\ReadConfirmation\Event\ConfirmationRequestEvent;
 use BlueSpice\ReadConfirmation\IMechanism;
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
@@ -477,5 +478,14 @@ class NonMinorEdit implements IMechanism {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * @param Title $title
+	 * @param User $user
+	 * @return RevisionRecord|null
+	 */
+	public function getLatestRevisionToConfirm( Title $title, User $user ): ?RevisionRecord {
+		return $this->services->getRevisionLookup()->getRevisionByTitle( $title );
 	}
 }

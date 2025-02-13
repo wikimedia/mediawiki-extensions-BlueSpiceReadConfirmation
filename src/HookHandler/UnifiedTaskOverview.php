@@ -126,6 +126,10 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 			if ( !$this->readConfirmationMechanism->canConfirm( $title, $user ) ) {
 				continue;
 			}
+			$revisionToConfirm = $this->readConfirmationMechanism->getLatestRevisionToConfirm( $title, $user );
+			if ( !$revisionToConfirm ) {
+				continue;
+			}
 
 			// If user marked as "read" any of revisions of the page
 			if ( isset( $userReadConfirmations[$pageId] ) ) {
@@ -134,7 +138,9 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 
 				// If marked as read revision is not the latest - create task
 				if ( $pageLatestRevId !== $userLatestReadId ) {
-					$readConfirmationTasks[] = new ReadConfirmationDescriptor( $title, $userLatestReadId );
+					$readConfirmationTasks[] = new ReadConfirmationDescriptor(
+						$title, $revisionToConfirm, $userLatestReadId
+					);
 				} else {
 					// If marked as "read" revision is the latest - no task is needed
 				}
@@ -143,7 +149,7 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 			}
 
 			// If user did not mark as "read" any of revisions of the page - create task
-			$readConfirmationTasks[] = new ReadConfirmationDescriptor( $title );
+			$readConfirmationTasks[] = new ReadConfirmationDescriptor( $title, $revisionToConfirm );
 		}
 
 		return $readConfirmationTasks;
