@@ -115,6 +115,7 @@ class NonMinorEdit implements IMechanism {
 	 * @param Title $title
 	 * @param User $userAgent
 	 * @return User[]|bool
+	 * @throws Exception
 	 */
 	public function notify( Title $title, User $userAgent ) {
 		$target = $this->getTargetFromTitle( $title );
@@ -125,18 +126,7 @@ class NonMinorEdit implements IMechanism {
 		$notifyUsers = $this->getNotifyUsers( $target );
 		$this->notifier->emit( new ConfirmationRequestEvent( $userAgent, $title, $notifyUsers ) );
 
-		$notifiedUsers = [];
-		$userFactory = $this->services->getUserFactory();
-		foreach ( $notifyUsers as $userId ) {
-			$user = $userFactory->newFromId( $userId );
-			if ( !$user ) {
-				continue;
-			}
-			$notifiedUsers[] = $user;
-
-		}
-
-		return $notifiedUsers;
+		return $notifyUsers;
 	}
 
 	/**
