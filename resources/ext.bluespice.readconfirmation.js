@@ -76,7 +76,8 @@
 			return;
 		}
 		var data = {
-			pageId: curPageId
+			pageId: curPageId,
+			revId: mw.config.get( 'wgRevisionId' )
 		};
 
 		mw.hook( 'readconfirmation.check.request.before' ).fire(data);
