@@ -56,7 +56,10 @@ class UnifiedTaskOverview implements GetTaskDescriptors {
 		MechanismFactory $readConfirmationMechanismFactory,
 		Config $mainConfig
 	): UnifiedTaskOverview {
-		$enabledNamespaces = $mainConfig->get( 'NamespacesWithEnabledReadConfirmation' );
+		$enabledNamespaces = null;
+		if ( $mainConfig->has( 'NamespacesWithEnabledReadConfirmation' ) ) {
+			$enabledNamespaces = $mainConfig->get( 'NamespacesWithEnabledReadConfirmation' );
+		}
 		if ( $enabledNamespaces === null ) {
 			$enabledNamespaces = [];
 		}
