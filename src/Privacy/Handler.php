@@ -67,7 +67,8 @@ class Handler implements IPrivacyHandler {
 		$res = $this->db->select(
 			'bs_readconfirmation',
 			'*',
-			[ 'rc_user_id' => $user->getId() ]
+			[ 'rc_user_id' => $user->getId() ],
+			__METHOD__
 		);
 
 		$data = [];
