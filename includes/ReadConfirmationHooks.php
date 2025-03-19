@@ -55,7 +55,11 @@ class ReadConfirmationHooks {
 		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$dbw->delete( 'bs_readconfirmation', $aRow );
 		$aRow['rc_timestamp'] = wfTimestampNow();
-		$dbw->insert( 'bs_readconfirmation', $aRow );
+		$dbw->insert(
+			'bs_readconfirmation',
+			$aRow,
+			__METHOD__
+		);
 
 		return true;
 	}
