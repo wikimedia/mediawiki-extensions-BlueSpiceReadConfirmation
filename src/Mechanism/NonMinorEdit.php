@@ -201,7 +201,11 @@ class NonMinorEdit implements IMechanism {
 			'rc_user_id' => $user->getId()
 		];
 
-		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->delete( 'bs_readconfirmation', $row );
+		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->delete(
+			'bs_readconfirmation',
+			$row,
+			__METHOD__
+		);
 		$row[ 'rc_timestamp' ] = wfTimestampNow();
 		$this->dbLoadBalancer->getConnection( DB_PRIMARY )->insert(
 			'bs_readconfirmation',

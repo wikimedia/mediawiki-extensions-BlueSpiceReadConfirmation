@@ -34,7 +34,11 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		$userOptionsManager->saveOptions( $oAssignedUser );
 
 		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
-		$dbw->delete( 'bs_pageassignments', [ 'pa_page_id' => $oTitle->getArticleID() ] );
+		$dbw->delete(
+			'bs_pageassignments',
+			[ 'pa_page_id' => $oTitle->getArticleID() ],
+			__METHOD__
+		);
 		$aPAData = [
 				[
 					'pa_page_id' => $oTitle->getArticleID(),
