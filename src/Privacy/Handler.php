@@ -47,7 +47,8 @@ class Handler implements IPrivacyHandler {
 		$this->db->update(
 			'bs_readconfirmation',
 			[ 'rc_user_id' => $deletedUser->getId() ],
-			[ 'rc_user_id' => $userToDelete->getId() ]
+			[ 'rc_user_id' => $userToDelete->getId() ],
+			__METHOD__
 		);
 
 		return Status::newGood();
