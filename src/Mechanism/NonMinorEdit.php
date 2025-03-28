@@ -233,11 +233,8 @@ class NonMinorEdit implements IMechanism {
 	 * 	]
 	 */
 	private function getUserLatestReadRevisions( array $userIds ): array {
-		$conds = [];
-		if ( $userIds ) {
-			$conds = [
-				'rc_user_id' => $userIds
-			];
+		if ( !$userIds ) {
+			return [];
 		}
 
 		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
@@ -250,7 +247,9 @@ class NonMinorEdit implements IMechanism {
 				'rev_page',
 				'rc_user_id'
 			],
-			$conds,
+			[
+				'rc_user_id' => $userIds
+			],
 			__METHOD__,
 			[
 				'GROUP BY' => [
@@ -391,24 +390,15 @@ class NonMinorEdit implements IMechanism {
 			return [];
 		}
 
-		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->select(
-			'revision',
-			[ 'rev_id', 'rev_page', 'rev_minor_edit' ],
-			[
-				'rev_minor_edit' => 0,
-				'rev_page' => $pageIds
-			],
-			__METHOD__,
-			[ 'ORDER BY' => 'rev_id DESC' ]
-		);
+		$res = $this->dbLoadBalancer->getConnection( DB_REPLICA )->newSelectQueryBuilder()
+			->from( 'page' )
+			->select( [ 'page_id', 'page_latest' ] )
+			->where( [ 'page_id' => $pageIds ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		foreach ( $res as $row ) {
-			$pageId = (int)$row->rev_page;
-			if ( isset( $recentData[$pageId] ) ) {
-				continue;
-				// This way we get only the latest revisions
-			}
-			$recentData[$pageId] = (int)$row->rev_id;
+			$recentData[ (int)$row->page_id ] = (int)$row->page_latest;
 		}
 
 		return $recentData;
