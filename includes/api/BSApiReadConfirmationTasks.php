@@ -33,7 +33,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_confirm( $taskData, $params ) {
+	protected function task_confirm( $taskData, $params ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$result = $this->makeStandardReturn();
 
 		if ( empty( $taskData->pageId ) ) {
@@ -74,7 +74,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_check( $taskData, $params ) {
+	protected function task_check( $taskData, $params ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$result = $this->makeStandardReturn();
 		$mechanismInstance = $this->getMechanismInstance();
 
@@ -117,7 +117,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	 * @param array $params
 	 * @return Standard
 	 */
-	protected function task_remind( $taskData, $params ) {
+	protected function task_remind( $taskData, $params ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$result = $this->makeStandardReturn();
 		$title = Title::newFromID( $taskData->pageId );
 		$mechanismInstance = $this->getMechanismInstance();

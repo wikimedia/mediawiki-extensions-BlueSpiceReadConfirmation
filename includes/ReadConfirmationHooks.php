@@ -75,7 +75,7 @@ class ReadConfirmationHooks {
 	 * @param array &$aMetaFields
 	 * @return bool Always true
 	 */
-	public static function onNamespaceManager_getMetaFields( &$aMetaFields ) {
+	public static function onNamespaceManager_getMetaFields( &$aMetaFields ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$aMetaFields[] = [
 				'name' => 'read_confirmation',
 				'type' => 'boolean',
@@ -98,8 +98,9 @@ class ReadConfirmationHooks {
 	 * @param bool $bUseInternalDefaults
 	 * @return bool Always true
 	 */
-	public static function onNamespaceManager_editNamespace( &$aNamespaceDefinition, &$iNs,
-		$aAdditionalSettings, $bUseInternalDefaults ) {
+	public static function onNamespaceManager_editNamespace( // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
+		&$aNamespaceDefinition, &$iNs, $aAdditionalSettings, $bUseInternalDefaults
+	) {
 		if ( empty( $aNamespaceDefinition[$iNs] ) ) {
 			$aNamespaceDefinition[$iNs] = [];
 		}

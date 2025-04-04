@@ -64,10 +64,11 @@ class ReadConfirmation extends AttentionIndicator {
 	 * @param TitleFactory|null $titleFactory
 	 * @return IAttentionIndicator
 	 */
-	public static function factory( string $key, Config $config, User $user,
-		MediaWikiServices $services, MechanismFactory $mechanismFactory = null,
-		LoadBalancer $lb = null, UserGroupManager $userGroupManager = null,
-		TitleFactory $titleFactory = null ) {
+	public static function factory(
+		string $key, Config $config, User $user, MediaWikiServices $services,
+		?MechanismFactory $mechanismFactory = null, ?LoadBalancer $lb = null,
+		?UserGroupManager $userGroupManager = null, ?TitleFactory $titleFactory = null
+	) {
 		if ( !$mechanismFactory ) {
 			$mechanismFactory = $services->getService( 'BSReadConfirmationMechanismFactory' );
 		}
