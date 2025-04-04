@@ -45,7 +45,7 @@ class ReadConfirmationDescriptor implements ITaskDescriptor {
 	 * @param int|null $latestReadRevision <tt>null</tt> if user did not mark any revision of specified article,
 	 * 	or ID of the latest read revision otherwise
 	 */
-	public function __construct( Title $title, RevisionRecord $revisionToConfirm, int $latestReadRevision = null ) {
+	public function __construct( Title $title, RevisionRecord $revisionToConfirm, ?int $latestReadRevision = null ) {
 		$this->title = $title;
 		$this->pageProps = MediaWikiServices::getInstance()->getPageProps();
 		$this->revisionToConfirm = $revisionToConfirm;
