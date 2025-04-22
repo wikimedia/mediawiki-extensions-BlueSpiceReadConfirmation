@@ -43,9 +43,11 @@ class ReadConfirmation extends AttentionIndicator {
 	 * @param UserGroupManager $userGroupManager
 	 * @param TitleFactory $titleFactory
 	 */
-	public function __construct( string $key, Config $config, User $user,
+	public function __construct(
+		string $key, Config $config, User $user,
 		MechanismFactory $mechanismFactory, LoadBalancer $lb,
-		UserGroupManager $userGroupManager, TitleFactory $titleFactory ) {
+		UserGroupManager $userGroupManager, TitleFactory $titleFactory
+	) {
 		$this->mechanismFactory = $mechanismFactory;
 		$this->lb = $lb;
 		$this->userGroupManager = $userGroupManager;
@@ -118,7 +120,7 @@ class ReadConfirmation extends AttentionIndicator {
 		foreach ( $res as $row ) {
 			$ids[] = $row->pa_page_id;
 		}
-		array_unique( $ids );
+		$ids = array_unique( $ids );
 
 		if ( empty( $ids ) ) {
 			return $count;
@@ -132,6 +134,14 @@ class ReadConfirmation extends AttentionIndicator {
 		}
 
 		foreach ( $ids as $id ) {
+			if ( empty( $userReadConfirmations[$id]['latest_read_rev'] ) ) {
+				$count++;
+				continue;
+			}
+			if ( $userReadConfirmations[$id]['latest_rev']
+				== $userReadConfirmations[$id]['latest_read_rev'] ) {
+				continue;
+			}
 			$title = $this->titleFactory->newFromID( $id );
 			if ( !$title || !$title->exists() ) {
 				continue;
@@ -141,14 +151,6 @@ class ReadConfirmation extends AttentionIndicator {
 					$title, $this->user, $title->getLatestRevID()
 				)
 			) {
-				continue;
-			}
-			if ( empty( $userReadConfirmations[$id]['latest_read_rev'] ) ) {
-				$count++;
-				continue;
-			}
-			if ( $userReadConfirmations[$id]['latest_rev']
-				== $userReadConfirmations[$id]['latest_read_rev'] ) {
 				continue;
 			}
 			$count++;
