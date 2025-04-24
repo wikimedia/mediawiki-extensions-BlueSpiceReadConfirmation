@@ -8,8 +8,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"BlueSpice\\ReadConfirmation\\": "src",
-			"BlueSpice\\ReadConfirmation\\Tests\\": "tests/phpunit"
+			"BlueSpice\\ReadConfirmation\\": "src"
 		}
 	},
 	"require-dev": {
