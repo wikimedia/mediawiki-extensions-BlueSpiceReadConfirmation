@@ -79,16 +79,16 @@
 		mw.hook( 'readconfirmation.check.request.before' ).fire( data );
 
 		bs.api.tasks.execSilent( 'readconfirmation', 'check', data )
-			.done( function ( response ) {
+			.done( ( response ) => {
 				if ( response.success && response.payload.userHasConfirmed === false ) {
-					mw.loader.using( 'mediawiki.ui.checkbox' ).done( function () {
+					mw.loader.using( 'mediawiki.ui.checkbox' ).done( () => {
 						buildMessage( curPageId );
 					} );
 				}
 			} );
 	};
 
-	setTimeout( function () {
+	setTimeout( () => {
 		$( bs.readconfirmation.init );
 	}, 1000 );
 
