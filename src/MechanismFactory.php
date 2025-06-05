@@ -2,7 +2,8 @@
 
 namespace BlueSpice\ReadConfirmation;
 
-use MWException;
+use InvalidArgumentException;
+use LogicException;
 
 class MechanismFactory {
 
@@ -14,17 +15,18 @@ class MechanismFactory {
 	/**
 	 * MechanismFactory constructor.
 	 * @param string $mechanismCallback
-	 * @throws MWException
+	 * @throws InvalidArgumentException
+	 * @throws LogicException
 	 */
 	public function __construct( $mechanismCallback ) {
 		if ( !is_callable( $mechanismCallback ) ) {
-			throw new MWException(
+			throw new InvalidArgumentException(
 				"There is no ReadConfirmation Mechanism"
 			);
 		}
 		$this->mechanism = call_user_func( $mechanismCallback );
 		if ( !$this->mechanism instanceof IMechanism ) {
-			throw new MWException(
+			throw new LogicException(
 				(string)$mechanismCallback . " must implements IMechanism interface"
 			);
 		}
