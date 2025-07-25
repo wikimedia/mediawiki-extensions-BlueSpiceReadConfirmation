@@ -3,7 +3,6 @@
 namespace BlueSpice\ReadConfirmation\Tests;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
 /**
@@ -26,7 +25,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 		$oExecutingUser = self::$users['sysop']->user;
 		$oAssignedUser = self::$users['uploader']->user;
 
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$userOptionsManager = $services->getUserOptionsManager();
 		$userOptionsManager->setOption( $oExecutingUser, 'echo-subscriptions-web-bs-pageassignments-action-cat', 1 );
 		$userOptionsManager->saveOptions( $oExecutingUser );
@@ -62,7 +61,7 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 	public function testCheck() {
 		$oTitle = Title::newFromId( 1 );
 		$iPageID = $oTitle->getArticleID();
-		$oExecutingUser = MediaWikiServices::getInstance()->getUserFactory()
+		$oExecutingUser = $this->getServiceContainer()->getUserFactory()
 			->newFromName( 'Apitestsysop' );
 
 		$oResponse = $this->executeTask(
