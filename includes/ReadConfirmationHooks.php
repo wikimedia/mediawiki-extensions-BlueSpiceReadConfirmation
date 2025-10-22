@@ -83,7 +83,7 @@ class ReadConfirmationHooks {
 				'filter' => [
 					'type' => 'boolean'
 				],
-				'label' => wfMessage( 'bs-readconfirmation-label-ns-manager' )->plain()
+				'label' => wfMessage( 'bs-readconfirmation-label-ns-manager' )->text()
 		];
 		return true;
 	}
