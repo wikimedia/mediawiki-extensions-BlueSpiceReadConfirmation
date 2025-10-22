@@ -94,7 +94,7 @@ class Handler implements IPrivacyHandler {
 				$title->getPrefixedText(),
 				$rev->getId(),
 				$timestamp
-			)->plain();
+			)->text();
 		}
 
 		return Status::newGood( [

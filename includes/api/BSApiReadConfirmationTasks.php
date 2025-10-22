@@ -37,12 +37,12 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$result = $this->makeStandardReturn();
 
 		if ( empty( $taskData->pageId ) ) {
-			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
 		$title = Title::newFromId( $taskData->pageId );
 		if ( !$title ) {
-			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
 		if ( $taskData->revId ) {
@@ -63,7 +63,7 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$this->logTaskAction( 'confirm', [ 'revid' => $revId ], [ 'target' => $title ] );
 			$result->success = true;
 		} else {
-			$result->message = $this->msg( 'bs-readconfirmation-api-error-cant-confirm' )->plain();
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-cant-confirm' )->text();
 		}
 
 		return $result;
@@ -79,12 +79,12 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 		$mechanismInstance = $this->getMechanismInstance();
 
 		if ( empty( $taskData->pageId ) ) {
-			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
 		$title = Title::newFromId( $taskData->pageId );
 		if ( !$title ) {
-			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->plain();
+			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
 		if ( $taskData->revId ) {
