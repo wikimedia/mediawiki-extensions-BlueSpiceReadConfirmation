@@ -188,7 +188,7 @@
 		"LoadExtensionSchemaUpdates": "\\BlueSpice\\ReadConfirmation\\Hook\\LoadExtensionSchemaUpdates\\AddReadConfirmationDatabase::callback",
 		"BeforePageDisplay": [
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddManagePageAssignmentsIntegration::callback",
-			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources::callback"
+			"addResources"
 		],
 		"PageSaveComplete": "ReadConfirmationHooks::onPageSaveComplete",
 		"NamespaceManager::getMetaFields": "ReadConfirmationHooks::onNamespaceManager_getMetaFields",
@@ -216,6 +216,10 @@
 		},
 		"addReadConfirmationInfoToPageAssignments": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\AddReadConfirmationInfoToPageAssignments"
+		},
+		"addResources": {
+			"class": "\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources",
+			"services": [ "RevisionLookup", "BSReadConfirmationMechanismFactory", "PermissionManager" ]
 		}
 	},
 	"RestRoutes": [
