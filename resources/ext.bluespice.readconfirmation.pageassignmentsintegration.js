@@ -18,7 +18,7 @@
 
 	mw.hook( 'BSPageAssignmentsManagerPanelInit' ).add( ( gridCfg ) => {
 		gridCfg.columns.all_assignees_have_read = { // eslint-disable-line camelcase
-			headerText: mw.message( 'bs-readconfirmation-column-read' ).plain(),
+			headerText: mw.message( 'bs-readconfirmation-column-read' ).text(),
 			type: 'text',
 			sortable: true,
 			filter: {
@@ -106,16 +106,16 @@
 
 	mw.hook( 'BSPageAssignmentsOverviewPanelInit' ).add( ( gridCfg ) => {
 		gridCfg.columns.read_confirmation_display = { // eslint-disable-line camelcase
-			headerText: mw.message( 'bs-readconfirmation-column-read-at' ).plain(),
+			headerText: mw.message( 'bs-readconfirmation-column-read-at' ).text(),
 			type: 'text',
 			sortable: true,
 			filter: { type: 'date' },
 			valueParser: ( val ) => {
 				if ( !val ) {
-					return mw.message( 'bs-readconfirmation-not-read' ).plain();
+					return mw.message( 'bs-readconfirmation-not-read' ).text();
 				}
 				if ( val === 'disabled' ) {
-					return mw.message( 'bs-readconfirmation-disabled-ns' ).plain();
+					return mw.message( 'bs-readconfirmation-disabled-ns' ).text();
 				}
 
 				return bs.util.convertMWTimestampToISO( val );
