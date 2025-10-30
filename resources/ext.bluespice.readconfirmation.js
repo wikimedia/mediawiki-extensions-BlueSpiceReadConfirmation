@@ -19,10 +19,10 @@
 			'</div>';
 
 		const $message = $( html.format(
-			mw.message( 'bs-readconfirmation-confirm-read-heading' ).plain(),
-			mw.message( 'bs-readconfirmation-confirm-read-checkbox-label' ).plain(),
-			mw.message( 'bs-readconfirmation-confirm-read-button-label' ).plain(),
-			mw.message( 'bs-readconfirmation-confirm-read-aria-description' ).plain()
+			mw.message( 'bs-readconfirmation-confirm-read-heading' ).text(),
+			mw.message( 'bs-readconfirmation-confirm-read-checkbox-label' ).text(),
+			mw.message( 'bs-readconfirmation-confirm-read-button-label' ).text(),
+			mw.message( 'bs-readconfirmation-confirm-read-aria-description' ).text()
 		) );
 
 		const $button = $message.find( '#bs-rc-btn-ack' );

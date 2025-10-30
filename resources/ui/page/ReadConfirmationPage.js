@@ -11,7 +11,7 @@ OO.inheritClass( bs.readconfirmation.ui.ReadConfirmationPage, OOJSPlus.ui.bookle
 
 bs.readconfirmation.ui.ReadConfirmationPage.prototype.getItems = function () {
 	const label = new OO.ui.LabelWidget( {
-		label: mw.message( 'bs-readconfirmation-dlg-label-page', this.page ).plain()
+		label: mw.message( 'bs-readconfirmation-dlg-label-page', this.page ).text()
 	} );
 	this.grid = new OOJSPlus.ui.data.GridWidget( {
 		noHeader: true,
@@ -44,7 +44,7 @@ bs.readconfirmation.ui.ReadConfirmationPage.prototype.getItems = function () {
 };
 
 bs.readconfirmation.ui.ReadConfirmationPage.prototype.getTitle = function () {
-	return mw.message( 'bs-readconfirmation-dlg-title' ).plain();
+	return mw.message( 'bs-readconfirmation-dlg-title' ).text();
 };
 
 bs.readconfirmation.ui.ReadConfirmationPage.prototype.getSize = function () {

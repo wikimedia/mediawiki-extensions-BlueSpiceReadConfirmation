@@ -39,7 +39,7 @@
 		bs.readconfirmation.ui.ReadConfirmationInformationPage.super.prototype.setupOutlineItem.apply( this, arguments );
 
 		if ( this.outlineItem ) {
-			this.outlineItem.setLabel( mw.message( 'bs-readconfirmation-page-info-read-confirmations' ).plain() );
+			this.outlineItem.setLabel( mw.message( 'bs-readconfirmation-page-info-read-confirmations' ).text() );
 		}
 	};
 
