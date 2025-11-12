@@ -49,5 +49,7 @@
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(em $1)",
 	"bs-readconfirmation-uto-task-header": "Confirmação de leitura obrigatória",
 	"bs-readconfirmation-uto-task-body-diff": "Ver mudanças desde a última confirmação de leitura",
-	"bs-readconfirmation-confirm-read-aria-description": "Confirmação de leitura pedida"
+	"bs-readconfirmation-confirm-read-aria-description": "Confirmação de leitura pedida",
+	"bs-readconfirmation-page-info-user": "Utilizador",
+	"bs-readconfirmation-page-info-confirmation": "Confirmação"
 }
