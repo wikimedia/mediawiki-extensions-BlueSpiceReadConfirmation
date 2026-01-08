@@ -34,9 +34,6 @@
 						"structuremanager"
 					]
 				}
-			},
-			"RunJobsTriggerHandlerRegistry": {
-				"bs-readconfirmation-autonotifier": "BlueSpice\\ReadConfirmation\\RunJobsTriggerHandler\\AutomaticReadConfirmationNotifier::factory"
 			}
 		},
 		"BlueSpicePrivacy": {
@@ -90,7 +87,8 @@
 		"BSApiReadConfirmationTasks": "includes/api/BSApiReadConfirmationTasks.php"
 	},
 	"ExtensionFunctions": [
-		"BlueSpice\\ReadConfirmation\\TriggerRegistration::addNotificationTrigger"
+		"BlueSpice\\ReadConfirmation\\TriggerRegistration::addNotificationTrigger",
+		"BlueSpice\\ReadConfirmation\\ReadConfirmationNotificationCron::register"
 	],
 	"APIModules": {
 		"bs-readconfirmation-tasks": "BSApiReadConfirmationTasks"
