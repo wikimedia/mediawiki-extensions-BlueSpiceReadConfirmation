@@ -198,7 +198,8 @@
 		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations",
 		"SkinTemplateNavigation::Universal": "skin",
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
-		"StandardDialogsRegisterPageInfoPanelModules": "standard-dialogs"
+		"StandardDialogsRegisterPageInfoPanelModules": "standard-dialogs",
+		"NamespaceManagerCollectNamespaceProperties": "addNamespaceProperties"
 	},
 	"HookHandlers": {
 		"addUTOReadConfirmations": {
@@ -220,6 +221,9 @@
 		"addResources": {
 			"class": "\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddResources",
 			"services": [ "RevisionLookup", "BSReadConfirmationMechanismFactory", "PermissionManager" ]
+		},
+		"addNamespaceProperties": {
+			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\NamespaceManagerCollectNamespaceProperties\\AddNamespaceProperties"
 		}
 	},
 	"RestRoutes": [
