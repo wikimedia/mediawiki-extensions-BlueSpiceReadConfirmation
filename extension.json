@@ -49,7 +49,10 @@
 		"UnifiedTaskOverview": {
 			"AttentionIndicatorCollectionRegistry": [
 				"readconfirmation"
-			]
+			],
+			"TaskDescriptorRegistry": {
+				"read-confirmation": "\\BlueSpice\\ReadConfirmation\\UnifiedTaskOverview\\ReadConfirmationTaskDescriptor"
+			}
 		},
 		"NotifyMe": {
 			"Events": {
@@ -188,24 +191,26 @@
 			"\\BlueSpice\\ReadConfirmation\\Hook\\BeforePageDisplay\\AddManagePageAssignmentsIntegration::callback",
 			"addResources"
 		],
-		"PageSaveComplete": "ReadConfirmationHooks::onPageSaveComplete",
+		"PageSaveComplete": [
+			"ReadConfirmationHooks::onPageSaveComplete",
+			"createTask"
+		],
 		"NamespaceManager::getMetaFields": "ReadConfirmationHooks::onNamespaceManager_getMetaFields",
 		"NamespaceManager::editNamespace": "ReadConfirmationHooks::onNamespaceManager_editNamespace",
 		"BSApiNamespaceStoreMakeData": "ReadConfirmationHooks::onBSApiNamespaceStoreMakeData",
 		"UserMergeAccountFields": "\\BlueSpice\\ReadConfirmation\\Hook\\UserMergeAccountFields\\MergeReadConfirmationDBFields::callback",
-		"UnifiedTaskOverviewGetTaskDescriptors": "addUTOReadConfirmations",
 		"SkinTemplateNavigation::Universal": "skin",
+		"BSReadConfirmationUpdateTask": "updateUnifiedTaskOverview",
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
 		"StandardDialogsRegisterPageInfoPanelModules": "standard-dialogs",
 		"NamespaceManagerCollectNamespaceProperties": "addNamespaceProperties"
 	},
 	"HookHandlers": {
-		"addUTOReadConfirmations": {
-			"factory": "\\BlueSpice\\ReadConfirmation\\HookHandler\\UnifiedTaskOverview::factory",
-			"services": [ "DBLoadBalancer", "UserGroupManager", "BSReadConfirmationMechanismFactory", "MainConfig" ]
-		},
 		"skin": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\Skin"
+		},
+		"updateUnifiedTaskOverview": {
+			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\UpdateUnifiedTaskOverview"
 		},
 		"writeNamespaceConfiguration": {
 			"class": "\\BlueSpice\\ReadConfirmation\\Hook\\WriteNamespaceConfiguration"
@@ -222,6 +227,10 @@
 		},
 		"addNamespaceProperties": {
 			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\NamespaceManagerCollectNamespaceProperties\\AddNamespaceProperties"
+		},
+		"createTask": {
+			"class": "\\BlueSpice\\ReadConfirmation\\HookHandler\\PageSaveComplete\\CreateTask",
+			"services": [ "HookContainer", "BSReadConfirmationMechanismFactory" ]
 		}
 	},
 	"RestRoutes": [
