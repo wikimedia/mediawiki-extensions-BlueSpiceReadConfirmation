@@ -3,6 +3,8 @@
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\ReadConfirmation\IMechanism;
 use BlueSpice\ReadConfirmation\MechanismFactory;
+use BlueSpice\ReadConfirmation\UnifiedTaskOverview\ReadConfirmationTaskDescriptor;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 
 class BSApiReadConfirmationTasks extends BSApiTasksBase {
@@ -40,17 +42,21 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
+
 		$title = Title::newFromId( $taskData->pageId );
 		if ( !$title ) {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-no-page' )->text();
 			return $result;
 		}
-		if ( $taskData->revId ) {
-			$revision = $this->services->getRevisionStore()->getRevisionById( $taskData->revId );
-			if ( !$revision || $revision->getPage()->getId() != $title->getArticleID() ) {
-				$revision = $this->services->getRevisionStore()->getRevisionByTitle( $title );
-			}
+
+		$revisionStore = $this->services->getRevisionStore();
+		$revision = $taskData->revId
+			? $revisionStore->getRevisionById( $taskData->revId )
+			: null;
+		if ( !$revision || $revision->getPage()->getId() != $title->getArticleID() ) {
+			$revision = $revisionStore->getRevisionByTitle( $title );
 		}
+
 		$revId = $revision ? $revision->getId() : null;
 		if ( isset( $taskData->stabilizedRevId ) && $taskData->stabilizedRevId !== $revId ) {
 			$revId = $taskData->stabilizedRevId;
@@ -62,6 +68,8 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 			$mechanismInstance->confirm( $title, $this->getUser(), $revId );
 			$this->logTaskAction( 'confirm', [ 'revid' => $revId ], [ 'target' => $title ] );
 			$result->success = true;
+
+			$this->fireTaskUpdateHook( $title, $revision, $revId );
 		} else {
 			$result->message = $this->msg( 'bs-readconfirmation-api-error-cant-confirm' )->text();
 		}
@@ -239,4 +247,23 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 
 		return $factory->getMechanismInstance();
 	}
+
+	/**
+	 * @param Title $title
+	 * @param RevisionRecord|null $revision
+	 * @param int|null $revId
+	 */
+	private function fireTaskUpdateHook( Title $title, ?RevisionRecord $revision, ?int $revId ): void {
+		$descriptor = new ReadConfirmationTaskDescriptor(
+			$title,
+			$revision,
+			$revId
+		);
+
+		$this->services->getHookContainer()->run(
+			'BSReadConfirmationUpdateTask',
+			[ $descriptor, $this->getUser(), true ]
+		);
+	}
+
 }

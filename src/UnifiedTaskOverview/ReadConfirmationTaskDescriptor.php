@@ -9,8 +9,9 @@ use MediaWiki\Message\Message;
 use MediaWiki\Page\PageProps;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
+use stdClass;
 
-class ReadConfirmationDescriptor implements ITaskDescriptor {
+class ReadConfirmationTaskDescriptor implements ITaskDescriptor {
 
 	/**
 	 * Title, which user should mark as "read"
@@ -53,6 +54,46 @@ class ReadConfirmationDescriptor implements ITaskDescriptor {
 		if ( $latestReadRevision ) {
 			$this->latestReadRevision = $latestReadRevision;
 		}
+	}
+
+	/**
+	 * @param stdClass $row
+	 * @return static|null
+	 */
+	public static function newFromTaskRow( stdClass $row ): ?static {
+		$services = MediaWikiServices::getInstance();
+		$title = $services->getTitleFactory()->newFromID( (int)$row->uto_page_id );
+		if ( !$title ) {
+			return null;
+		}
+
+		$revision = $services->getRevisionLookup()->getRevisionByTitle( $title );
+		if ( !$revision ) {
+			return null;
+		}
+
+		return new static(
+			$title,
+			$revision,
+			null
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getUniqueKey(): string {
+		$pageId = $this->title->getArticleID();
+		$revId = $this->revisionToConfirm->getId() ?? 0;
+
+		return $pageId . ':' . $revId;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getTitle(): Title {
+		return $this->title;
 	}
 
 	/**

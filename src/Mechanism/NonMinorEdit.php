@@ -118,15 +118,16 @@ class NonMinorEdit implements IMechanism {
 	 * @throws Exception
 	 */
 	public function notify( Title $title, User $userAgent ) {
-		$target = $this->getTargetFromTitle( $title );
-		if ( $target === false ) {
+		$users = $this->getUsersToConfirm( $title );
+		if ( !$users ) {
 			return false;
 		}
 
-		$notifyUsers = $this->getNotifyUsers( $target );
-		$this->notifier->emit( new ConfirmationRequestEvent( $userAgent, $title, $notifyUsers ) );
+		$this->notifier->emit(
+			new ConfirmationRequestEvent( $userAgent, $title, $users )
+		);
 
-		return $notifyUsers;
+		return $users;
 	}
 
 	/**
@@ -135,14 +136,15 @@ class NonMinorEdit implements IMechanism {
 	 * @throws Exception
 	 */
 	private function notifyDaily( Title $title ) {
-		$target = $this->getTargetFromTitle( $title );
-		if ( $target === false ) {
+		$users = $this->getUsersToConfirm( $title );
+		if ( !$users ) {
 			return false;
 		}
 
-		$notifyUsers = $this->getNotifyUsers( $target );
-		$event = new ConfirmationRemindEvent( $title, $notifyUsers );
-		$this->notifier->emit( $event );
+		$this->notifier->emit(
+			new ConfirmationRemindEvent( $title, $users )
+		);
+
 		return true;
 	}
 
@@ -332,31 +334,6 @@ class NonMinorEdit implements IMechanism {
 	}
 
 	/**
-	 * @param TitleTarget $target
-	 * @return array
-	 */
-	private function getNotifyUsers( $target ) {
-		$assignedUserIds = $target->getAssignedUserIDs();
-		$currentReads = $this->getCurrentReadConfirmations(
-			$assignedUserIds,
-			[ $target->getTitle()->getArticleID() ]
-		);
-
-		$notReadUserIds = array_filter(
-			$target->getAssignedUserIDs(),
-			static function ( $e ) use( $target, $currentReads ) {
-				return !isset( $currentReads[$target->getTitle()->getArticleID()][$e] );
-			}
-		);
-
-		$notReadUsers = array_map( function ( $id ) {
-			return $this->services->getUserFactory()->newFromId( $id );
-		}, $notReadUserIds );
-
-		return array_filter( $notReadUsers );
-	}
-
-	/**
 	 * @param Title $title
 	 * @return TitleTarget|bool
 	 */
@@ -484,4 +461,39 @@ class NonMinorEdit implements IMechanism {
 	public function getLatestRevisionToConfirm( Title $title, User $user ): ?RevisionRecord {
 		return $this->services->getRevisionLookup()->getRevisionByTitle( $title );
 	}
+
+	public function getUsersToConfirm( Title $title ): array {
+		$target = $this->getTargetFromTitle( $title );
+		if ( !$target ) {
+			return [];
+		}
+
+		return $this->getUsersToConfirmFromTarget( $target );
+	}
+
+	private function getUsersToConfirmFromTarget( TitleTarget $target ): array {
+		$assignedUserIds = $target->getAssignedUserIDs();
+
+		$currentReads = $this->getCurrentReadConfirmations(
+			$assignedUserIds,
+			[ $target->getTitle()->getArticleID() ]
+		);
+
+		$notReadUserIds = array_filter(
+			$assignedUserIds,
+			static function ( $userId ) use ( $target, $currentReads ) {
+				return !isset(
+					$currentReads[$target->getTitle()->getArticleID()][$userId]
+				);
+			}
+		);
+
+		$notReadUsers = array_map(
+			fn ( $id ) => $this->services->getUserFactory()->newFromId( $id ),
+			$notReadUserIds
+		);
+
+		return array_filter( $notReadUsers );
+	}
+
 }
