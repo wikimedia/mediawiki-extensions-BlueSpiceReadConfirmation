@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"DDPAT",
+			"Dirruw'o",
 			"Ice bulldog",
-			"Megakott"
+			"Megakott",
+			"Yurina Tatiana"
 		]
 	},
 	"logeventslist-bs-readconfirmation-log": "Читать журнал подтверждений",
@@ -14,5 +16,8 @@
 	"bs-readconfirmation-action-apiread-confirm-description": "Отметить $1 как прочитано",
 	"bs-readconfirmation-disabled-ns-short": "Выключен",
 	"bs-readconfirmation-graphicallist-btn-read": "Читать",
-	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)"
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(от $1)",
+	"bs-readconfirmation-confirm-read-checkbox-label": "Да, я полностью прочитал(-а) эту страницу.",
+	"bs-readconfirmation-page-info-user": "Участник",
+	"bs-readconfirmation-page-info-confirmation": "Подтверждение"
 }
