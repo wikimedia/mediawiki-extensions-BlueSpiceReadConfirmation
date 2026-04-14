@@ -12,10 +12,8 @@ class AddNamespaceProperties {
 		array $globals,
 		array &$properties
 	): void {
-		$properties['read_confirmation'] = in_array(
-			$namespaceId,
-			$globals['wgNamespacesWithEnabledReadConfirmation'] ?? []
-		);
+		$properties['read_confirmation'] =
+			( $globals['wgNamespacesWithEnabledReadConfirmation'][$namespaceId] ?? false ) === true;
 	}
 
 }
