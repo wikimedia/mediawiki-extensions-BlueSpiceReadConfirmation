@@ -258,6 +258,12 @@
 		"readconfirmationremind",
 		"readconfirmationviewconfirmations"
 	],
+	"GrantPermissions": {
+		"editprotected": {
+			"readconfirmationremind": true,
+			"readconfirmationviewconfirmations": true
+		}
+	},
 	"config_prefix": "bsgReadConfirmation",
 	"config": {
 		"Mechanism": {
