@@ -175,12 +175,10 @@ class ReadConfirmation extends AttentionIndicator {
 		}
 
 		foreach ( $ids as $id ) {
-			if ( empty( $userReadConfirmations[$id]['latest_read_rev'] ) ) {
-				$count++;
-				continue;
-			}
-			if ( $userReadConfirmations[$id]['latest_rev']
-				== $userReadConfirmations[$id]['latest_read_rev'] ) {
+			if (
+				!empty( $userReadConfirmations[$id]['latest_read_rev'] ) &&
+				$userReadConfirmations[$id]['latest_rev'] == $userReadConfirmations[$id]['latest_read_rev']
+			) {
 				continue;
 			}
 			$title = $this->titleFactory->newFromID( $id );
