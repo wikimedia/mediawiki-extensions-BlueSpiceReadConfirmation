@@ -41,10 +41,14 @@
 	"bs-readconfirmation-navigation-link-text": "읽음 여부 확인을 요청함",
 	"bs-readconfirmation-graphicallist-btn-read": "읽음",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: 당신은 $3에서 $1 문서($2 판)를 읽었다는 것을 확인했습니다",
+	"action-readconfirmationremind": "사용자에게 문서를 읽었음을 확인해야 한다고 알리기",
+	"right-readconfirmationremind": "사용자에게 문서를 읽었음을 확인해야 한다고 알리기",
 	"bs-readconfirmation-logentry-confirm-suffix-as-of": "($1 기준)",
 	"bs-readconfirmation-uto-task-header": "읽음 여부 확인 요구됨",
+	"bs-readconfirmation-uto-task-body-diff": "마지막 읽음 확인 이후 변경 사항 보기",
 	"bs-readconfirmation-confirm-read-aria-description": "읽음 여부 확인 요청됨",
 	"bs-readconfirmation-dlg-title": "읽음 여부 확인",
+	"bs-readconfirmation-dlg-label-page": "문서 \"$1\" 읽음 확인",
 	"bs-readconfirmation-view-confirmations": "읽음 여부 확인 보기",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "가능한 유효한 문서 제목이 없습니다",
 	"bs-readconfirmation-api-confirmation-error-no-assignment-title": "문서 할당이 가능한 유효한 제목이 없습니다",
@@ -55,5 +59,9 @@
 	"bs-readconfirmation-page-info-user": "사용자",
 	"bs-readconfirmation-page-info-confirmation": "확인",
 	"readconfirmation-event-confirmation-request-key-desc": "읽음 여부 확인 필요함",
-	"readconfirmation-event-confirmation-request": "$2 문서에 대한 읽음 확인을 {{GENDER:$1|요청했습니다}}"
+	"readconfirmation-event-confirmation-request": "$2 문서에 대한 읽음 확인을 {{GENDER:$1|요청했습니다}}",
+	"readconfirmation-event-confirmation-request-bot": "$1 문서를 읽었음을 확인하라는 요청을 받았습니다",
+	"readconfirmation-event-confirmation-remind-key-desc": "보류 중인 읽음 확인 알림",
+	"readconfirmation-event-confirmation-remind-bot": "$1 문서를 읽었음을 확인하라는 알림",
+	"readconfirmation-event-confirmation-links-intro": "문서를 읽었다고 확인하기 위해 다음 링크의 문서를 방문해 주세요"
 }
