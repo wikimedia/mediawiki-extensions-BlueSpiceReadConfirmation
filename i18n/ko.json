@@ -37,7 +37,7 @@
 	"bs-readconfirmation-api-error-not-active-ns": "이 이름공간에 대해 읽음 여부 확인이 활성화되어 있지 않습니다",
 	"bs-readconfirmation-disabled-ns": "읽음 여부 확인 활성화되지 않음",
 	"bs-readconfirmation-disabled-ns-short": "비활성화됨",
-	"bs-readconfirmation-navigation-link-title": "보류 중인 모든 읽기 확인 요청의 개요를 봅니다",
+	"bs-readconfirmation-navigation-link-title": "대기 중인 모든 읽기 확인 요청의 개요를 봅니다",
 	"bs-readconfirmation-navigation-link-text": "읽음 여부 확인을 요청함",
 	"bs-readconfirmation-graphicallist-btn-read": "읽음",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: 당신은 $3에서 $1 문서($2 판)를 읽었다는 것을 확인했습니다",
@@ -61,7 +61,7 @@
 	"readconfirmation-event-confirmation-request-key-desc": "읽음 여부 확인 필요함",
 	"readconfirmation-event-confirmation-request": "$2 문서에 대한 읽음 확인을 {{GENDER:$1|요청했습니다}}",
 	"readconfirmation-event-confirmation-request-bot": "$1 문서를 읽었음을 확인하라는 요청을 받았습니다",
-	"readconfirmation-event-confirmation-remind-key-desc": "보류 중인 읽음 확인 알림",
+	"readconfirmation-event-confirmation-remind-key-desc": "대기 중인 읽음 확인 알림",
 	"readconfirmation-event-confirmation-remind-bot": "$1 문서를 읽었음을 확인하라는 알림",
 	"readconfirmation-event-confirmation-links-intro": "문서를 읽었다고 확인하기 위해 다음 링크의 문서를 방문해 주세요"
 }
