@@ -50,7 +50,7 @@
 	"notification-bs-readconfirmation-remind-daily-body": "$1을(를) 읽었는지 확인해 주세요.",
 	"logentry-bs-readconfirmation-confirm": "$1님{{GENDER:$2|이}} $3 문서를 읽었다고 {{GENDER:$1|확인했습니다}}",
 	"logentry-bs-readconfirmation-remind": "$1님{{GENDER:$2|이}} 사용자 $4님에게 $3 문서를 읽는지 확인을 {{GENDER:$1|물어보았습니다}}",
-	"bs-readconfirmation-navigation-link-title": "보류 중인 모든 읽기 확인 요청의 개요를 봅니다",
+	"bs-readconfirmation-navigation-link-title": "대기 중인 모든 읽기 확인 요청의 개요를 봅니다",
 	"bs-readconfirmation-graphicallist-btn-read": "읽음",
 	"bs-readconfirmation-privacy-transparency-working-rc": "BlueSpiceReadConfirmation: 당신은 $3에서 $1 문서($2 판)를 읽었다는 것을 확인했습니다",
 	"bs-readconfirmation-api-confirmation-error-no-valid-title": "가능한 유효한 문서 제목이 없습니다",
@@ -61,7 +61,7 @@
 	"bs-readconfirmation-uto-task-body-diff": "마지막 읽음 확인 이후 변경 사항 보기",
 	"bs-readconfirmation-dlg-label-page": "문서 \"$1\" 읽음 확인",
 	"readconfirmation-event-confirmation-request-bot": "$1 문서를 읽었음을 확인하라는 요청을 받았습니다",
-	"readconfirmation-event-confirmation-remind-key-desc": "보류 중인 읽음 확인 알림",
+	"readconfirmation-event-confirmation-remind-key-desc": "대기 중인 읽음 확인 알림",
 	"readconfirmation-event-confirmation-remind-bot": "$1 문서를 읽었음을 확인하라는 알림",
 	"readconfirmation-event-confirmation-links-intro": "문서를 읽었다고 확인하기 위해 다음 링크의 문서를 방문해 주세요"
 }
