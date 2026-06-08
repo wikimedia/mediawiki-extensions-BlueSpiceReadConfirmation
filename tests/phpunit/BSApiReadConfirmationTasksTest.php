@@ -122,15 +122,14 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 
 		$this->assertTrue( $oResponse->success, 'Remind task failed' );
 
-		$this->assertSelect(
-			'echo_event',
-			[ 'event_agent_id', 'event_page_id' ],
-			[ 'event_type' => 'bs-readconfirmation-remind' ],
-			[
+		$this->newSelectQueryBuilder()
+			->select( [ 'event_agent_id', 'event_page_id' ] )
+			->from( 'echo_event' )
+			->where( [ 'event_type' => 'bs-readconfirmation-remind' ] )
+			->assertResultSet( [
 				[ (string)$oExecutingUser->getId(), (string)$oTitle->getArticleID() ],
 				[ (string)$oExecutingUser->getId(), (string)$oTitle->getArticleID() ]
-			]
-		);
+			] );
 	}
 
 	/**
@@ -151,11 +150,9 @@ class BSApiReadConfirmationTasksTest extends BSApiTasksTestBase {
 
 		$this->assertTrue( $oResponse->success, 'Confirm task failed' );
 
-		$this->assertSelect(
-			'bs_readconfirmation',
-			[ 'rc_rev_id', 'rc_user_id' ],
-			[],
-			[ [ $oWikiPage->getRevisionRecord()->getId(), $oExecutingUser->getId() ] ]
-		);
+		$this->newSelectQueryBuilder()
+			->select( [ 'rc_rev_id', 'rc_user_id' ] )
+			->from( 'bs_readconfirmation' )
+			->assertRowValue( [ $oWikiPage->getRevisionRecord()->getId(), $oExecutingUser->getId() ] );
 	}
 }
