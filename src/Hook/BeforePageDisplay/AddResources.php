@@ -72,11 +72,6 @@ class AddResources implements BeforePageDisplayHook {
 
 		$isDiffView = $diff && $type === 'revision';
 
-		$isRevisionCurrent = $out->isRevisionCurrent();
-		if ( !$isRevisionCurrent && !$isDiffView ) {
-			return true;
-		}
-
 		/** @var NonMinorEdit */
 		$mechanism = $this->mechanismFactory->getMechanismInstance();
 		$toRead = $mechanism->getLatestRevisionToConfirm( $title, $out->getUser() );
