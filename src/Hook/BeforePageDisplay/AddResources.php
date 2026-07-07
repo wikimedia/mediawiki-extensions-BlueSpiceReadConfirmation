@@ -37,27 +37,31 @@ class AddResources implements BeforePageDisplayHook {
 	 * @param OutputPage $out
 	 * @return bool
 	 */
-	protected function shouldSkipProcessing( OutputPage $out ) {
-		global $wgNamespacesWithEnabledReadConfirmation;
-
-		$namespaces = isset( $wgNamespacesWithEnabledReadConfirmation )
-			? array_keys( $GLOBALS['wgNamespacesWithEnabledReadConfirmation'] )
-			: [];
-
+	private function isOnValidPage( OutputPage $out ): bool {
 		$title = $out->getTitle();
 		if ( !$title ) {
-			return true;
+			return false;
 		}
-		$action = $out->getRequest()->getVal( 'veaction', $out->getRequest()->getVal( 'action', 'view' ) );
-		if ( $action !== 'view' ) {
-			return true;
-		}
-
+		$namespaces = array_keys( $GLOBALS['wgNamespacesWithEnabledReadConfirmation'] ?? [] );
 		$namespace = $title->getNamespace();
 		if ( !in_array( $namespace, $namespaces ) ) {
 			if ( $title->isSpecial( 'ManagePageAssignments' ) ) {
-				return false;
+				return true;
 			}
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param OutputPage $out
+	 * @return bool
+	 */
+	protected function shouldSkipProcessing( OutputPage $out ) {
+		$title = $out->getTitle();
+		$action = $out->getRequest()->getVal( 'veaction', $out->getRequest()->getVal( 'action', 'view' ) );
+		if ( $action !== 'view' ) {
 			return true;
 		}
 		$type = $out->getRequest()->getVal( 'type', '' );
@@ -113,17 +117,18 @@ class AddResources implements BeforePageDisplayHook {
 	 * @inheritDoc
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
+		if ( !$this->isOnValidPage( $out ) ) {
+			return;
+		}
+		$user = $skin->getUser();
+		$isAllowed = $this->permissionManager->userHasRight( $user, 'readconfirmationviewconfirmations' );
+		$out->addJsConfigVars( 'bsReadConfirmationsViewRight', $isAllowed );
+
 		if ( $this->shouldSkipProcessing( $out ) ) {
 			return;
 		}
-
 		$out->addModuleStyles( 'ext.readconfirmation.styles' );
 		$out->addModules( 'ext.readconfirmation.scripts' );
-
-		$user = $skin->getUser();
-		$isAllowed = $this->permissionManager->userHasRight( $user, 'readconfirmationviewconfirmations' );
-
-		$out->addJsConfigVars( 'bsReadConfirmationsViewRight', $isAllowed );
 	}
 
 }
