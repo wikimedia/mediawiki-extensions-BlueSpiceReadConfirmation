@@ -7,7 +7,6 @@ use BlueSpice\Hook\BeforePageDisplay;
 class AddManagePageAssignmentsIntegration extends BeforePageDisplay {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function skipProcessing() {
@@ -19,7 +18,6 @@ class AddManagePageAssignmentsIntegration extends BeforePageDisplay {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {

@@ -110,7 +110,7 @@ class ReadConfirmation extends AttentionIndicator {
 		return is_array( $namespaces )
 			? array_keys( array_filter(
 				$namespaces,
-				fn ( $enabled, $nsId ) => is_int( $nsId ) && $enabled === true,
+				static fn ( $enabled, $nsId ) => is_int( $nsId ) && $enabled === true,
 				ARRAY_FILTER_USE_BOTH
 			) ) : [];
 	}
