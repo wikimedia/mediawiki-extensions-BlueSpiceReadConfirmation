@@ -146,7 +146,6 @@ class BSApiReadConfirmationTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isWriteMode() {

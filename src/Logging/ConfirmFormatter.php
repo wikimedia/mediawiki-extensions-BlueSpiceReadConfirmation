@@ -37,7 +37,6 @@ class ConfirmFormatter extends LogFormatter {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	private function appendRevisionLink() {
@@ -57,7 +56,6 @@ class ConfirmFormatter extends LogFormatter {
 	}
 
 	/**
-	 *
 	 * @return void
 	 */
 	private function initRevId() {
@@ -68,7 +66,6 @@ class ConfirmFormatter extends LogFormatter {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	private function hasRevisionIdLogged() {
@@ -76,7 +73,6 @@ class ConfirmFormatter extends LogFormatter {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	private function getTimestampFromRevisionId() {
