@@ -9,7 +9,6 @@ use MediaWiki\Title\Title;
 
 class ReadConfirmationPageAssignmentHooks {
 	/**
-	 *
 	 * @param PrimaryDataProvider $dataProvider
 	 * @param Record $dataSet
 	 * @param Title $title
@@ -55,7 +54,6 @@ class ReadConfirmationPageAssignmentHooks {
 	}
 
 	/**
-	 *
 	 * @param \BSApiExtJSStoreBase $oApiModule
 	 * @param array &$aData
 	 * @return bool
@@ -68,7 +66,6 @@ class ReadConfirmationPageAssignmentHooks {
 	}
 
 	/**
-	 *
 	 * @param array &$aData
 	 */
 	protected static function extendBSApiMyPageAssignmentStore( &$aData ) {

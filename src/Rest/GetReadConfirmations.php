@@ -31,7 +31,6 @@ class GetReadConfirmations extends SimpleHandler {
 	private $permissionManager = null;
 
 	/**
-	 *
 	 * @param MechanismFactory $mechanismFactory
 	 * @param AssignmentFactory $assignmentFactory
 	 * @param TitleFactory $titleFactory
@@ -53,7 +52,6 @@ class GetReadConfirmations extends SimpleHandler {
 	}
 
 	/**
-	 *
 	 * @inheritDoc
 	 */
 	public function run() {
@@ -122,7 +120,6 @@ class GetReadConfirmations extends SimpleHandler {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	private function checkViewPermissions() {

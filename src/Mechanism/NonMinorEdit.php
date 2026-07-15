@@ -35,7 +35,6 @@ class NonMinorEdit implements IMechanism {
 	private $enabledNamespaces;
 
 	/**
-	 *
 	 * @var AssignmentFactory
 	 */
 	protected $assignmentFactory = null;
