@@ -49,7 +49,7 @@
 						break;
 				}
 
-				const iconWidget = new OO.ui.IconWidget( { // eslint-disable-line mediawiki/class-doc
+				const iconWidget = new OO.ui.IconWidget( {
 					icon: icon,
 					classes: [ iconClass ],
 					disabled: disabled

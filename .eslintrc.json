@@ -21,6 +21,7 @@
 	},
 	"rules": {
 		"es-x/no-async-functions": "off",
-		"max-len": "off"
+		"max-len": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }
