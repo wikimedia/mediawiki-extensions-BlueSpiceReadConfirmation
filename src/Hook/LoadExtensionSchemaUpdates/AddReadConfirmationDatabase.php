@@ -6,7 +6,6 @@ use BlueSpice\Hook\LoadExtensionSchemaUpdates;
 
 class AddReadConfirmationDatabase extends LoadExtensionSchemaUpdates {
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -21,7 +20,6 @@ class AddReadConfirmationDatabase extends LoadExtensionSchemaUpdates {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getExtensionPath() {
