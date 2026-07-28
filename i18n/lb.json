@@ -14,6 +14,7 @@
 	"notification-bs-readconfirmation-remind-daily-body": "Confirméiert wgl., datt Dir $1 gelies hutt.",
 	"bs-readconfirmation-disabled-ns-short": "Desaktivéiert",
 	"bs-readconfirmation-graphicallist-btn-read": "Liesen",
+	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Kee gültege Säitentitel disponibel",
 	"bs-readconfirmation-page-info-user": "Benotzer",
 	"bs-readconfirmation-page-info-confirmation": "Bestätegung"
 }
