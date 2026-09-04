@@ -41,15 +41,7 @@
 				"\\BlueSpice\\ReadConfirmation\\Privacy\\Handler"
 			]
 		},
-		"BlueSpiceDiscovery": {
-			"AttentionIndicatorRegistry": {
-				"readconfirmation": "\\BlueSpice\\ReadConfirmation\\AttentionIndicator\\ReadConfirmation::factory"
-			}
-		},
 		"UnifiedTaskOverview": {
-			"AttentionIndicatorCollectionRegistry": [
-				"readconfirmation"
-			],
 			"TaskDescriptorRegistry": {
 				"read-confirmation": "\\BlueSpice\\ReadConfirmation\\UnifiedTaskOverview\\ReadConfirmationTaskDescriptor"
 			}
