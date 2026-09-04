@@ -9,7 +9,6 @@ use MediaWiki\Message\Message;
 use MediaWiki\Page\PageProps;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
-use stdClass;
 
 class ReadConfirmationTaskDescriptor implements ITaskDescriptor {
 
@@ -54,29 +53,6 @@ class ReadConfirmationTaskDescriptor implements ITaskDescriptor {
 		if ( $latestReadRevision ) {
 			$this->latestReadRevision = $latestReadRevision;
 		}
-	}
-
-	/**
-	 * @param stdClass $row
-	 * @return static|null
-	 */
-	public static function newFromTaskRow( stdClass $row ): ?static {
-		$services = MediaWikiServices::getInstance();
-		$title = $services->getTitleFactory()->newFromID( (int)$row->uto_page_id );
-		if ( !$title ) {
-			return null;
-		}
-
-		$revision = $services->getRevisionLookup()->getRevisionByTitle( $title );
-		if ( !$revision ) {
-			return null;
-		}
-
-		return new static(
-			$title,
-			$revision,
-			null
-		);
 	}
 
 	/**
