@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"PanWor"
+		]
+	},
+	"logentry-bs-readconfirmation-confirm": "$1 {{GENDER:$2|potwierdził|potwierdziła|potwierdził(a)}} zapoznanie się ze stroną „$3”",
+	"logentry-bs-readconfirmation-remind": "$1 {{GENDER:$2|poprosił|poprosiła|poprosił(a)}} $4 o potwierdzenie zapoznania się ze stroną „$3”",
+	"bs-readconfirmation-logentry-confirm-suffix-as-of": "(stan na $1)"
+}

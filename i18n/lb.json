@@ -15,5 +15,7 @@
 	"bs-readconfirmation-disabled-ns-short": "Desaktivéiert",
 	"bs-readconfirmation-graphicallist-btn-read": "Liesen",
 	"bs-readconfirmation-page-info-user": "Benotzer",
-	"bs-readconfirmation-page-info-confirmation": "Bestätegung"
+	"bs-readconfirmation-page-info-confirmation": "Bestätegung",
+	"bs-readconfirmation-api-confirmation-error-no-valid-title": "Kee gültege Säitentitel disponibel",
+	"readconfirmation-event-confirmation-request-bot": "Dir gouft gefrot, fir ze confirméieren, datt Dir d'Säit $1 gelies hutt"
 }
